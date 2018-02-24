@@ -40,27 +40,13 @@ function login(){
 						
 					});
 			} else {
-				document.location.href = "page?action=homepage";
+				document.location.href = "page?action=index";
 			}
 		},
 		type : 'GET',
 	});
 }
 
-function logout()
-{
-	$.ajax({
-		url : 'logout',
-		success : function(response) {
-			document.location.href = "index.jsp";
-		},
-		error : function()
-		{
-			alert("logout error");
-		},
-		type : 'GET',
-	});	
-}
 function facebookLogout(){
  	  alert("facebook signOut");
      FB.logout();

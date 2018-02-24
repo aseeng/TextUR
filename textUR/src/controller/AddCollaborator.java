@@ -21,8 +21,6 @@ public class AddCollaborator extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("servlet add collaborator");
-		
 		HttpSession session = req.getSession();
 		Project project = (Project) session.getAttribute("project");
 		

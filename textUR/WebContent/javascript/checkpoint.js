@@ -1,4 +1,3 @@
-
 function createCheckpoint(){
 	var name = null;
 	swal("Please enter checkpoint description:", {

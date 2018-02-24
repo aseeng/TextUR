@@ -6,53 +6,45 @@
 <link href="../css/home.css" rel="stylesheet">
 
 <head>
+<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>InstanText | Showcase</title>
 </head>
 
 <body class="skin-red-light">
 	<div class="box box-danger center" id="explorer">
-		<section class="content"> 
-		<div class="input-group-btn">
-			<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> New project
-				 <span class="fa fa-caret-down"></span>
+		<section class="content">
+		<button class="btn btn-danger" onclick="back(true);" id="returnButton">
+			<i class="fa fa-arrow-left"></i>
+		</button>
+		<div class="input-group-btn" id="options">
+			<button class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown">Options
+				<span class="fa fa-caret-down"></span>
 			</button>
 			<ul class="dropdown-menu">
-				<li><a id="empty"> Empty Project</a></li>
-				<li><a id="hello"> HelloWorld Project</a></li>
-				<li><a onclick="uploadRequest();">Upload your project</a></li>
+				<li><a id="add" onclick="addPackage('rep1');">Add Package</a></li>
+				<li><a id="rename" onclick="renameProject();">Rename project</a></li>
+				<li><a id="delete" onclick="removeProject();">Delete project</a></li>
+				<li><a href="page?action=settings">Settings</a></li>
+				<li><a onclick="compile();">Compile</a></li>
+				<li><a onclick="execute();">Execute</a></li>
 			</ul>
 		</div>
-
-		<h2 class="site-heading text-center">	<span class="site-heading-lower">Your <b>projects</b></span> 	</h2>
-		<div class=" text-center">
-			<c:forEach var="project" items="${user.getProjects().values()}">
-				<button class="btn btn-warning" onclick="showContent('${project.getName()}', true);"> 
+		<h3 class="site-heading text-center">
+			<span class="site-heading-lower" id="name">${project.getName()}</span>
+		</h3>
+		<div class="text-center" id="contentDiv"> 
+			<c:forEach var="pack" items="${project.getPackages().values()}">
+				<button class="btn btn-warning" onclick="showContent('${pack.getName()}', true);"> 
 					<span class="info-box-icon bg-yellow">
 						<i class="fa fa-folder icon_folder"><br> </i> 
-						<p class="names">${project.getName()}</p> 
+						<p class="names">${pack.getName()}</p> 
 					</span>
 				</button>
-			</c:forEach>
-		</div>
-		</section>
-
-		<section class="content">
-		<h2 class="site-heading text-center">	<span class="site-heading-lower">Other <b>projects</b></span>	</h2>
-
-		<div class="text-center">
-			<c:forEach var="project" items="${user.getOtherProjects().values()}">
-				<button class="btn btn-warning overflow-ellipsis" onclick="showContent('${project.getName()}', false);">
-					<span class="info-box-icon bg-yellow">
-						<i class="fa fa-folder icon_folder"><br></i>
-						<p class = "names">${project.getName()}</p>
-					</span>
-				</button>
-			</c:forEach>
-		</div>
+			</c:forEach></div>
 		</section>
 	</div>
 
-<script src="../javascript/explorer.js"></script>
 </body>
+<script src="../javascript/compiler.js"></script>
 </html>

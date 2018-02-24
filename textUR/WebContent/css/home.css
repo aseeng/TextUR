@@ -18,6 +18,7 @@
 #name{
 	max-width: 100%;
 	overflow: hidden;
+	font-weight: bold;
 }
 
 .icon_folder{

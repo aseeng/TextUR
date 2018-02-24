@@ -3,6 +3,8 @@ $(document).ready(function() {
 	if(sp[1] != undefined)
 		var mode = sp[1].split("\=")[1];
 
+	$('#sidebar').attr("style","display:block");
+	
 	editor = CodeMirror.fromTextArea($('#fileCode')[0], {
 		tabSize : 4,
 		lineNumbers : true,

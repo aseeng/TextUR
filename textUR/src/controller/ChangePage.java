@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import model.Checkpoint;
 import model.File;
@@ -40,7 +41,6 @@ public class ChangePage extends HttpServlet {
 		FileDao fileDao = DAOFactory.getInstance().getFileDao();
 		CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
 		CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
-//		System.out.println(action);
 		
 		if(action.equals("open"))
 		{
@@ -50,14 +50,12 @@ public class ChangePage extends HttpServlet {
 
 			switch (hash.length) {
 				case 2:								// open project
-					Collection<Package> packagesList = packageDao.findByName(hash[0],hash[1]).values();
-					String packages = (new JSONArray(packagesList).toString());
-					resp.getWriter().print(packages);
-
 					Project project1 = projectDao.findByName(hash[0], hash[1]);
 					if(project1 == null)
 						project1 = collaboratorDao.findProject(hash[0], hash[1]);
-
+					
+					project1.setPackages(packageDao.findByName(hash[0], hash[1]));
+					
 					session.setAttribute("project", project1);
 					session.setAttribute("firstMessage", 0);
 					break;
@@ -90,13 +88,18 @@ public class ChangePage extends HttpServlet {
 				req.getRequestDispatcher("index.jsp").forward(req, resp);
 				break;
 			case "homepage":
-				if (user != null)
-					fileDao.disableWrite(user.getUsername());
 				session.setAttribute("firstLoad", false);
+				if(user != null)
+					fileDao.disableWrite(user.getUsername());
+
 				req.getRequestDispatcher("homepage.jsp").forward(req, resp);
 				break;
 			case "login":
 				req.getRequestDispatcher("login.html").forward(req, resp);
+				break;
+			case "logout":
+				session.invalidate();
+				req.getRequestDispatcher("page?action=index").forward(req, resp);
 				break;
 			case "openFile":
 				req.getRequestDispatcher("text.jsp").forward(req, resp);

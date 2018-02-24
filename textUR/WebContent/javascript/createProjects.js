@@ -2,7 +2,7 @@ var reader;
 var formdata = null;
 
 function createProject(type) {
-	
+	alert(type);
 	var name = null;
 	swal("Please insert project name:", {
 		title: "New project",
