@@ -12,15 +12,9 @@ function createCheckpoint(){
 						name : name
 					},
 					success: function(response){
-						
-						if(response=="equals"){
-							swal("Unable to create a new checkpoint", "You have to make some changes", "error");
-						}
-						else{
-							swal("Created", "Checkpoint created successfully!", "success").then(() => {
-								document.location.href = "settings.jsp";								
-							})
-						}
+						swal("Created", "Checkpoint created successfully!", "success").then(() => {
+							document.location.href = "page?action=settings";								
+						})
 					},
 					error : function(){ 
 						alert("error");
@@ -76,7 +70,7 @@ function restoreCheckpoint(id){
 									},
 									success: function(response){
 										swal("Restored", "Checkpoint restored successfully!", "success").then(() => {
-											document.location.href = "settings.jsp";	
+											document.location.href = "page?action=settings";	
 										});
 									},
 									error: function(){

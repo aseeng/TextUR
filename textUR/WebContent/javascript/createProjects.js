@@ -2,7 +2,6 @@ var reader;
 var formdata = null;
 
 function createProject(type) {
-	alert(type);
 	var name = null;
 	swal("Please insert project name:", {
 		title: "New project",
@@ -23,7 +22,7 @@ function createProject(type) {
 								then(() => { createProject(type);})
 						} else {
 							swal("Created", "Project created successfully!", "success").then(() => {
-								document.location.href = "page?action=homepage";								
+								document.location.href = "page?action=index";								
 							})
 						}
 					},

@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import model.Checkpoint;
 import model.File;
-import model.Package;
 import model.Project;
 import model.User;
 import persistence.DAOFactory;
