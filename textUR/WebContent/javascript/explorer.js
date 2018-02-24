@@ -9,7 +9,7 @@ $(document).ready(() => {
 });
 
 window.onload = function() {
-	
+	$('#sidebar').attr("style","display:block");
 	window.setInterval(load, 5000, $('#user').html());
 };
 

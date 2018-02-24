@@ -1,16 +1,16 @@
 var sessionUser ="";
 function sendMessage() {
 	
-	if($('#text').val() == "" || $('#text').val() == " ")
+	if($('#message').val() == "" || $('#message').val() == " ")
 		return;
 	
 	$.ajax({
 		url : 'load',
 		data : {
-			text : $('#text').val()
+			text : $('#message').val()
 		},
 		success : function() {
-			$('#text').val("");
+			$('#message').val("");
 			olist = $('#chat_zone').val();
 			olist.scrollTop = olist.scrollHeight;
 		},

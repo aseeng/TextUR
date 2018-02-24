@@ -1,8 +1,11 @@
 $(document).ready(function() {
+	
 	var sp = document.location.href.split("&");
 	if(sp[1] != undefined)
 		var mode = sp[1].split("\=")[1];
-
+	else
+		return;
+	
 	$('#sidebar').attr("style","display:block");
 	
 	editor = CodeMirror.fromTextArea($('#fileCode')[0], {
@@ -31,7 +34,6 @@ $(document).ready(function() {
 });
 
 window.onload = function(){
-	$('#a_drop').show();
 	var user = $('#user').html(); 
 	load(user);
 	window.setInterval(load,5000, user);
