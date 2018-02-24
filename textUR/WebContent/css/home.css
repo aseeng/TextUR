@@ -1,0 +1,25 @@
+@charset "ISO-8859-1";
+
+.names{
+	font-family: Raleway; 
+	font-size: 20px;
+	margin-top: -4px;
+	margin-left: -5px;
+	max-width: 130px;
+	overflow: hidden;
+	color: white
+}
+
+#options{
+	float: right;
+	margin-right: 20%;
+}
+
+#name{
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.icon_folder{
+	padding-top: 10px;
+}

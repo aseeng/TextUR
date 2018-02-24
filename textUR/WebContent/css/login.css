@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.title{
+	font-family:Raleway;
+	margin-top:90px;
+	margin-bottom:-30px;
+}
+
+
+#text{
+	
+	font-size: 80px;
+	color: #929292;
+}
+
+#upper{
+	
+	font-size: 100px;
+	color: #e6b41d;
+}
+
+#registration{
+	font-family:Raleway;
+	font-size:15px;
+	color: #fbfbfb;
+}
+
+#login{
+	
+	font-family:Raleway;
+	font-size:18px;
+	color: #fbfbfb;
+}
