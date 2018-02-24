@@ -41,15 +41,15 @@
 			<div class="container">
 				<div class="intro">
 					<img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="../img/intro.jpg">
-					<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+					<div class="intro-text left-0 text-center bg-faded p-5 rounded description">
 						<h2 class="section-heading mb-4">
 							<span class="section-heading-upper">TextUR</span>
 							<span class="section-heading-lower">Create the future</span>
 						</h2>
-						<p class="mb-3">An innovative web editor to create your Java project online.
+						<p class="mb-3 font">An innovative web editor to create your Java project online.
 							Work with your collaborator and share with them your projects.</p>
 						<div class="intro-button mx-auto">
-							<a class="btn btn-primary btn-xl" href="page?action=register">Register Now!</a>
+							<a class="btn btn-primary btn-lg" href="page?action=register">Register Now!</a>
 						</div>
 					</div>
 				</div>

@@ -32,7 +32,7 @@ function register(){
 	if(res == null ){
 		swal("Error", "Please insert a valid email!", "error")
 		.then(() => {
-			document.location = "register.html";
+			document.location.href = "page?action=register";
 		});
 		return;
 	}
@@ -48,16 +48,24 @@ function register(){
 			if(response == "exist"){
 				swal("Username not valid", "Username already used!", "error")
 					.then(() => {
-						document.location = "register.html";
+						
+						$('#username').val("");
+						$('#username').css("border-color","red");
+						$('#username').focus();
+						$('#password').val("");
+						$('#retype_password').val("");
 					});
 			}
 			
 			else if(response == "email_exist"){
 				swal("E-mail not valid", "E-mail already used!", "error")
 				.then(() =>{
-					msg.innerHTML = "<b>select another e-mail</b>";
-					msg.style.color = "red";
-					$('#mail').focus();
+					
+					$('#email').val("");
+					$('#email').css("border-color","red");
+					$('#email').focus();					
+					$('#password').val("");
+					$('#retype_password').val("");
 				});
 				
 			}
@@ -65,12 +73,14 @@ function register(){
 
 				swal("Password don't match", "Please retype the password!", "warning")
 				.then(() =>{
-					msg.innerHTML = "<b>Passwords don't match</b>";
-					msg.style.color = "red";
-					$('#password').focus();
+
+					$('#password').css("border-color","red");
+					$('#retype_password').css("border-color","red");
+					$('#password').val("");
+					$('#retype_password').val("");
 				});
 			}
-			else document.location.href = "login.html";
+			else document.location.href = "page?action=login";
 
 		},
 		type : 'POST',
