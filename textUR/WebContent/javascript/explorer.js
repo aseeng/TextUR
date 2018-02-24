@@ -208,8 +208,8 @@ function renamePackage(){
 	})
 }
 
-function showContent(name, isCreator){
-	$('#a_drop').show();
+function showContent(name){
+	$('.buttonName').removeAttr("onclick", null);	
 	location.hash += "/" + name;
 	$.ajax({
 		url : 'page',
@@ -239,8 +239,8 @@ function showContent(name, isCreator){
 				$('#name').html(hash[2]);
 				$('#contentDiv').html("");
 				$.each(JSON.parse(response), function(idx, obj) {
-					var buttonFolder = $("<button></button>").addClass("btn btn-warning overflow-ellipsis");
-						buttonFolder.attr("onclick", "showContent(\"" + obj.name + "\" ," + isCreator +");");
+					var buttonFolder = $("<button></button>").addClass("btn btn-warning buttonName");
+						buttonFolder.attr("onclick", "showContent(\"" + obj.name + "\");");
 					var spanFolderBG = $("<span></span>").addClass("info-box-icon bg-yellow");
 					var iconFolder = $("<i></i>").addClass("fa fa-file icon_folder");
 					var br = $("<br>");
@@ -262,7 +262,7 @@ function showContent(name, isCreator){
 	});
 }
 
-function back(isCreator){
+function back(){
 	var hash = location.hash.split("/");
 	if(hash.length == 2)
 	{
@@ -272,5 +272,5 @@ function back(isCreator){
 	location.hash = hash[0];
 	for(i = 1; i<hash.length-2; i++)
 		location.hash += "/"+hash[i];
-	showContent(hash[hash.length-2], isCreator);
+	showContent(hash[hash.length-2]);
 }

@@ -14,7 +14,7 @@
 <body class="skin-red-light">
 	<div class="box box-danger center" id="explorer">
 		<section class="content">
-		<button class="btn btn-danger" onclick="back(true);" id="returnButton">
+		<button class="btn btn-danger" onclick="back();" id="returnButton">
 			<i class="fa fa-arrow-left"></i>
 		</button>
 		<div class="input-group-btn" id="options">
@@ -35,7 +35,7 @@
 		</h3>
 		<div class="text-center" id="contentDiv"> 
 			<c:forEach var="pack" items="${project.getPackages().values()}">
-				<button class="btn btn-warning" onclick="showContent('${pack.getName()}', true);"> 
+				<button class="btn btn-warning buttonName" onclick="showContent('${pack.getName()}')"> 
 					<span class="info-box-icon bg-yellow">
 						<i class="fa fa-folder icon_folder"><br> </i> 
 						<p class="names">${pack.getName()}</p> 

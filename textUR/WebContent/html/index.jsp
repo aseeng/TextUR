@@ -73,7 +73,7 @@
 				<h2 class="site-heading text-center">	<span class="site-heading-lower">Your <b>projects</b></span> 	</h2>
 				<div class=" text-center">
 					<c:forEach var="project" items="${user.getProjects().values()}">
-						<button class="btn btn-warning" onclick="showContent('${project.getName()}', true);"> 
+						<button class="btn btn-warning buttonName" onclick="showContent('${project.getName()}', true);"> 
 							<span class="info-box-icon bg-yellow">
 								<i class="fa fa-folder icon_folder"><br> </i> 
 								<p class="names">${project.getName()}</p> 
