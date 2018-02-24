@@ -27,13 +27,17 @@ function login(){
 			if(response == "password"){
 				swal("Error", "Wrong password!", "error")
 					.then(() => {
-						document.location.href = "page?action=login";
+						
+						$('#password').val("")
+						$('#password').css("border-color","red")
 					});
 			}
 			else if(response == "user"){
 				swal("Error","User not found!", "error")
 					.then(() => {
-						document.location.href = "page?action=login";
+						$('#username').val("")
+						$('#password').val("")
+						
 					});
 			} else {
 				document.location.href = "page?action=homepage";
