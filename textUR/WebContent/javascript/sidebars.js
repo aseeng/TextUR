@@ -12,4 +12,6 @@ $(document).ready(function() {
 //		},
 //		type: 'GET'
 //	});
+	
+//	$('#control-sidebar-theme-demo-options-tab').remove();
 })

@@ -67,27 +67,27 @@
 						</li>
 					</ul>
 				</li>
-				<li> <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+				<li> <a href="#control-sidebar-home-tab" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
 			</ul>
 		</div>
 	</nav> </header>
-	
+<!-- 		SIDEBAR	
 	<aside class="control-sidebar control-sidebar-dark control-sidebar-open">
-	    <!-- Create the tabs -->
+	    <!-- Create the tabs 
 	    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 	      <li><a href="#control-sidebar-home-tab" data-toggle="tab" aria-expanded="true"><i class="fa fa-home"></i></a></li>
 	      <li><a href="#control-sidebar-settings-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-gears"></i></a></li>
 	    </ul>
-	    <!-- Tab panes -->
+	    <!-- Tab panes
 	    <div class="tab-content">
-	      <!-- calendar tab content -->
+	      <!-- calendar tab content 
 	      <div class="tab-pane active" id="control-sidebar-home-tab">
 	        <h3 class="control-sidebar-heading">CALENDAR</h3>
 						<div class="box box-solid bg-red-gradient">
 							<div class="box-header ui-sortable-handle" style="cursor: move;">
 								<!-- tools box -->
 								<div class="pull-right box-tools">
-									<!-- button with a dropdown -->
+									<!-- button with a dropdown
 									<div class="btn-group">
 										<button type="button"
 											class="btn btn-success btn-sm dropdown-toggle"
@@ -102,11 +102,11 @@
 										</ul>
 									</div>
 								</div>
-								<!-- /. tools -->
+								<!-- /. tools 
 							</div>
-							<!-- /.box-header -->
+							<!-- /.box-header 
 							<div class="box-body no-padding" style="">
-								<!--The calendar -->
+								<!--The calendar 
 								<div id="calendar" style="width: 100%">
 									<div class="datepicker datepicker-inline">
 
@@ -348,10 +348,10 @@
 							</span>
 						</div>
 	      </div>
-	      <!-- chat tab content -->
+	      <!-- chat tab content 
 	      <div class="tab-pane" id="control-sidebar-settings-tab">
 	          <h3 class="control-sidebar-heading">CHAT</h3>
-	          <!-- chat dropdown menu -->
+	          <!-- chat dropdown menu
 				<div class="box box-danger direct-chat direct-chat-danger">
 					<div class="box-body" id="chatBox">
 						<div class="direct-chat-messages" id="chat_zone"></div>
@@ -365,9 +365,9 @@
 					</span>
 				</div>
 	      </div>
-	      <!-- /.tab-pane -->
+	      <!-- /.tab-pane
 	    </div>
-	  </aside>
+	  </aside> -->
 	<script src="https://apis.google.com/js/api.js"
 		onload="this.onload=function(){};handleClientLoad()"
 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
