@@ -121,35 +121,35 @@ function showCollaborator(creator, currUser){
 		success: function(response){	
 			$('#collaborators').html("");
 			$.each(JSON.parse(response), function(idx, obj) {	
+				
 				var div = $('<div></div>').addClass("col-md-3");
 					div.attr("id", "-" + obj.key);
 				var div1 = $('<div></div>').addClass("center");
 				var div2 = $('<div></div>').addClass("box box-widget widget-user");
 				var div3 = $('<div></div>').addClass("widget-user-header bg-aqua-active");
 				
-				if(currUser == creator) 
-				{
-					var a = $('<a></a>').addClass("btn btn-danger btn-xs bg-red");
-						a.attr("onclick", "removeCollaborator('${project}','" + obj.key + "','" + creator + "','" + currUser + "');");
-						a.html("remove");
-					div3.append(a);
-				}
-				
-				var h3 = $('<h3></h3>').addClass("widget-user-username");
-					h3.attr("text", obj.key);
+				var h3 = $('<h3></h3>').addClass("widget-user-username username").text(obj.key);
 				div3.append(h3);
 				
+				if(currUser == creator) 
+				{
+					var a = $('<a></a>').addClass("btn btn-danger btn-xs remove fa fa-remove");
+						a.attr("onclick", "removeCollaborator('${project}','" + obj.key + "','" + creator + "','" + currUser + "');");
+					div3.append(a);
+				}
+
+				
 				if(!obj.value)
-					div3.append($('<h5></h5>').attr("id","pending").html("pending..."));
+					div3.append($('<h5></h5>').attr("id","pending").addClass("text").text("pending..."));
 				else
-				{	var h5 = $('<h5></h5>').addClass("widget-user-desc").html("Collaborator");
+				{	var h5 = $('<h5></h5>').addClass("widget-user-desc text").text("Collaborator");
 					div3.append(h5);
 				}
 				
 				div2.append(div3);
 				
-				var div4 = $('<div></div>').addClass("widget-user-image");
-				var image = $('<img>').addClass("img-circle").attr({
+				var div4 = $('<div></div>').addClass("widget-user-image ");
+				var image = $('<img>').addClass("img-circle myimg").attr({
 					src: "../dist/img/user1-128x128.jpg",
 					alt: "User avatar"
 				});

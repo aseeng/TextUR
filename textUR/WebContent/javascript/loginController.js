@@ -35,8 +35,10 @@ function login(){
 			else if(response == "user"){
 				swal("Error","User not found!", "error")
 					.then(() => {
+						$('#username').css("border-color","red")
 						$('#username').val("")
 						$('#password').val("")
+						
 						
 					});
 			} else {

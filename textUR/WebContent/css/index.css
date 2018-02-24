@@ -32,8 +32,14 @@
 }
 
 #sub{
+	 font-size: 20px;	
+}
+
+.font{
+	font-size: 18px;
 	
-	
-	 font-size: 20px;
-	
+}
+
+.description{
+	height: 250px;
 }
