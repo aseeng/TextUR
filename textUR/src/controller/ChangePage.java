@@ -97,7 +97,7 @@ public class ChangePage extends HttpServlet {
 				req.getRequestDispatcher("homepage.jsp").forward(req, resp);
 				break;
 			case "login":
-				req.getRequestDispatcher("login.jsp").forward(req, resp);
+				req.getRequestDispatcher("login.html").forward(req, resp);
 				break;
 			case "logout":
 				session.invalidate();
