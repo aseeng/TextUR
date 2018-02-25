@@ -1,4 +1,4 @@
-var sessionUser ="";
+var user = $('#user').html();
 function sendMessage() {
 	
 	if($('#message').val() == "" || $('#message').val() == " ")
@@ -18,15 +18,13 @@ function sendMessage() {
 	});
 }
 
-function load(user) {
-	sessionUser = user;
+function load() {
 	$.ajax({
 		url : 'load',
 
 		success : function(response) {
 			
 			$("#chat_zone").html("");
-			
 			$.each(JSON.parse(response), function(idx, obj) {
 				var div;
 				
@@ -77,14 +75,12 @@ $('#chat_zone').scroll(function() {
 			url : 'loadOld',
 			
 			success : function(response) {
-				var tmp="";
-				
 				if(response!=null && response != "") {
 									
 					$.each(JSON.parse(response), function(idx, obj) {	
 						var div;
 						
-						if(sessionUser == obj.user.username)
+						if(user == obj.user.username)
 							div = $('<div></div>').addClass("direct-chat-msg right");
 						else
 							div = $('<div></div>').addClass("direct-chat-msg left");

@@ -39,7 +39,6 @@ public class ChangePage extends HttpServlet {
 		FileDao fileDao = DAOFactory.getInstance().getFileDao();
 		CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
 		CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
-		
 		if(action.equals("open"))
 		{
 			String split = req.getParameter("hash");
@@ -49,6 +48,7 @@ public class ChangePage extends HttpServlet {
 			switch (hash.length) {
 				case 2:								// open project
 					Project project1 = projectDao.findByName(hash[0], hash[1]);
+
 					if(project1 == null)
 						project1 = collaboratorDao.findProject(hash[0], hash[1]);
 					
@@ -79,27 +79,32 @@ public class ChangePage extends HttpServlet {
 				default:
 					break;
 			}
+			
+			return;
 		}
 		
 		switch (action) {
 			case "index":
-				req.getRequestDispatcher("index.jsp").forward(req, resp);
-				break;
-			case "homepage":
-				session.setAttribute("firstLoad", false);
+				session.setAttribute("firstLoad", true);
 				if(user != null)
 					fileDao.disableWrite(user.getUsername());
 
+				req.getRequestDispatcher("index.jsp").forward(req, resp);
+				break;
+			case "homepage":
+				if(user != null)
+					fileDao.disableWrite(user.getUsername());
 				req.getRequestDispatcher("homepage.jsp").forward(req, resp);
 				break;
 			case "login":
-				req.getRequestDispatcher("login.html").forward(req, resp);
+				req.getRequestDispatcher("login.jsp").forward(req, resp);
 				break;
 			case "logout":
 				session.invalidate();
-				req.getRequestDispatcher("page?action=index").forward(req, resp);
+				req.getRequestDispatcher("index.jsp").forward(req, resp);
 				break;
 			case "openFile":
+				session.setAttribute("firstLoadComments", true);
 				req.getRequestDispatcher("text.jsp").forward(req, resp);
 				break;
 			case "register":
@@ -120,6 +125,7 @@ public class ChangePage extends HttpServlet {
 				req.getRequestDispatcher("settings.jsp").forward(req, resp);
 				break;
 			default:
+				resp.sendError(500);
 				break;
 		}
 	}

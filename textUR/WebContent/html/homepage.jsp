@@ -21,10 +21,12 @@
 			<button class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown">Options
 				<span class="fa fa-caret-down"></span>
 			</button>
-			<ul class="dropdown-menu">
-				<li><a id="add" onclick="addPackage('rep1');">Add Package</a></li>
-				<li><a id="rename" onclick="renameProject();">Rename project</a></li>
-				<li><a id="delete" onclick="removeProject();">Delete project</a></li>
+			<ul class="dropdown-menu" id="options_menu">
+				<li><a id="add" onclick="addPackage();">Add Package</a></li>
+				<c:if test="${project.getCreator().getUsername() == user.getUsername()}">
+					<li><a id="rename" onclick="renameProject();">Rename project</a></li>
+					<li><a id="delete" onclick="removeProject();">Delete project</a></li>
+				</c:if>
 				<li><a href="page?action=settings">Settings</a></li>
 				<li><a onclick="compile();">Compile</a></li>
 				<li><a onclick="execute();">Execute</a></li>

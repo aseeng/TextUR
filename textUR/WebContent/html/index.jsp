@@ -9,7 +9,6 @@
 <link href="../css/home.css" rel="stylesheet">
 <title>InstanText - Welcome</title>
 
-<!-- Bootstrap core CSS -->
 <!-- Custom fonts for this template -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
@@ -88,7 +87,7 @@
 		
 				<div class="text-center">
 					<c:forEach var="project" items="${user.getOtherProjects().values()}">
-						<button class="btn btn-warning overflow-ellipsis" onclick="showContent('${project.getName()}', false);">
+						<button class="btn btn-warning buttonName" onclick="showContent('${project.getName()}', false);">
 							<span class="info-box-icon bg-yellow">
 								<i class="fa fa-folder icon_folder"><br></i>
 								<p class = "names">${project.getName()}</p>

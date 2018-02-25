@@ -1,6 +1,6 @@
 package model;
 
-public class Collaborator extends User {
+public class Collaborator {
 	
 	private Long id;
 	private User user;
@@ -49,6 +49,4 @@ public class Collaborator extends User {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	public boolean isCollaborator() {return true;}
 }

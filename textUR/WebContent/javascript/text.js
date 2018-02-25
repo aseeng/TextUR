@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	
-	var sp = document.location.href.split("&");
-	if(sp[1] != undefined)
-		var mode = sp[1].split("\=")[1];
+	var page = document.location.href.split("&");
+	if(page[1] != undefined)
+		var mode = page[1].split("\=")[1];
 	else
 		return;
 	
@@ -40,6 +40,7 @@ window.onload = function(){
 }
 
 function initComments() {
+	
 	for(i=0; i<editor.lineCount(); i++)
 	{
 		var id = "#comment"+(i+1);
@@ -59,7 +60,27 @@ function initComments() {
 		
 		div.append(button);
 		$('#comments').append(div);
-	}	
+	}
+	
+	$.ajax({
+		url: 'comment',
+		success: function(response){
+			$.each(JSON.parse(response), function(idx, obj) {
+				var comment = "#comment"+obj.line;
+				$(comment).removeAttr("onmouseover", null);
+				$(comment).removeAttr("onmouseout", null);
+				
+				var button = "#button"+obj.line;
+				$(button).removeAttr("style",null);
+				$(button).attr("style","opacity:50");
+				
+				var icon = "#icon"+obj.line;
+				$(icon).removeClass();
+				$(icon).addClass("fa fa-comment-o icon");
+			})
+		},
+		type: 'GET'
+	});
 }
 
 function initOptions() {
@@ -440,12 +461,15 @@ function editComments(index, lines){
 		if(j != index)
 		{
 			var id = "#icon"+j;
-			$(id).removeClass();
-			$(id).addClass("fa fa-plus icon");
+			if(!$(id).hasClass("fa fa-comment-o icon"))
+			{
+				$(id).removeClass();
+				$(id).addClass("fa fa-plus icon");
 			
-			var id = "#comment"+j;
-			$(id).attr("onmouseout", "hideButton("+j+")");
-			hideButton(j);
+				var id = "#comment"+j;
+				$(id).attr("onmouseout", "hideButton("+j+")");
+				hideButton(j);
+			}
 		}
 	}
 	
@@ -456,9 +480,23 @@ function editComments(index, lines){
 		return;
 	}
 	
+	if($(iconId).hasClass("fa fa-comments-o icon")){
+		$(iconId).removeClass();
+		$(iconId).addClass("fa fa-comment-o icon");
+		return;
+	}
+	
 	$(commentId).removeAttr("onmouseout", null);
-	$(iconId).removeClass();
-	$(iconId).addClass("fa fa-minus icon");
+	
+	if($(iconId).hasClass("fa fa-comment-o icon"))
+	{
+		$(iconId).removeClass();
+		$(iconId).addClass("fa fa-comments-o icon");
+	}
+	else {
+		$(iconId).removeClass();
+		$(iconId).addClass("fa fa-minus icon");
+	}
 	
 	var forum = $('<div></div').addClass("removable");
 	var mainDiv = $('<div></div').addClass("box box-danger direct-chat direct-chat-danger").attr("id","forum");

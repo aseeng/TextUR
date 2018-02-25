@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +15,9 @@ public class CheckLogin extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
-		PrintWriter out = resp.getWriter();
-		if(session.getAttribute("user")!=null)
-			out.print("true");
-		else
-			out.print("false");
+		String page = req.getParameter("page");
+
+		if(session.getAttribute("user")==null && !page.contains("index") && !page.contains("log")) 
+			resp.getWriter().print("false");
 	}
 }

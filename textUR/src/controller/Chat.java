@@ -57,7 +57,7 @@ public class Chat extends HttpServlet {
 			List<Message> chat = messageDao.findForTime(date, project.getId());
 
 			session.setAttribute("firstMessage", (Integer) session.getAttribute("firstMessage") + chat.size());
-			session.setAttribute("firstLoad", true);
+			session.setAttribute("firstLoad", false);
 			String files = (new JSONArray(chat).toString());
 			resp.getWriter().print(files);
 		} else {

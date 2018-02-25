@@ -25,16 +25,24 @@ public class Comments extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		File file = (File) session.getAttribute("file");
-		
 		if(file == null)
 			return;
-		
+
 		CommentDao commentDao = DAOFactory.getInstance().getCommentDao();
-		Long line = Long.parseLong(req.getParameter("line"));
-		
-		List<Comment> comments = commentDao.findFromLine(file.getId(), line);
-		String commentList = (new JSONArray(comments).toString());
-		resp.getWriter().print(commentList);
+		Boolean firstLoad = (boolean) session.getAttribute("firstLoadComments");
+		if(firstLoad) {
+			List<Comment> comments = commentDao.find(file.getId());
+			String commentList = (new JSONArray(comments).toString());
+			resp.getWriter().print(commentList);
+			session.setAttribute("firstLoadComments", false);
+			return;
+		}
+		else {
+			Long line = Long.parseLong(req.getParameter("line"));
+			List<Comment> comments = commentDao.findFromLine(file.getId(), line);
+			String commentList = (new JSONArray(comments).toString());
+			resp.getWriter().print(commentList);
+		}
 	}
 	
 	@Override

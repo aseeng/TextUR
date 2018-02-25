@@ -38,8 +38,6 @@ function login(){
 						$('#username').css("border-color","red")
 						$('#username').val("")
 						$('#password').val("")
-						
-						
 					});
 			} else {
 				document.location.href = "page?action=index";
@@ -49,21 +47,52 @@ function login(){
 	});
 }
 
-function facebookLogout(){
- 	  alert("facebook signOut");
-     FB.logout();
-//     function(response){
-//         document.getElementById('logout').style.display = 'none';
-//         document.getElementById('profile').style.display = 'none';
-//         document.getElementById('feed').style.display = 'none';
-//         document.getElementById('fb-btn').style.display = 'block';
-//         document.getElementById('heading').style.display = 'block';
-//     });
-   }
-function signOutGoogle() {
-	   alert("google signOut");
-		var auth2 = gapi.auth2.getAuthInstance();
-	    auth2.signOut().then(function () {
-	      console.log('User signed out.');
-	    });
-	  }
+function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	  $.ajax({
+			url : 'loginAPI',
+			data : {
+				email : profile.getEmail()
+			},
+			success : function(responseText) {
+				if(responseText == "register")
+				{
+					swal("Please choose your username:", {
+						content: "input",
+						})
+						.then((value) => {
+							if (value != null && value != "") {
+								$.ajax({
+									url: 'loginAPI',
+									data : {
+										email : profile.getEmail(),
+										name :  value
+									},
+									success : function(){
+										document.location.href = "page?action=index";
+									},
+									error : function(){ 
+										alert("error");
+									},
+									type : 'POST'
+								});
+							}
+						})
+				}	
+				else
+					document.location.href = "page?action=index";
+			},
+			type : 'GET'
+	});
+}
+
+function logout() {
+	 document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:8080/SIW_InstanText/html/page?action=logout";
+}
+
+//function logout(){
+//	alert("google signOut");
+//	gapi.auth2.getAuthInstance().signOut();
+//	document.location.href = "page?action=logout";
+//}
+

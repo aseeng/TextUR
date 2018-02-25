@@ -21,7 +21,6 @@ public class LoginAPI extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("login post");
 		
 		HttpSession session = req.getSession();
 		String email = req.getParameter("email");
@@ -31,8 +30,7 @@ public class LoginAPI extends HttpServlet {
 		User user = new User(username, email);
 		userDao.save(user);
 				
-		if(session.getAttribute("user") == null)
-			session.setAttribute("user", user);
+		session.setAttribute("user", user);
 	}
 	
 	@Override
@@ -59,6 +57,5 @@ public class LoginAPI extends HttpServlet {
 		user.setOtherProjects(otherProjects);
 
 		session.setAttribute("user", user);
-		resp.getWriter().print("logged");
 	}
 }

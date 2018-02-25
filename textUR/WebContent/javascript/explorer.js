@@ -6,6 +6,8 @@ $(document).ready(() => {
 		name = "/" + $('#name').html();
 	
 	location.hash = user+name;
+	
+	
 });
 
 window.onload = function() {
@@ -13,7 +15,7 @@ window.onload = function() {
 	window.setInterval(load, 5000, $('#user').html());
 };
 
-function addPackage(projectname) {
+function addPackage() {
 	var name = null;
 	swal("Please enter package name:", {
 		content: "input",
@@ -29,7 +31,7 @@ function addPackage(projectname) {
 				success: function(response){
 					if(response == "exist")
 						swal("Error", "There is already a package with the same name", "error").then(()=>{
-							addPackage(projectname);
+							addPackage();
 						});
 					else {
 						swal("Created", "Package created successfully!", "success").then(()=>{
@@ -230,11 +232,28 @@ function showContent(name){
 				$('#add').text("Add File");
 				$('#add').attr("onclick", "addFile();");
 				
-				$('#rename').text("Rename package");
-				$('#rename').attr("onclick", "renamePackage();");
-			
-				$('#delete').text("Delete package");
-				$('#delete').attr("onclick", "removePackage();");
+				$('#rename').remove();
+				$('#delete').remove();
+				
+//				<li><a id="rename" onclick="renameProject();">Rename project</a></li>
+//				<li><a id="delete" onclick="removeProject();">Delete project</a></li>
+				var li = $('<li></li>');
+				var rename = $('<a></a>').attr({
+					id: "rename",
+					onclick: "renamePackage();",
+					text: "Rename package"
+				})
+				li.append(rename);
+				$('#options_menu').next().append(li);
+				
+				var li2 = $('<li></li>');
+				var remove = $('<a></a>').attr({
+					id: "delete",
+					onclick: " removePackage();",
+					text: "Delete package"
+				})
+				li2.append(remove);
+				$('#options_menu').next().next().append(li);
 				
 				$('#name').html(hash[2]);
 				$('#contentDiv').html("");

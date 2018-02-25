@@ -35,18 +35,12 @@
 </head>
 
 <body onload="checkEnter();">
-	<script src="../javascript/loginController.js"></script>
-<!--
-	<script src="../javascript/facebooksignin.js"></script>
-	<script src="../javascript/googlesignin.js"></script>
--->
 
 	<header class="hold-transition login-page background-image">
 	<h1 class="login-logo title">
-				<span class="site-heading-lower" id="text">Text</span>
-				<span class="site-heading-lower" id="upper">UR</span>
-			</h1>
-			
+		<span class="site-heading-lower" id="text">Text</span>
+		<span class="site-heading-lower" id="upper">UR</span>
+	</h1>
 			
 		<div class="login-box">
 			
@@ -66,18 +60,9 @@
 						</div>
 	
 						<div class="col-xs-12 social-auth-links text-center">
-		<!-- 				<div id="facebook" class="fb-login-button" data-max-rows="1" data-size="medium" data-width="1500"
-								data-button-type="login_with" data-show-faces="false"data-auto-logout-link="true" data-use-continue-as="true">
-							</div>
-							<div id="google" class="g-signin2" data-onsuccess="onSignIn" data-width="320" data-height="30"></div>
-							
-							<button class="btn" href="#" onclick="signOutGoogle();">Sign out</button>
-							<a href="#">I forgot my password (?)</a>
-							 																				-->	 
+						<div id="google" class="g-signin2" data-onsuccess="onSignIn" data-width="320" data-height="30"></div>   																				
+						<a href="page?action=register" type="button" class="btn btn-block btn-info btn-xs" id="registration">Register a new membership</a>
 							 																				
-							<a href="page?action=register" type="button" class="btn btn-block btn-info btn-xs" id="registration">Register a new membership</a>
-							 																				
-					
 						</div>
 					</div>
 					<!-- /.social-auth-links -->
@@ -93,6 +78,8 @@
 			<script src="../bootstrap/bootstrap/dist/js/bootstrap.min.js"></script>
 
 			<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+			<script src="../javascript/loginController.js"></script>
+	  		<script src="../javascript/googlesignin.js"></script> 
 	</header>
 </body>
 </html>

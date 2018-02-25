@@ -103,7 +103,7 @@ public class CommentDaoJDBC implements CommentDao {
 		try {
 			Comment comment;
 			PreparedStatement statement;
-			String query = "select * from comment where file = ? order by date";
+			String query = "select * from comment where file = ? order by file";
 			statement = connection.prepareStatement(query);
 			statement.setLong(1, fileId);
 			ResultSet result = statement.executeQuery();

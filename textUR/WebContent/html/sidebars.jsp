@@ -62,12 +62,12 @@
 								<a href="#" class="btn btn-default btn-flat">Profile</a>
 							</div>
 							<div class="pull-right">
-								<a href="page?action=logout" class="btn btn-default btn-flat">Logout</a>
+								<a onclick="logout();" class="btn btn-default btn-flat">Logout</a>
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li> <a href="#control-sidebar-home-tab" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+				<li> <a data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
 			</ul>
 		</div>
 	</nav> </header>
@@ -85,7 +85,7 @@
 	        <h3 class="control-sidebar-heading">CALENDAR</h3>
 						<div class="box box-solid bg-red-gradient">
 							<div class="box-header ui-sortable-handle" style="cursor: move;">
-								<!-- tools box -->
+								<!-- tools box 
 								<div class="pull-right box-tools">
 									<!-- button with a dropdown
 									<div class="btn-group">
@@ -369,7 +369,7 @@
 	    </div>
 	  </aside> -->
 	<script src="https://apis.google.com/js/api.js"
-		onload="this.onload=function(){};handleClientLoad()"
+		onload="this.onload= handleClientLoad()"
 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
 		
 	</script>
@@ -389,6 +389,7 @@
 	<script src="../javascript/explorer.js"></script>
 	<script src="../javascript/calendar.js"></script>
 	<script src="../javascript/sidebars.js"></script>
+	<script src="../javascript/loginController.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	
 </body>

@@ -62,7 +62,6 @@
 	<script src="../plugins/codemirror/addon/hint/css-hint.js"></script>
 	<script src="../plugins/codemirror/addon/hint/show-hint.js"></script>
 	<script src="../plugins/codemirror/addon/edit/closebrackets.js"></script>
-	<script src="../plugins/codemirror/mode/css.js"></script>
 	<script src="../javascript/text.js"></script>
 	
 </body>
