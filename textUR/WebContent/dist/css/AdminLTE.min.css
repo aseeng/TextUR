@@ -741,8 +741,8 @@ a:hover, a:active, a:focus {
 
 .control-sidebar-bg, .control-sidebar {
 	top: 0;
-	right: -230px;
-	width: 230px;
+	right: -280px;
+	width: 280px;
 	-webkit-transition: right .3s ease-in-out;
 	-o-transition: right .3s ease-in-out;
 	transition: right .3s ease-in-out
