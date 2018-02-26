@@ -5,10 +5,9 @@ var DISCOVERY_DOCS = [ "https://www.googleapis.com/discovery/v1/apis/calendar/v3
 
 var SCOPES = "https://www.googleapis.com/auth/calendar";
 
-var authorizeButton = document.getElementById('authorize-button');
-var signoutButton = document.getElementById('signout-button');
-
 function handleClientLoad() {
+	
+	$('#sidebarButton').removeAttr("onclick",null);
 	gapi.load('client:auth2', initClient);
 }
 
@@ -19,31 +18,29 @@ function initClient() {
 		discoveryDocs : DISCOVERY_DOCS,
 		scope : SCOPES
 	}).then(function() {
+		
 		gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
+		
 		updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-		authorizeButton.onclick = handleAuthClick;
-		signoutButton.onclick = handleSignoutClick;
+		
+		gapi.auth2.getAuthInstance().signIn();
 	});
 }
 
 function updateSigninStatus(isSignedIn) {
-	if (isSignedIn) {
-		authorizeButton.style.display = 'none';
-		signoutButton.style.display = 'block';
+
+	if (isSignedIn){
 		listUpcomingEvents();
-	} else {
-		authorizeButton.style.display = 'block';
-		signoutButton.style.display = 'none';
+
+		var button = $('<button></button').addClass("btn btn-primary center").attr({
+			id: "btnCreateEvent",
+			onclick: "insertEvent();"
+		});
+		button.html("Create Event");
+
+		$('#createEventSpan').append(button);
 	}
-}
-
-function handleAuthClick(event) {
-	gapi.auth2.getAuthInstance().signIn();
-}
-
-function handleSignoutClick(event) {
-	gapi.auth2.getAuthInstance().signOut();
+	
 }
 
 function appendPre(message) {
@@ -55,32 +52,13 @@ function appendPre(message) {
 function listUpcomingEvents() {
 	gapi.client.calendar.events.list({
 		'calendarId': 'primary',
-        'timeMin': (new Date()).toISOString(),
-        'showDeleted': false,
-        'singleEvents': true,
-        'maxResults': 10,
-        'orderBy': 'startTime'
 	}).then(function(response) {
 		var events = response.result.items;
-		appendPre('Upcoming events:');
-
-		if (events.length > 0) {
-			for (i = 0; i < events.length; i++) {
-				var event = events[i];
-				var when = event.start.dateTime;
-				if (!when) {
-					when = event.start.date;
-				}
-				appendPre(event.summary + ' (' + when + ')')
-			}
-		} else {
-			appendPre('No upcoming events found.');
-		}
+		load(events);
 	});
 }
 
 function createEvent(){
-	
 
 	var summary = document.createElement("select");
 	summary.classList = "js-example-basic-single";
@@ -156,9 +134,7 @@ function createEvent(){
 		}
 		min.appendChild(op);
 	}
-	
-	
-	
+
 	var div = document.createElement("div");
 	
 	div.appendChild(summary);
@@ -190,29 +166,30 @@ function insertEvent() {
 		button: {
 		    text: "ok!"
 		  },
-		}).then(	()=>{
+		}).then(	(value)=>{
 			
-			var event={
-					
-				'summary' :	$("#summary").val(),
-				'location' : $("#location").val(),
-				'description' : $("#description").val(),
-				'start' : {
-					'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
-				},
-				'end' : {
-					'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
-				},
-			};
-			
-			var request = gapi.client.calendar.events.insert({
-			'calendarId' : 'primary',
-			'resource' : event
-			});
+			if(value){	
+				
+				var event={
+					'summary' :	$("#summary").val(),
+					'location' : $("#location").val(),
+					'description' : $("#description").val(),
+					'start' : {
+						'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
+					},
+					'end' : {
+						'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
+					},
+				};
+				
+				var request = gapi.client.calendar.events.insert({
+					'calendarId' : 'primary',
+					'resource' : event
+				});
 
-			request.execute(function(event) {
-				console.log(event);
-			});
-		});			
-
+				request.execute(function() {
+					listUpcomingEvents();
+				});
+			}
+		});		
 }

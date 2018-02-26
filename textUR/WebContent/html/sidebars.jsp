@@ -68,7 +68,7 @@
 						</li>
 					</ul>
 				</li>
-				<li> <a data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+				<li> <a id="sidebarButton" data-toggle="control-sidebar" onclick="handleClientLoad();"><i class="fa fa-gears"></i></a></li>
 				
 				
 			</ul>
@@ -81,7 +81,7 @@
 	<aside class="control-sidebar control-sidebar-light">
   
 		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-			<li class="active"><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false" onclick="loadCalendar();"><i class="fa fa-calendar"></i></a></li>
+			<li class="active"><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-calendar"></i></a></li>
 			<li><a href="#control-sidebar-chat-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-envelope"></i></a></li>
 		</ul>
 		
@@ -91,8 +91,7 @@
 				<h3 class="control-sidebar-heading">CALENDAR</h3>
 				<div id="calendar"></div>
 					<div class="input-group">
-						<span class="input-group-btn">
-							<button id="btnCreateEvent" class="btn btn-primary center" onclick="insertEvent();">Create Event</button>
+						<span id="createEventSpan" class="input-group-btn">
 						</span>
 					</div>
 				</div>
@@ -140,9 +139,8 @@
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 	<script src="../javascript/myCalendar.js"></script>
 	<script async defer src="https://apis.google.com/js/api.js"
-     	onload="this.onload=function(){};handleClientLoad()"
-     	onreadystatechange="if (this.readyState === 'complete') this.onload()">
-	</script>
+   		onreadystatechange="if (this.readyState === 'complete') this.onload()">
+	</script>	
 	
 </body>
 </html>
