@@ -22,7 +22,7 @@
 				<span class="fa fa-caret-down"></span>
 			</button>
 			<ul class="dropdown-menu" id="options_menu">
-				<li><a id="add" onclick="addPackage();">Add Package</a></li>
+				<li id="addLi"><a id="add" onclick="addPackage();">Add Package</a></li>
 				<c:if test="${project.getCreator().getUsername() == user.getUsername()}">
 					<li><a id="rename" onclick="renameProject();">Rename project</a></li>
 					<li><a id="delete" onclick="removeProject();">Delete project</a></li>

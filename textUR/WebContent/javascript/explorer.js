@@ -235,25 +235,23 @@ function showContent(name){
 				$('#rename').remove();
 				$('#delete').remove();
 				
-//				<li><a id="rename" onclick="renameProject();">Rename project</a></li>
-//				<li><a id="delete" onclick="removeProject();">Delete project</a></li>
 				var li = $('<li></li>');
-				var rename = $('<a></a>').attr({
-					id: "rename",
-					onclick: "renamePackage();",
-					text: "Rename package"
-				})
-				li.append(rename);
-				$('#options_menu').next().append(li);
-				
-				var li2 = $('<li></li>');
 				var remove = $('<a></a>').attr({
 					id: "delete",
-					onclick: " removePackage();",
-					text: "Delete package"
-				})
-				li2.append(remove);
-				$('#options_menu').next().next().append(li);
+					onclick: " removePackage();"
+				}).html("Delete package");
+				
+				li.append(remove);
+				li.insertAfter($('#addLi'));				
+
+				var li2 = $('<li></li>');
+				var rename = $('<a></a>').attr({
+					id: "rename",
+					onclick: "renamePackage();"
+				}).html("Rename package");
+				
+				li2.append(rename);
+				li2.insertAfter($('#addLi'));
 				
 				$('#name').html(hash[2]);
 				$('#contentDiv').html("");

@@ -39,7 +39,7 @@
 								<!-- data del checkpoint -->
 
 								<h3 class="timeline-header">
-									<a href="#">${check.getCreator().getUsername()} </a>
+									<a onclick="openProfile('${check.getCreator().getUsername()}')">${check.getCreator().getUsername()}</a>
 									<!-- utente checkpiont -->
 								</h3>
 

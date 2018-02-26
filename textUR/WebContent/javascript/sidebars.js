@@ -16,3 +16,19 @@ $(document).ready(function() {
 		type: 'GET'
 	});
 })
+
+function openProfile(user)
+{
+	alert(user);
+	$.ajax({
+		url: 'page',
+		data : {
+			action : "openProfile",
+			name : user
+		},
+		type: 'GET',
+		success : function(response){
+			document.location.href = "page?action=profile";
+		}
+	})
+}

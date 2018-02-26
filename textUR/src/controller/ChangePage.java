@@ -22,6 +22,7 @@ import persistence.dao.CollaboratorDao;
 import persistence.dao.FileDao;
 import persistence.dao.PackageDao;
 import persistence.dao.ProjectDao;
+import persistence.dao.UserDao;
 
 @SuppressWarnings("serial")
 public class ChangePage extends HttpServlet {
@@ -34,11 +35,24 @@ public class ChangePage extends HttpServlet {
 		Project project = (Project) session.getAttribute("project");
 		String action = req.getParameter("action");
 		
+		UserDao userDao = DAOFactory.getInstance().getUserDao();
 		ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
 		PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
 		FileDao fileDao = DAOFactory.getInstance().getFileDao();
 		CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
 		CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
+
+		if(action.equals("openProfile"))
+		{
+			String name = req.getParameter("name");
+			User visitor = userDao.findByPrimaryKey(name);
+
+			visitor.setProjects(projectDao.find(name));
+			visitor.setOtherProjects(collaboratorDao.find(name));
+			session.setAttribute("visitor", visitor);
+			return;
+		}
+		
 		if(action.equals("open"))
 		{
 			String split = req.getParameter("hash");
@@ -95,6 +109,9 @@ public class ChangePage extends HttpServlet {
 				if(user != null)
 					fileDao.disableWrite(user.getUsername());
 				req.getRequestDispatcher("homepage.jsp").forward(req, resp);
+				break;
+			case "profile":
+				req.getRequestDispatcher("profile.jsp").forward(req, resp);
 				break;
 			case "login":
 				req.getRequestDispatcher("login.html").forward(req, resp);

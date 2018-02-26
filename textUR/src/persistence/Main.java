@@ -1,13 +1,11 @@
 package persistence;
 
-import java.util.HashMap;
-
 import model.Collaborator;
 import model.File;
 import model.Message;
+import model.Package;
 import model.Project;
 import model.User;
-import model.Package;
 import persistence.JDBC.UtilDao;
 import persistence.dao.CollaboratorDao;
 import persistence.dao.FileDao;

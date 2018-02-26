@@ -148,7 +148,9 @@ function showCollaborator(creator, currUser){
 				
 				div2.append(div3);
 				
-				var div4 = $('<div></div>').addClass("widget-user-image ");
+				var div4 = $('<div></div>').addClass("widget-user-image");
+					div4.attr("onclick", "openProfile("+ obj.key +");");
+					
 				var image = $('<img>').addClass("img-circle myimg").attr({
 					src: "../dist/img/user1-128x128.jpg",
 					alt: "User avatar"
