@@ -225,32 +225,31 @@ public class ProjectDaoJDBC implements ProjectDao {
 	}
 
 	public void delete(Long id) {
+//		CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
+//		List<Checkpoint> checkpoints = checkpointDao.find(id);
+//
+//		for (Checkpoint checkpoint : checkpoints)
+//			checkpointDao.delete(checkpoint.getId());
+//
+//		PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
+//		HashMap<Long, Package> packages = packageDao.find(id);
+//
+//		for (Long packageId : packages.keySet())
+//			packageDao.delete(packageId);
+//
+//		MessageDao messageDao = DAOFactory.getInstance().getMessageDao();
+//		List<Message> messages = messageDao.find(id);
+//
+//		for (Message message : messages)
+//			messageDao.delete(message);
+//
+//		CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
+//		List<User> collaborators = collaboratorDao.find(id);
+//		for (User collaborator : collaborators)
+//			collaboratorDao.delete(collaborator.getUsername(), id);
+
 		Connection connection = dataSource.getConnection();
 		try {
-
-			CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
-			List<Checkpoint> checkpoints = checkpointDao.find(id);
-
-			for (Checkpoint checkpoint : checkpoints)
-				checkpointDao.delete(checkpoint.getId());
-
-			PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-			HashMap<Long, Package> packages = packageDao.find(id);
-
-			for (Long packageId : packages.keySet())
-				packageDao.delete(packageId);
-
-			MessageDao messageDao = DAOFactory.getInstance().getMessageDao();
-			List<Message> messages = messageDao.find(id);
-
-			for (Message message : messages)
-				messageDao.delete(message);
-
-			CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
-			List<User> collaborators = collaboratorDao.find(id);
-			for (User collaborator : collaborators)
-				collaboratorDao.delete(collaborator.getUsername(), id);
-
 			String delete = "delete FROM project WHERE id = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.setLong(1, id);

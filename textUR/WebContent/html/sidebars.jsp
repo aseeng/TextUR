@@ -60,7 +60,7 @@
 						<!-- Menu Footer-->
 						<li class="user-footer">
 							<div class="pull-left">
-								<a href="openProfile('${user.getUsername()}')" class="btn btn-default btn-flat">Profile</a>
+								<a onclick="openProfile('${user.getUsername()}')" class="btn btn-default btn-flat">Profile</a>
 							</div>
 							<div class="pull-right">
 								<a onclick="logout();" class="btn btn-default btn-flat">Logout</a>

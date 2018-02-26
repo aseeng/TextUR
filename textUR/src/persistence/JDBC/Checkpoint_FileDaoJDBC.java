@@ -163,7 +163,6 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				checkpointFile.setCreator(userDao.findByPrimaryKey(result.getString("creator")));
 				
 				checkpointFile.setDescription(result.getString("description"));
-				
 				checkpointsFile.put(file.getId(), checkpointFile);
 			}
 		} catch (SQLException e) {
