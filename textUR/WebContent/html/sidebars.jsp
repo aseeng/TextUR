@@ -29,11 +29,6 @@
 <link rel="stylesheet" href="../css/sidebars.css">
 <link rel="stylesheet" href="../css/swal.css">
 <link rel="stylesheet" href="../css/calendar.css">
-<script async defer src="https://apis.google.com/js/api.js"
-     onload="this.onload=function(){};handleClientLoad()"
-     onreadystatechange="if (this.readyState === 'complete') this.onload()">
-</script>
-
 </head>
 <body>
 
@@ -144,6 +139,10 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 	<script src="../javascript/myCalendar.js"></script>
+	<script async defer src="https://apis.google.com/js/api.js"
+     	onload="this.onload=function(){};handleClientLoad()"
+     	onreadystatechange="if (this.readyState === 'complete') this.onload()">
+	</script>
 	
 </body>
 </html>

@@ -19,7 +19,6 @@ public class UtilDao implements Dao {
 		Connection connection = dataSource.getConnection();
 		try {
 			String delete = "drop table if EXISTS checkpointFile;"
-					+ "drop table if EXISTS idTable;"
 					+ "drop table if EXISTS checkpoints;" 
 					+ "drop table if EXISTS message;"
 					+ "drop table if EXISTS collaborator;" 

@@ -122,7 +122,43 @@ function createEvent(){
 	dateStart.setAttribute("id","start");
 	dateStart.type="date";
 
-
+	var hour = document.createElement("select");
+	hour.setAttribute("id","hour");
+	for(i=0; i<24; i++){	
+		
+		var op=document.createElement("option");
+		
+		if(i<10){
+			op.setAttribute("value","0"+i);
+			op.text="0"+i;
+		}
+		else{
+			op.setAttribute("value",i);
+			op.text=i;
+		}
+		hour.appendChild(op);
+	}
+	
+	
+	var min = document.createElement("select");
+	min.setAttribute("id","min");
+	for(i=0; i<60; i++){	
+		
+		var op=document.createElement("option");
+		
+		if(i<10){
+			op.setAttribute("value","0"+i);
+			op.text="0"+i;
+		}
+		else{
+			op.setAttribute("value",i);
+			op.text=i;
+		}
+		min.appendChild(op);
+	}
+	
+	
+	
 	var div = document.createElement("div");
 	
 	div.appendChild(summary);
@@ -135,6 +171,10 @@ function createEvent(){
 	div.appendChild(document.createElement("br"));
 	div.appendChild(document.createElement("br"));
 	div.appendChild(dateStart);
+	div.appendChild(document.createElement("br"));
+	div.appendChild(document.createElement("br"));
+	div.appendChild(hour);
+	div.appendChild(min);
 	
 	return div;
 }
@@ -154,26 +194,25 @@ function insertEvent() {
 			
 			var event={
 					
-					'summary' :	$("#summary").val(),
-					'location' : $("#location").val(),
-					'description' : $("#description").val(),
-					'start' : {
-						'dateTime' : $("#start").val()+'T09:00:00-07:00',
-					},
-					'end' : {
-						'dateTime' : $("#start").val()+'T09:00:00-07:00',
-					},
-				};
+				'summary' :	$("#summary").val(),
+				'location' : $("#location").val(),
+				'description' : $("#description").val(),
+				'start' : {
+					'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
+				},
+				'end' : {
+					'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
+				},
+			};
 			
-				var request = gapi.client.calendar.events.insert({
-				'calendarId' : 'primary',
-				'resource' : event
-				});
+			var request = gapi.client.calendar.events.insert({
+			'calendarId' : 'primary',
+			'resource' : event
+			});
 
-				request.execute(function(event) {
-					appendPre('Event created: ' + event.htmlLink);
-					console.log(event);
-				});
+			request.execute(function(event) {
+				console.log(event);
+			});
 		});			
 
 }
