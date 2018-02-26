@@ -1,6 +1,5 @@
 package persistence;
 
-import persistence.JDBC.UtilDao;
 import persistence.dao.CheckpointDao;
 import persistence.dao.Checkpoint_FileDao;
 import persistence.dao.CollaboratorDao;

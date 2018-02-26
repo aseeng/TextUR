@@ -11,7 +11,6 @@ import persistence.JDBC.MessageDaoJDBC;
 import persistence.JDBC.PackageDaoJDBC;
 import persistence.JDBC.ProjectDaoJDBC;
 import persistence.JDBC.UserDaoJDBC;
-import persistence.JDBC.UtilDao;
 import persistence.dao.CheckpointDao;
 import persistence.dao.Checkpoint_FileDao;
 import persistence.dao.CollaboratorDao;

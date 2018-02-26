@@ -1,12 +1,9 @@
-package persistence.JDBC;
+package persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import persistence.DataSource;
-import persistence.IdBroker;
-import persistence.PersistenceException;
 import persistence.dao.Dao;
 
 public class UtilDao implements Dao {
@@ -21,8 +18,8 @@ public class UtilDao implements Dao {
 
 		Connection connection = dataSource.getConnection();
 		try {
-			String delete = "drop TABLE if EXISTS idTable;"
-					+ "drop table if EXISTS checkpointFile;"
+			String delete = "drop table if EXISTS checkpointFile;"
+					+ "drop table if EXISTS idTable;"
 					+ "drop table if EXISTS checkpoints;" 
 					+ "drop table if EXISTS message;"
 					+ "drop table if EXISTS collaborator;" 
@@ -33,8 +30,9 @@ public class UtilDao implements Dao {
 					+ "drop table if EXISTS users;";
 
 			PreparedStatement statement = connection.prepareStatement(delete);
-
 			statement.executeUpdate();
+			
+			IdBroker.drop(connection);
 			System.out.println("Executed drop database");
 
 		} catch (SQLException e) {
@@ -54,8 +52,7 @@ public class UtilDao implements Dao {
 
 		Connection connection = dataSource.getConnection();
 		try {
-			String create = "create TABLE idTable(\"name\" VARCHAR(20) primary key, value BIGINT);"
-					+ "create table users(\"username\" VARCHAR(20) primary key, mail VARCHAR(50), password VARCHAR(16));"
+			String create = "create table users(\"username\" VARCHAR(20) primary key, mail VARCHAR(50), password VARCHAR(16));"
 					+ "create table project(\"id\" BIGINT primary key, name VARCHAR(50), creator VARCHAR(20) REFERENCES users(\"username\"));"
 					+ "create table package(\"id\" BIGINT primary key, name VARCHAR(50), project BIGINT REFERENCES project(\"id\"));"
 					+ "create table message(\"id\" BIGINT primary key, project BIGINT REFERENCES project(\"id\"), text VARCHAR(400), username VARCHAR(20) REFERENCES users(\"username\"), date TIMESTAMP);"
@@ -87,12 +84,8 @@ public class UtilDao implements Dao {
 	public void resetDatabase() {
 		Connection connection = dataSource.getConnection();
 		try {
-			String reset = "delete FROM idTable;";
+			String reset = "delete FROM checkpointFile";
 			PreparedStatement statement = connection.prepareStatement(reset);
-			statement.executeUpdate();
-
-			reset = "delete FROM checkpointFile";
-			statement = connection.prepareStatement(reset);
 			statement.executeUpdate();
 
 			reset = "delete FROM checkpoints";
@@ -127,6 +120,7 @@ public class UtilDao implements Dao {
 			statement = connection.prepareStatement(reset);
 			statement.executeUpdate();
 
+			IdBroker.drop(connection);
 			IdBroker.init(connection);
 			System.out.println("Executed reset database");
 

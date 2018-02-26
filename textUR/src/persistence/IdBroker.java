@@ -6,19 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class IdBroker {
-
+	private static String[] names = {"checkpointID", "messageID", "fileID", "packageID", "collaboratorID", "checkpointFileID","projectID","commentID"};
+	
 	public static void init(Connection connection)
 	{
 		try {
-			String[] names = {"checkpointID", "messageID", "fileID", "packageID", "collaboratorID", "checkpointFileID","projectID","commentID"};
-			
 			PreparedStatement statement;
 			for(int i = 0; i < names.length; i++)
 			{
-				String insert = "insert into idTable(name, value) values (?,?)";
+				String insert = "create SEQUENCE " + names[i] + ";";
 				statement = connection.prepareStatement(insert);
-				statement.setString(1, names[i]);
-				statement.setLong(2, 1l);
 				statement.executeUpdate();
 			}
 			
@@ -28,23 +25,32 @@ public class IdBroker {
 	}
 	
 	public static Long getID(Connection connection, String name) {
-		Long value = null;
+		Long id = null;
 		try {
-			String query = "select value from idTable where name = ? ";
+			String query = "SELECT nextval('"+name+"') AS id";
+			
 			PreparedStatement statement = connection.prepareStatement(query);
-			statement.setString(1, name);
 			ResultSet result = statement.executeQuery();
 			result.next();
-			value = result.getLong("value");
+			id = result.getLong("id");
+		} catch (SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		}
+		return id;
+	}
 
-			String updateQuery = "update idTable SET value = ? where name = ? ";
-			statement = connection.prepareStatement(updateQuery);
-			statement.setLong(1, value +1);
-			statement.setString(2, name);
+	public static void drop(Connection connection) {
+		try {
+			String delete = "";
+			
+			for(int i=0; i<names.length; i++)
+				delete += "drop SEQUENCE if EXISTS " + names[i] + ";";
+
+			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
 		}
-		return value;
 	}
+
 }

@@ -6,7 +6,6 @@ import model.Message;
 import model.Package;
 import model.Project;
 import model.User;
-import persistence.JDBC.UtilDao;
 import persistence.dao.CollaboratorDao;
 import persistence.dao.FileDao;
 import persistence.dao.MessageDao;
