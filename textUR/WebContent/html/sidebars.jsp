@@ -19,17 +19,21 @@
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css">
 
 <!-- Google Font -->
-<link
-	href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-<link href="../css/business-casual.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/business-casual.min.css">
 
-<link rel="stylesheet"href="../css/sidebars.css">
+<link rel="stylesheet" href="../css/sidebars.css">
 <link rel="stylesheet" href="../css/swal.css">
 <link rel="stylesheet" href="../css/calendar.css">
+<script async defer src="https://apis.google.com/js/api.js"
+     onload="this.onload=function(){};handleClientLoad()"
+     onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
 </head>
 <body>
 
@@ -82,7 +86,7 @@
 	<aside class="control-sidebar control-sidebar-light">
   
 		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-			<li class="active"><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-calendar"></i></a></li>
+			<li class="active"><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false" onclick="loadCalendar();"><i class="fa fa-calendar"></i></a></li>
 			<li><a href="#control-sidebar-chat-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-envelope"></i></a></li>
 		</ul>
 		
@@ -90,17 +94,13 @@
 			
 			<div class="tab-pane active" id="control-sidebar-calendar-tab">
 				<h3 class="control-sidebar-heading">CALENDAR</h3>
-					<div id="calendar"></div>
-
-				
-						<div class="input-group">
-							<span class="input-group-btn">
-								<button id="btnCreateEvent" class="btn btn-primary center"
-									onclick="insertEvent();">Create Event</button>
-							</span>
-						</div>
-				
-			</div>
+				<div id="calendar"></div>
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button id="btnCreateEvent" class="btn btn-primary center" onclick="insertEvent();">Create Event</button>
+						</span>
+					</div>
+				</div>
 			
 			<div class="tab-pane" id="control-sidebar-chat-tab">
 				<h3 class="control-sidebar-heading">CHAT</h3>
@@ -121,10 +121,6 @@
 			</div>
 		</div>
 	</aside>
-
-	<script src="https://apis.google.com/js/api.js"
-		onload="this.onload= handleClientLoad()"
-		onreadystatechange="if (this.readyState === 'complete') this.onload()">
 		
 	</script>
 	<!-- jQuery 3 -->
@@ -146,6 +142,7 @@
 	<script src="../javascript/loginController.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 	<script src="../javascript/myCalendar.js"></script>
 	
 </body>

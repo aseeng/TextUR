@@ -81,9 +81,34 @@ function listUpcomingEvents() {
 
 function createEvent(){
 	
-	var summary = document.createElement("input");
+
+	var summary = document.createElement("select");
+	summary.classList = "js-example-basic-single";
+	summary.setAttribute("name","state");
 	summary.setAttribute("id","summary");
 	summary.placeholder = "Summary";
+
+	
+	var option1=document.createElement("option");
+	option1.setAttribute("value","conference");
+	option1.text='Conference';
+	
+	var option2=document.createElement("option");
+	option2.setAttribute("value","reunion");
+	option2.text='Reunion';
+	
+	var option3=document.createElement("option");
+	option3.setAttribute("value","deadline");
+	option3.text='Deadline';
+	
+	var option4=document.createElement("option");
+	option4.setAttribute("value","other");
+	option4.text='Other';
+	
+	summary.appendChild(option1);
+	summary.appendChild(option2);
+	summary.appendChild(option3);
+	summary.appendChild(option4);
 	
 	var location = document.createElement("input");
 	location.setAttribute("id","location");
@@ -96,11 +121,8 @@ function createEvent(){
 	var dateStart = document.createElement("input");
 	dateStart.setAttribute("id","start");
 	dateStart.type="date";
-	
-	var dateEnd = document.createElement("input");
-	dateEnd.setAttribute("id","end");
-	dateEnd.type="date";
-	
+
+
 	var div = document.createElement("div");
 	
 	div.appendChild(summary);
@@ -113,7 +135,6 @@ function createEvent(){
 	div.appendChild(document.createElement("br"));
 	div.appendChild(document.createElement("br"));
 	div.appendChild(dateStart);
-	div.appendChild(dateEnd);
 	
 	return div;
 }
@@ -122,7 +143,6 @@ function createEvent(){
 function insertEvent() {
 	
 	var div = createEvent();
-	alert(div.innerHTML);
 
 	swal({
 		text: 'Insert a new event.',
@@ -133,7 +153,6 @@ function insertEvent() {
 		}).then(	()=>{
 			
 			var event={
-
 					
 					'summary' :	$("#summary").val(),
 					'location' : $("#location").val(),
@@ -142,7 +161,7 @@ function insertEvent() {
 						'dateTime' : $("#start").val()+'T09:00:00-07:00',
 					},
 					'end' : {
-						'dateTime' : $("#end").val()+'T09:00:00-07:00',
+						'dateTime' : $("#start").val()+'T09:00:00-07:00',
 					},
 				};
 			

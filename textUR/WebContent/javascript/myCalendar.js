@@ -2,7 +2,7 @@
 
   var today = moment();
 
-  function Calendar(selector, events) {
+  function Calendar(selector,events) {
     this.el = document.querySelector(selector);
     this.events = events;
     this.current = moment().date(1);
@@ -17,10 +17,9 @@
   }
 
   Calendar.prototype.draw = function() {
-    //Create Header
+	  
     this.drawHeader();
 
-    //Draw Month
     this.drawMonth();
 
     this.drawLegend();
@@ -108,9 +107,10 @@
   }
 
   Calendar.prototype.currentMonth = function() {
+	  
     var clone = this.current.clone();
 
-    while(clone.month() === this.current.month()) {
+    while(clone.month() === this.current.month()) {    	
       this.drawDay(clone);
       clone.add('days', 1);
     }
@@ -141,12 +141,16 @@
 
 
     //Events
-    var events = createElement('div', 'day-events');
-    this.drawEvents(day, events);
+    if(this.events!=null){
+    		var events = createElement('div', 'day-events');
+    		this.drawEvents(day, events);
+    }
 
     outer.appendChild(name);
     outer.appendChild(number);
-    outer.appendChild(events);
+    if(this.events!=null){
+    		outer.appendChild(events);
+    }
     this.week.appendChild(outer);
   }
 
@@ -277,19 +281,20 @@
   }
 
   Calendar.prototype.drawLegend = function() {
-    var legend = createElement('div', 'legend');
-    var calendars = this.events.map(function(e) {
-      return e.calendar + '|' + e.color;
-    }).reduce(function(memo, e) {
-      if(memo.indexOf(e) === -1) {
-        memo.push(e);
-      }
-      return memo;
-    }, []).forEach(function(e) {
-      var parts = e.split('|');
-      var entry = createElement('span', 'entry ' +  parts[1], parts[0]);
-      legend.appendChild(entry);
-    });
+
+	  
+    var legend = document.createElement('div')
+    legend.classList = 'legend';
+    var color = ['blue','orange','red','yellow'];
+    var name = ['conference','reunion','deadline','other'];
+    
+    for(i=0; i<4; i++){
+    		var span = document.createElement('span')
+    		span.classList= 'entry ' + color[i];
+    		span.innerHTML = name[i];
+    		legend.appendChild(span);
+    }
+    
     this.el.appendChild(legend);
   }
 
@@ -319,35 +324,24 @@
   }
 }();
 
-!function() {
-  var data = [
-    { eventName: 'Lunch Meeting w/ Mark', calendar: 'Work', color: 'orange' },
-    { eventName: 'Interview - Jr. Web Developer', calendar: 'Work', color: 'orange' },
-    { eventName: 'Demo New App to the Board', calendar: 'Work', color: 'orange' },
-    { eventName: 'Dinner w/ Marketing', calendar: 'Work', color: 'orange' },
+function load () {
 
-    { eventName: 'Game vs Portalnd', calendar: 'Sports', color: 'blue' },
-    { eventName: 'Game vs Houston', calendar: 'Sports', color: 'blue' },
-    { eventName: 'Game vs Denver', calendar: 'Sports', color: 'blue' },
-    { eventName: 'Game vs San Degio', calendar: 'Sports', color: 'blue' },
+	data = [];
 
-    { eventName: 'School Play', calendar: 'Kids', color: 'yellow' },
-    { eventName: 'Parent/Teacher Conference', calendar: 'Kids', color: 'yellow' },
-    { eventName: 'Pick up from Soccer Practice', calendar: 'Kids', color: 'yellow' },
-    { eventName: 'Ice Cream Night', calendar: 'Kids', color: 'yellow' },
+  var calendar = new Calendar('#calendar',data);
 
-    { eventName: 'Free Tamale Night', calendar: 'Other', color: 'green' },
-    { eventName: 'Bowling Team', calendar: 'Other', color: 'green' },
-    { eventName: 'Teach Kids to Code', calendar: 'Other', color: 'green' },
-    { eventName: 'Startup Weekend', calendar: 'Other', color: 'green' }
-  ];
+};
 
-  
+var culo;
 
-  function addDate(ev) {
-    
-  }
+$(document).ready(function(){
+	
+	culo="troia";
+	load();	
+})
 
-  var calendar = new Calendar('#calendar', data);
-
-}();
+function ciao(){
+	alert("ciao");
+	
+}
+	
