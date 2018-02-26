@@ -42,6 +42,5 @@ public class Login extends HttpServlet {
 		user.setOtherProjects(collaboratorDao.find(username));
 
 		session.setAttribute("user", user);
-
 	}
 }

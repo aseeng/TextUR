@@ -32,6 +32,16 @@
 	  
 	  
 	  <servlet>
+	    <servlet-name>ChangeServlet</servlet-name>
+	    <servlet-class>controller.Change</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>ChangeServlet</servlet-name>
+	    <url-pattern>/html/change</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
 	    <servlet-name>ChangePageServlet</servlet-name>
 	    <servlet-class>controller.ChangePage</servlet-class>
 	  </servlet>

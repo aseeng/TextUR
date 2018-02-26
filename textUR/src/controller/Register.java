@@ -28,30 +28,22 @@ public class Register extends HttpServlet {
 
 		if (userDao.findByPrimaryKey(username) != null) {
 			resp.getWriter().print("exist");
-			System.out.println("user found");
 			return;
 		}
-
 		else if (userDao.findByMail(mail) != null) {
 			resp.getWriter().print("email_exist");
-			System.out.println("email exist");
 			return;
 		}
-		
 		else if (!password.equals(rePassword)) {
 			resp.getWriter().print("not_match");
-			System.out.println("not match");
 			return;
 		}
-	
 		else {
 			try {
 				User user = new User(username, mail);
-				System.out.println("csvsdvsv");
 				userDao.save(user);
 				userDao.setPassword(user, password);
 
-				resp.sendRedirect("login.html");
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}

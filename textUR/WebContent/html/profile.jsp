@@ -51,7 +51,11 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-
+		<div class="box box-primary">Options
+			<button class="btn" onclick="changeUsername();">change username</button>
+			<button class="btn" onclick="changeEmail();">change email</button>
+			<button class="btn" onclick="changePassword();">change password</button>
+		</div>
           <!-- About Me Box -->
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -113,4 +117,5 @@
 	</div>
 	</section>
 </body>
+<script src="../javascript/profile.js"></script>
 </html>

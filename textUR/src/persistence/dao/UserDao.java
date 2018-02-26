@@ -16,7 +16,9 @@ public interface UserDao extends Dao {
 	
 	public List<String> findAll(Project project);
 
-	public void update(User user);
+	public boolean updateMail(String username, String mail);
+	
+	public boolean updateUsername(String username, String newUsername);
 
 	public void delete(User user);
 	

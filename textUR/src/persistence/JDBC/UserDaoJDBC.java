@@ -155,13 +155,15 @@ public class UserDaoJDBC implements UserDao{
 		return users;
 	}
 
-	public void update(User user) {
+	public boolean updateMail(String username, String mail) {
+		if(findByMail(mail)!= null)
+			return false;
 		Connection connection = dataSource.getConnection();
 		try {
 			String update = "update users SET mail = ? WHERE username=?";
 			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setString(1, user.getMail());
-			statement.setString(2, user.getUsername());
+			statement.setString(1, mail);
+			statement.setString(2, username);
 			statement.executeUpdate();
 		}  catch (SQLException e) {
 			if (connection != null) {
@@ -178,6 +180,37 @@ public class UserDaoJDBC implements UserDao{
 				throw new PersistenceException(e.getMessage());
 			}
 		}
+		return true;
+	}
+	
+	public boolean updateUsername(String username, String newUsername)
+	{
+		if(findByPrimaryKey(newUsername) != null)
+			return false;
+		
+		Connection connection = dataSource.getConnection();
+		try {
+			String update = "update users SET username = ? WHERE username=?";
+			PreparedStatement statement = connection.prepareStatement(update);
+			statement.setString(1, newUsername);
+			statement.setString(2, username);
+			statement.executeUpdate();
+		}  catch (SQLException e) {
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch(SQLException excep) {
+					throw new PersistenceException(e.getMessage());
+				}
+			} 
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+		return true;
 	}
 
 	public void delete(User user) {

@@ -6,12 +6,10 @@ $(document).ready(() => {
 		name = "/" + $('#name').html();
 	
 	location.hash = user+name;
-	
-	
+	$('#sidebar').attr("style","display:block");
 });
 
 window.onload = function() {
-	$('#sidebar').attr("style","display:block");
 	window.setInterval(load, 5000, $('#user').html());
 };
 

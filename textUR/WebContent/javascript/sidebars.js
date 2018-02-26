@@ -19,7 +19,6 @@ $(document).ready(function() {
 
 function openProfile(user)
 {
-	alert(user);
 	$.ajax({
 		url: 'page',
 		data : {
