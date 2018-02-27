@@ -1,25 +1,41 @@
 var reader;
 var formdata = null;
 
-function createProject(type) {
-	var name = null;
+function createProject() {
+
+	var div = document.createElement('div');
+	var input = document.createElement('input');
+	input.classList = "col-xs-12 createInput";
+	input.autofocus = true;
+	
+	var checkDiv = document.createElement('div');
+	var label = document.createElement('label');
+		label.innerHTML = "initialize with a main ";
+	
+	var checkbox = document.createElement('input');
+		checkbox.type = "checkbox";
+	
+	label.appendChild(checkbox);
+	checkDiv.appendChild(label);
+	div.appendChild(input);
+	div.appendChild(checkDiv);
+	
 	swal("Please insert project name:", {
 		title: "New project",
-		content: "input",
+		content: div
 		})
-		.then((value) => {
-			name = value;
+		.then((name) => {
 			if (name != null && name != "") {
 				$.ajax({
 					url: 'createProject',
 					data : {
-						projectName : name,
-						type : type
+						projectName : input.value,
+						type : checkbox.checked
 					},
 					success : function(response){ 
 						if(response == "exist"){
 							swal("Error", "There is already a project with the same name!", "error").
-								then(() => { createProject(type);})
+								then(() => { createProject();})
 						} else {
 							swal("Created", "Project created successfully!", "success").then(() => {
 								document.location.href = "page?action=index";								

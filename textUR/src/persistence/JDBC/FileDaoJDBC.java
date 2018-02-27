@@ -407,9 +407,6 @@ public class FileDaoJDBC implements FileDao {
 	public void delete(Long fileId) {
 		Connection connection = dataSource.getConnection();
 		try {
-			Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
-			checkpointFileDao.deleteFromFile(fileId);
-
 			String delete = "delete FROM file WHERE id = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.setLong(1, fileId);

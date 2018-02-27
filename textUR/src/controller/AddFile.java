@@ -26,6 +26,7 @@ public class AddFile extends HttpServlet {
 		
 		String name = req.getParameter("name");
 		String packageName = req.getParameter("packageName");
+		String type = req.getParameter("type");
 
 		PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
 		FileDao fileDao = DAOFactory.getInstance().getFileDao();
@@ -36,7 +37,7 @@ public class AddFile extends HttpServlet {
 			resp.getWriter().print("exist");
 			return;
 		}
-		String code = "package " + pack.getName() +";\n\npublic class " + name + "{\n\n\n}"; 
+		String code = "package " + pack.getName() +";\n\npublic "+ type + " " + name + "{\n\n\n}"; 
 		File file = new File(name, pack, code);
 		fileDao.save(file);
 

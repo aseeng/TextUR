@@ -10,11 +10,10 @@ import java.util.Set;
 import model.File;
 import model.Package;
 import model.Project;
+import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.IdBroker;
 import persistence.PersistenceException;
-import persistence.DAOFactory;
-import persistence.dao.Checkpoint_FileDao;
 import persistence.dao.FileDao;
 import persistence.dao.PackageDao;
 import persistence.dao.ProjectDao;
@@ -394,15 +393,6 @@ public class PackageDaoJDBC implements PackageDao {
 	}
 		
 	public void delete(Long packageId) {
-		FileDao fileDao = DAOFactory.getInstance().getFileDao();
-
-		Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
-		checkpointFileDao.deleteFromPackage(packageId);
-		
-		HashMap<Long, File> files = fileDao.find(packageId);
-		for (Long fileId : files.keySet()) 
-			fileDao.delete(fileId);
-
 		Connection connection = dataSource.getConnection();
 		try {
 			String delete = "delete FROM package WHERE id = ? ";

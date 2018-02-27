@@ -17,9 +17,4 @@ public interface CommentDao extends Dao {
 	public void update(Comment comment);
 	
 	public void delete(Long id);
-
-	public void deleteFromLine(Long id, Long fileId);
-
-	public void deleteFromFile(Long file);
-
 }

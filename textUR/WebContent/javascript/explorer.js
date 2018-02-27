@@ -34,7 +34,7 @@ function addPackage() {
 					else {
 						swal("Created", "Package created successfully!", "success").then(()=>{
 							var buttonFolder = $("<button></button>").addClass("btn btn-warning overflow-ellipsis");
-								buttonFolder.attr("onclick", "showContent(\"" + value + "\","+"true)");
+								buttonFolder.attr("onclick", "showContent('" + value + "')");
 							var spanFolderBG = $("<span></span>").addClass("info-box-icon bg-yellow");
 							var iconFolder = $("<i></i>").addClass("fa fa-folder icon_folder");
 							var br = $("<br>");
@@ -83,17 +83,64 @@ function removePackage() {
 function addFile() {
 	var name = null;
 	var hash = location.hash.split("/");
+	
+	var div = document.createElement('div');
+	var input = document.createElement('input');
+	input.classList = "col-xs-12 createInput";
+	input.autofocus = true;
+	input.name = "file";
+	
+	var checkDiv = document.createElement('div');
+		checkDiv.classList = "form-group";
 
+	var classLabel = document.createElement('label');
+	var classB = document.createElement('input');
+		classB.type = "radio";
+		classB.classList = "minimal";
+		classB.name = "choose";
+		classB.value = "class";
+		classB.checked = true;
+	classLabel.classList = "iradio_minimal-blue checked fileButton";
+	classLabel.innerHTML = "class";
+	classLabel.appendChild(classB);
+	
+	var abstractLabel = document.createElement('label');
+	var abstract = document.createElement('input');
+		abstract.type = "radio";
+		abstract.classList = "minimal";
+		abstract.name = "choose";
+		abstract.value = "abstract class";
+		
+	abstractLabel.classList = "iradio_minimal-blue checked fileButton";
+	abstractLabel.innerHTML = "abstract class";
+	abstractLabel.appendChild(abstract);
+
+	var interfaceLabel = document.createElement('label');
+	var interfaceB = document.createElement('input');
+		interfaceB.type = "radio";
+		interfaceB.classList = "minimal";
+		interfaceB.name = "choose";
+		interfaceB.value = "interface";
+	interfaceLabel.classList = "iradio_minimal-blue checked fileButton";
+	interfaceLabel.innerHTML = "interface";
+	interfaceLabel.appendChild(interfaceB);
+
+	checkDiv.appendChild(classLabel);
+	checkDiv.appendChild(abstractLabel);
+	checkDiv.appendChild(interfaceLabel);
+	div.appendChild(input);
+	div.appendChild(checkDiv);
 	swal("Please enter file name:", {
-		content: "input",
+		content: div
 	}).then((value) => {
-		name = value;
+		name = document.querySelector('input[name="file"]').value;
 		if (name != null && name != "") {
 			$.ajax({
 				url: 'addFile',
 				data : {
-					name : name,
-					packageName : hash[2]
+					name : document.querySelector('input[name="file"]').value,
+					packageName : hash[2],
+					type: document.querySelector('input[name="choose"]:checked').value
 				},
 				success: function(response){
 					if(response == "exist")
@@ -102,7 +149,7 @@ function addFile() {
 						});
 					else
 						swal("Created", "File created successfully!", "success").then(()=> {
-							showContent(value, "true");
+							showContent(name);
 						})
 				},
 				error : function(){ 
@@ -113,7 +160,6 @@ function addFile() {
 		}
 	})
 }
-
 
 function removeProject() {
 	$.ajax({

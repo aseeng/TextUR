@@ -34,11 +34,12 @@ public class Change extends HttpServlet {
 					user.setUsername(parameter);
 				
 				break;
-			case "email":
+			case "mail":
 				if(!userDao.updateMail(user.getUsername(), parameter))
 					resp.getWriter().print("exist");
 				else
 					user.setMail(parameter);
+				System.out.println(user.getMail() + "   " + parameter);
 				break;
 			case "password":
 				userDao.setPassword(user, parameter);
@@ -47,6 +48,7 @@ public class Change extends HttpServlet {
 				break;
 		}
 		
+		session.setAttribute("visitor", user);
 		session.setAttribute("user", user);
 	}
 }

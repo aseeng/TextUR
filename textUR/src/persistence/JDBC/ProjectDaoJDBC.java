@@ -5,21 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.List;
 
-import model.Checkpoint;
-import model.Message;
-import model.Package;
 import model.Project;
 import model.User;
+import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.IdBroker;
 import persistence.PersistenceException;
-import persistence.DAOFactory;
-import persistence.dao.CheckpointDao;
-import persistence.dao.CollaboratorDao;
-import persistence.dao.MessageDao;
-import persistence.dao.PackageDao;
 import persistence.dao.ProjectDao;
 import persistence.dao.UserDao;
 
@@ -225,29 +217,6 @@ public class ProjectDaoJDBC implements ProjectDao {
 	}
 
 	public void delete(Long id) {
-//		CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
-//		List<Checkpoint> checkpoints = checkpointDao.find(id);
-//
-//		for (Checkpoint checkpoint : checkpoints)
-//			checkpointDao.delete(checkpoint.getId());
-//
-//		PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-//		HashMap<Long, Package> packages = packageDao.find(id);
-//
-//		for (Long packageId : packages.keySet())
-//			packageDao.delete(packageId);
-//
-//		MessageDao messageDao = DAOFactory.getInstance().getMessageDao();
-//		List<Message> messages = messageDao.find(id);
-//
-//		for (Message message : messages)
-//			messageDao.delete(message);
-//
-//		CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
-//		List<User> collaborators = collaboratorDao.find(id);
-//		for (User collaborator : collaborators)
-//			collaboratorDao.delete(collaborator.getUsername(), id);
-
 		Connection connection = dataSource.getConnection();
 		try {
 			String delete = "delete FROM project WHERE id = ? ";

@@ -162,6 +162,8 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 
 	@Override
 	public List<Collaborator> findCollaborator(Long projectID) {
+		ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
+		Project project = projectDao.findByPrimaryKey(projectID);
 		Connection connection = dataSource.getConnection();
 		List<Collaborator> users = new LinkedList<>();
 		try {
@@ -173,13 +175,11 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 			while (result.next()) {
 				Collaborator collaborator = new Collaborator();
 
-				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				collaborator.setProject(projectDao.findByPrimaryKey(projectID));
+				collaborator.setProject(project);
+				collaborator.setStatus(result.getBoolean("status"));
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
 				collaborator.setUser(userDao.findByPrimaryKey(result.getString("username")));
-
-				collaborator.setStatus(result.getBoolean("status"));
 
 				users.add(collaborator);
 			}

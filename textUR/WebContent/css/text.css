@@ -45,6 +45,7 @@ h2{
 .CodeMirror {
 	border: 1px solid #eee;
 	height: 600px;
+	font-weight: 300;
 }
 
 #mainarea{

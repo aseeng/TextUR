@@ -24,3 +24,13 @@
 .icon_folder{
 	padding-top: 10px;
 }
+
+.createInput{
+	margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.fileButton{
+	margin-right: 5px;
+	margin-left: 5px;
+}

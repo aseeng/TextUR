@@ -291,54 +291,6 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 		}
 	}
 	
-	public void deleteFromFile(Long fileId) {
-		Connection connection = dataSource.getConnection();
-		try {
-			String delete = "delete FROM checkpointFile WHERE file = ?";
-			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setLong(1, fileId);
-			statement.executeUpdate();
-		}  catch (SQLException e) {
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch(SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-	}
-	
-	public void deleteFromPackage(Long packageId) {
-		Connection connection = dataSource.getConnection();
-		try {
-			String delete = "delete FROM checkpointFile WHERE package = ?";
-			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setLong(1, packageId);
-			statement.executeUpdate();
-		}  catch (SQLException e) { 
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch(SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-	}
-	
 	@Override
 	public List<File> findString(Long fileId, String text) {
 

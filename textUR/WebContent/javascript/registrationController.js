@@ -32,7 +32,10 @@ function register(){
 	if(res == null ){
 		swal("Error", "Please insert a valid email!", "error")
 		.then(() => {
-			document.location.href = "page?action=register";
+			$('#email').css("border-color","red");
+			$('#email').focus();
+			$('#password').val("");
+			$('#retype_password').val("");
 		});
 		return;
 	}

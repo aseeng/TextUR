@@ -47,7 +47,7 @@ public class CreateProject extends HttpServlet {
 		Checkpoint checkpoint = new Checkpoint("Initial checkpoint", project, user); 
 		checkpointDao.save(checkpoint);
 		
-		if(type.equals("hello")) {
+		if(type.equals("true")) {
 			Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
 			PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
 			FileDao fileDao = DAOFactory.getInstance().getFileDao();

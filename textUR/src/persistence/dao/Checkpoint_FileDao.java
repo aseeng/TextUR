@@ -20,10 +20,6 @@ public interface Checkpoint_FileDao extends Dao{
 
 	public void delete(Long checkpointId);
 	
-	public void deleteFromFile(Long fileId);
-	
-	public void deleteFromPackage(Long packageId);
-	
 	public List<File> findString(Long fileId, String text);
 	
 	public List<File> findByFileId(Long fileId);

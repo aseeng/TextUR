@@ -31,11 +31,10 @@ public class UserDaoJDBC implements UserDao{
 	public void save(User user) {
 		Connection connection = dataSource.getConnection();
 		try {
-			String insert = "insert into users(username, mail,password) values (?,?,?)";
+			String insert = "insert into users(username, mail) values (?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, user.getUsername());
 			statement.setString(2, user.getMail());
-			statement.setString(3, "css");
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			if (connection != null) {
