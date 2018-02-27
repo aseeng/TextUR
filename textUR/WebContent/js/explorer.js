@@ -7,11 +7,9 @@ $(document).ready(() => {
 	
 	location.hash = user+name;
 	$('#sidebar').attr("style","display:block");
-	$('#calendar').attr("style","display:block");
+	$('#aside').attr("style","display:block");
 	window.setInterval(loadChat,1000);
 });
-
-
 
 function addPackage() {
 	var name = null;

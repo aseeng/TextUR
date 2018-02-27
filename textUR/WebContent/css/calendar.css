@@ -20,6 +20,10 @@ body {
 	margin-top:24px;
 }
 
+#aside{
+ display:none;	
+}
+
 #calendar {
   font-family: Raleway;
   -webkit-transform: translate3d(0, 0, 0);
@@ -29,7 +33,6 @@ body {
   margin: -15px;
   height: 70%;
   overflow: hidden;
-  display:none;
 }
 
 #calendarButton{
