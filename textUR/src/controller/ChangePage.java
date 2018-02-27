@@ -102,7 +102,7 @@ public class ChangePage extends HttpServlet {
 				session.setAttribute("firstLoad", true);
 				if(user != null)
 					fileDao.disableWrite(user.getUsername());
-
+				session.setAttribute("project", null);
 				req.getRequestDispatcher("index.jsp").forward(req, resp);
 				break;
 			case "homepage":

@@ -7,11 +7,10 @@ $(document).ready(() => {
 	
 	location.hash = user+name;
 	$('#sidebar').attr("style","display:block");
+	window.setInterval(loadChat,1000);
 });
 
-window.onload = function() {
-	window.setInterval(load, 1000);
-};
+
 
 function addPackage() {
 	var name = null;
@@ -270,6 +269,7 @@ function showContent(name){
 			if(hash.length == 2)
 			{
 				document.location.href="page?action=homepage";
+				
 			}
 			else if (hash.length == 3)
 			{

@@ -50,11 +50,12 @@ function appendPre(message) {
 }
 
 function listUpcomingEvents() {
+	
 	gapi.client.calendar.events.list({
 		'calendarId': 'primary',
 	}).then(function(response) {
 		var events = response.result.items;
-		load(events);
+		loadCalendar(events);
 	});
 }
 

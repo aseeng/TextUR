@@ -83,7 +83,7 @@
               <p>
                 <span class="label label-danger">UI Design</span>
                 <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
+                <span class="label label-info">js</span>
                 <span class="label label-warning">PHP</span>
                 <span class="label label-primary">Node.js</span>
               </p>
@@ -118,5 +118,5 @@
 	</div>
 	</section>
 </body>
-<script src="../javascript/profile.js"></script>
+<script src="../js/profile.js"></script>
 </html>

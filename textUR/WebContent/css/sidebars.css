@@ -32,3 +32,7 @@
 #user{
 	font-weight: 200;
 }
+
+#project{
+	visibility:hidden;
+}

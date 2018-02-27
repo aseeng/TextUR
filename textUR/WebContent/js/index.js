@@ -7,4 +7,5 @@ $(document).ready(function(){
 		$('#sidebar').attr("style","display:block");
 	else
 		$('#sidebar').attr("style","display:none");
+	$('#project').html("");
 });

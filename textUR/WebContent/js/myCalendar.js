@@ -316,7 +316,8 @@
 }();
 
 
-function load(events) {
+function loadCalendar(events) {
+
 	var data = [];
 	for (i = 0; i < events.length; i++) {
 
@@ -351,4 +352,3 @@ function load(events) {
 	$('#calendar').html("");
 	var calendar = new Calendar('#calendar', data);
 };
-

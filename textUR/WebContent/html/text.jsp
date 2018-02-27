@@ -57,14 +57,14 @@
 	</section>
 </div>	
 	
-	<!-- javascript -->
-	<script src="../javascript/jquery-3.2.1.min.js"></script>
+	<!-- js -->
+	<script src="../js/jquery-3.2.1.min.js"></script>
 	<script src="../plugins/codemirror/lib/codemirror.js"></script>
 	<script src="../plugins/codemirror/mode/clike/clike.js "></script>
 	<script src="../plugins/codemirror/addon/hint/css-hint.js"></script>
 	<script src="../plugins/codemirror/addon/hint/show-hint.js"></script>
 	<script src="../plugins/codemirror/addon/edit/closebrackets.js"></script>
-	<script src="../javascript/text.js"></script>
+	<script src="../js/text.js"></script>
 	
 </body>
 

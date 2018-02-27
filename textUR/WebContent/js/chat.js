@@ -18,12 +18,17 @@ function sendMessage() {
 	});
 }
 
-function load() {
+function loadChat() {
+	
+	if($('#project').html() == ""){
+		$("#chat_zone").html("");
+		return;
+	}
+	
 	$.ajax({
 		url : 'load',
 
 		success : function(response) {
-			
 			$("#chat_zone").html("");
 			$.each(JSON.parse(response), function(idx, obj) {
 				var div;

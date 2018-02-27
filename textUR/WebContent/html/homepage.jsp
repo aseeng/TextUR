@@ -48,5 +48,5 @@
 	</div>
 
 </body>
-<script src="../javascript/compiler.js"></script>
+<script src="../js/compiler.js"></script>
 </html>

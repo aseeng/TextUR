@@ -42,7 +42,7 @@
 		<!-- Messages: style can be found in dropdown.less-->
 		<div class="navbar-custom-menu" id="navbar_menu">
 			<ul class="nav navbar-nav">
-	
+				<span id="project">${project.getName()}</span>
 				<!-- user dropdown menu -->
 				<li class="dropdown user user-menu">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -78,7 +78,7 @@
 
 <div class="control-sidebar-bg"></div>
 
-	<aside class="control-sidebar control-sidebar-light" style="display:none">
+	<aside class="control-sidebar control-sidebar-light">
   
 		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 			<li class="active"><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-calendar"></i></a></li>
@@ -135,15 +135,15 @@
 	<script src="../dist/js/adminlte.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="../dist/js/demo.js"></script>
-	<script src="../javascript/chat.js"></script>
-	<script src="../javascript/explorer.js"></script>
-	<script src="../javascript/calendar.js"></script>
-	<script src="../javascript/sidebars.js"></script>
-	<script src="../javascript/loginController.js"></script>
+	<script src="../js/chat.js"></script>
+	<script src="../js/explorer.js"></script>
+	<script src="../js/calendar.js"></script>
+	<script src="../js/sidebars.js"></script>
+	<script src="../js/loginController.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-	<script src="../javascript/myCalendar.js"></script>
+	<script src="../js/myCalendar.js"></script>
 	<script async defer src="https://apis.google.com/js/api.js"
    		onreadystatechange="if (this.readyState === 'complete') this.onload()">
 	</script>	
