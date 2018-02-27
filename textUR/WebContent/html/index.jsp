@@ -19,15 +19,13 @@
 <link href="../css/createProject.css" rel="stylesheet">
 
 <!-- template first page -->
-<meta name="description" content="">
-<meta name="keywords" content="">
-<link href="../template/css/skel.css" rel="stylesheet">
-<link href="../template/css/style.css" rel="stylesheet">
-<link href="../template/css/style-xlarge.css" rel="stylesheet">
-<link href="../template/css/style-xsmall.css" rel="stylesheet">
-<link href="../template/css/style-small.css" rel="stylesheet">
-<link href="../template/css/style-medium.css" rel="stylesheet">
-<link href="../template/css/style-large.css" rel="stylesheet">
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/style-xlarge.css" />
 
 </head>
 
@@ -184,15 +182,17 @@
 	
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="../template/js/skel.min.js"></script>
-	<script src="../template/js/skel-layers.min.js"></script>
-	<script src="../template/js/init.js"></script>
+	<script src="../javascript/skel.min.js"></script>
+	<script src="../javascript/skel-layers.min.js"></script>
+	<script src="../javascript/init.js"></script>
+	<script src="../javascript/jquery.min.js"></script>
 	<script src="../vendor/jquery/jquery.min.js"></script>
 	<script src="../javascript/createProjects.js"></script>
 	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="../javascript/explorer.js"></script>
 	<script src="../javascript/index.js"></script>
 	<script src="../javascript/loginController.js"></script>
+
 </body>
 
 </html>
