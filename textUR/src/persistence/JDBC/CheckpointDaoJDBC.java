@@ -167,10 +167,11 @@ public class CheckpointDaoJDBC implements CheckpointDao {
 	}
 
 	public void delete(Long checkpointId) {
+		Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
+		checkpointFileDao.delete(checkpointId);
+
 		Connection connection = dataSource.getConnection();
 		try {
-			Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
-			checkpointFileDao.delete(checkpointId);
 
 			String delete = "delete FROM checkpoints WHERE id = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);

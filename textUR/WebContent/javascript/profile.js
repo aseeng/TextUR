@@ -39,6 +39,7 @@ function changeUsername(){
 						});
 					else {
 						swal("Success", "Username changed successfully!", "success");
+						$('#profile').html(value);
 					}
 				}
 			})

@@ -48,18 +48,17 @@ public class UtilDao implements Dao {
 	}
 
 	public void createDatabase() {
-
 		Connection connection = dataSource.getConnection();
 		try {
 			String create = "create table users(\"username\" VARCHAR(20) primary key, mail VARCHAR(50), password VARCHAR(16));"
 					+ "create table project(\"id\" BIGINT primary key, name VARCHAR(50), creator VARCHAR(20) REFERENCES users(\"username\"));"
-					+ "create table package(\"id\" BIGINT primary key, name VARCHAR(50), project BIGINT REFERENCES project(\"id\"));"
-					+ "create table message(\"id\" BIGINT primary key, project BIGINT REFERENCES project(\"id\"), text VARCHAR(400), username VARCHAR(20) REFERENCES users(\"username\"), date TIMESTAMP);"
-					+ "create table checkpoints (\"id\" BIGINT primary key,description VARCHAR(100), project BIGINT REFERENCES project(\"id\"),username VARCHAR(20) REFERENCES users(\"username\"), date TIMESTAMP);"
-					+ "create table collaborator (\"id\" BIGINT primary key, username VARCHAR(20) REFERENCES users(\"username\"), project BIGINT REFERENCES project(\"id\"), status BOOLEAN);"
-					+ "create table file (\"id\" BIGINT primary key, name VARCHAR(50), package BIGINT REFERENCES package(\"id\"), code TEXT,username VARCHAR(20) REFERENCES users(\"username\"));"
-					+ "create table checkpointFile (\"id\" BIGINT primary key, text TEXT, checkpoint BIGINT REFERENCES checkpoints(\"id\"), file BIGINT REFERENCES file(\"id\"), package BIGINT REFERENCES package(\"id\"), date TIMESTAMP, creator VARCHAR(20) REFERENCES users(\"username\"),description VARCHAR(100));"
-					+ "create table comment(\"id\" BIGINT primary key, date TIMESTAMP, file BIGINT REFERENCES file(\"id\"), line BIGINT, username VARCHAR(20) REFERENCES users(\"username\"), text TEXT);";
+					+ "create table package(\"id\" BIGINT primary key, name VARCHAR(50), project BIGINT REFERENCES project(\"id\") ON DELETE CASCADE);"
+					+ "create table message(\"id\" BIGINT primary key, project BIGINT REFERENCES project(\"id\") ON DELETE CASCADE, text VARCHAR(400), username VARCHAR(20) REFERENCES users(\"username\"), date TIMESTAMP);"
+					+ "create table checkpoints (\"id\" BIGINT primary key,description VARCHAR(100), project BIGINT REFERENCES project(\"id\") ON DELETE CASCADE,username VARCHAR(20) REFERENCES users(\"username\"), date TIMESTAMP);"
+					+ "create table collaborator (\"id\" BIGINT primary key, username VARCHAR(20) REFERENCES users(\"username\") ON DELETE CASCADE, project BIGINT REFERENCES project(\"id\") ON DELETE CASCADE, status BOOLEAN);"
+					+ "create table file (\"id\" BIGINT primary key, name VARCHAR(50), package BIGINT REFERENCES package(\"id\") ON DELETE CASCADE, code TEXT,username VARCHAR(20) REFERENCES users(\"username\") ON DELETE CASCADE);"
+					+ "create table checkpointFile (\"id\" BIGINT primary key, text TEXT, checkpoint BIGINT REFERENCES checkpoints(\"id\") ON DELETE CASCADE, file BIGINT REFERENCES file(\"id\"), package BIGINT REFERENCES package(\"id\"), date TIMESTAMP, creator VARCHAR(20) REFERENCES users(\"username\"),description VARCHAR(100));"
+					+ "create table comment(\"id\" BIGINT primary key, date TIMESTAMP, file BIGINT REFERENCES file(\"id\") ON DELETE CASCADE, line BIGINT, username VARCHAR(20) REFERENCES users(\"username\"), text TEXT);";
 			PreparedStatement statement = connection.prepareStatement(create);
 
 			statement.executeUpdate();

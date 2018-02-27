@@ -362,15 +362,15 @@ public class PackageDaoJDBC implements PackageDao {
 
 	@Override
 	public void remove(Long id) {
+		FileDao fileDao = DAOFactory.getInstance().getFileDao();
+		HashMap<Long, File> files = fileDao.find(id);
+		Set<Long> filesId = files.keySet();
+		
+		for (Long fileId : filesId)
+			fileDao.remove(fileId);
+		
 		Connection connection = dataSource.getConnection();
 		try {
-			FileDao fileDao = DAOFactory.getInstance().getFileDao();
-			HashMap<Long, File> files = fileDao.find(id);
-			Set<Long> filesId = files.keySet();
-			
-			for (Long fileId : filesId)
-				fileDao.remove(fileId);
-			
 			String update = "update package SET project = NULL WHERE id = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setLong(1, id);
@@ -394,17 +394,17 @@ public class PackageDaoJDBC implements PackageDao {
 	}
 		
 	public void delete(Long packageId) {
+		FileDao fileDao = DAOFactory.getInstance().getFileDao();
+
+		Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
+		checkpointFileDao.deleteFromPackage(packageId);
+		
+		HashMap<Long, File> files = fileDao.find(packageId);
+		for (Long fileId : files.keySet()) 
+			fileDao.delete(fileId);
+
 		Connection connection = dataSource.getConnection();
 		try {
-			FileDao fileDao = DAOFactory.getInstance().getFileDao();
-
-			Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
-			checkpointFileDao.deleteFromPackage(packageId);
-			
-			HashMap<Long, File> files = fileDao.find(packageId);
-			for (Long fileId : files.keySet()) 
-				fileDao.delete(fileId);
-			
 			String delete = "delete FROM package WHERE id = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.setLong(1, packageId);
