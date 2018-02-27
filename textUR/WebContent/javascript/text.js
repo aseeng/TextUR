@@ -523,15 +523,23 @@ function editComments(index, lines){
 				
 				comm.append(div);
 			});
-			var buttonDiv = $('<div></div>').addClass("removable buttons").attr("id","buttons");
+			var buttonDiv = $('<div></div>').addClass("input-group removable buttons").attr("id","buttons");
 			var input = $('<input>').attr({
 				id: "input",
 				placeholder: "write a comment ..."
 			});
 			buttonDiv.append(input);
 			
-			var button = $('<button> </button>').attr("onclick","post("+index+");");
-				button.text("post");
+			var button = $('<button></button>');
+			button.attr({
+				onclick: "post("+index+");",
+			});
+		
+			var icon = $('<i></i>').addClass('fa fa-send');
+			button.append(icon);
+			
+			
+
 			buttonDiv.append(button);
 			boxBody.append(comm);
 			

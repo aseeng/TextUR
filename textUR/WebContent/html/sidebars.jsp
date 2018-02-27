@@ -78,7 +78,7 @@
 
 <div class="control-sidebar-bg"></div>
 
-	<aside class="control-sidebar control-sidebar-light">
+	<aside class="control-sidebar control-sidebar-light" style="display:none">
   
 		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 			<li class="active"><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-calendar"></i></a></li>

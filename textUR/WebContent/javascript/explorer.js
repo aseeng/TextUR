@@ -273,6 +273,7 @@ function showContent(name){
 			}
 			else if (hash.length == 3)
 			{
+				checkLogin();
 				$('#add').text("Add File");
 				$('#add').attr("onclick", "addFile();");
 				

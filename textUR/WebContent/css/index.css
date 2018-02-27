@@ -20,7 +20,7 @@
 	
 	font-family:Raleway;
 	font-size: 100px;
-	color: #929292;
+	color: #929292 !important;
 	
 }
 
@@ -28,11 +28,13 @@
 	
 	font-family:Raleway;
 	font-size: 120px;
-	color: #e6b41d;
+	color: #e6b41d !important;
 }
 
 #sub{
-	 font-size: 20px;	
+	 font-size: 22px;
+	 margin-top: 10px;	
+	 color: #ff5969 !important;
 }
 
 .font{
