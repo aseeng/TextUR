@@ -29,6 +29,10 @@
 	float: right;
 }
 
+#sendMessage{
+	font-family: Raleway;
+}
+
 #user{
 	font-weight: 200;
 }

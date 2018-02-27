@@ -32,7 +32,7 @@ function updateSigninStatus(isSignedIn) {
 	if (isSignedIn){
 		listUpcomingEvents();
 
-		var button = $('<button></button').addClass("btn btn-primary center createEvent").attr({
+		var button = $('<button></button').addClass("btn btn-danger center createEvent").attr({
 			id: "btnCreateEvent",
 			onclick: "insertEvent();"
 		});
@@ -40,7 +40,6 @@ function updateSigninStatus(isSignedIn) {
 
 		$('#createEventSpan').append(button);
 	}
-	
 }
 
 function appendPre(message) {
@@ -155,7 +154,6 @@ function createEvent(){
 	
 	return div;
 }
-	
 
 function insertEvent() {
 	

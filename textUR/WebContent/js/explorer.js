@@ -7,6 +7,7 @@ $(document).ready(() => {
 	
 	location.hash = user+name;
 	$('#sidebar').attr("style","display:block");
+	$('#calendar').attr("style","display:block");
 	window.setInterval(loadChat,1000);
 });
 
@@ -269,7 +270,7 @@ function showContent(name){
 			if(hash.length == 2)
 			{
 				document.location.href="page?action=homepage";
-				
+				loadChat();
 			}
 			else if (hash.length == 3)
 			{

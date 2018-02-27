@@ -88,22 +88,22 @@
 		<div class="tab-content">
 			
 			<div class="tab-pane active" id="control-sidebar-calendar-tab">
-				<h3 class="control-sidebar-heading">CALENDAR</h3>
+				<h3 class="control-sidebar-heading"></h3>
 				<div id="calendar"></div>
-					<div class="input-group">
-						<span id="createEventSpan" class="input-group-btn">
+					<div class="input-group" id ="calendarButton">
+						<div id="createEvent" class="input-group-btn">
 							<div class="legend">
 								<span class="entry blue">conference</span>
 								<span class="entry orange">reunion</span>
 								<span class="entry red">deadline</span>
 								<span class="entry yellow">other</span>
 							</div>
-						</span>
+						</div>
 					</div>
 				</div>
 			
 			<div class="tab-pane" id="control-sidebar-chat-tab">
-				<h3 class="control-sidebar-heading">CHAT</h3>
+				<h3 class="control-sidebar-heading"></h3>
 				
 				<div class="box box-danger direct-chat direct-chat-danger">
 					<div class="box-body" id="chatBox">
@@ -115,7 +115,7 @@
 					<input type="text" name="message" placeholder="Write message ..."
 						class="form-control" id="message"> <span
 						class="input-group-btn">
-						<button class="btn btn-danger" onclick="sendMessage();">Send</button>
+						<button class="btn btn-danger" id="sendMessage" onclick="sendMessage();">Send</button>
 					</span>
 				</div>
 			</div>

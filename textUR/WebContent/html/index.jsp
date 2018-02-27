@@ -138,7 +138,7 @@
     </c:when>    
     <c:otherwise>
 		<div class="box box-danger center" id="explorer">
-			<section class="content"> 
+			<section class="content" id="yours"> 
 				<div class="input-group-btn">
 					<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> New project
 						 <span class="fa fa-caret-down"></span>
@@ -164,7 +164,7 @@
 					</div>
 			</section>
 	
-			<section class="content">
+			<section class="content" id="others">
 				<h2 class="site-heading text-center">	<span class="site-heading-lower">Other <b>projects</b></span>	</h2>
 		
 				<div class="text-center">

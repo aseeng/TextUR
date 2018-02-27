@@ -44,3 +44,11 @@
 .description{
 	height: 250px;
 }
+
+#yours{
+	margin-top: -4%;
+}
+
+#others{
+	margin-top: 5%;
+}

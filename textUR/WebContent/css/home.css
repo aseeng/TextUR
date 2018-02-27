@@ -10,6 +10,10 @@
 	color: white
 }
 
+#explorer{
+	height: 570px;
+}
+
 #options{
 	float: right;
 	margin-right: 20%;

@@ -38,12 +38,12 @@
 
 			this.title = createElement('h1');
 
-			var right = createElement('div', 'right');
+			var right = createElement('div', 'pright');
 			right.addEventListener('click', function() {
 				self.nextMonth();
 			});
 
-			var left = createElement('div', 'left');
+			var left = createElement('div', 'pleft');
 			left.addEventListener('click', function() {
 				self.prevMonth();
 			});
