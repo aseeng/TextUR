@@ -60,7 +60,7 @@
 						<!-- Menu Footer-->
 						<li class="user-footer">
 							<div class="pull-left">
-								<a href="openProfile('${user.getUsername()}')" class="btn btn-default btn-flat">Profile</a>
+								<a onclick="openProfile('${user.getUsername()}')" class="btn btn-default btn-flat">Profile</a>
 							</div>
 							<div class="pull-right">
 								<a onclick="logout();" class="btn btn-default btn-flat">Logout</a>
@@ -92,6 +92,12 @@
 				<div id="calendar"></div>
 					<div class="input-group">
 						<span id="createEventSpan" class="input-group-btn">
+							<div class="legend">
+								<span class="entry blue">conference</span>
+								<span class="entry orange">reunion</span>
+								<span class="entry red">deadline</span>
+								<span class="entry yellow">other</span>
+							</div>
 						</span>
 					</div>
 				</div>

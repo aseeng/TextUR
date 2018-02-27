@@ -32,7 +32,7 @@ function updateSigninStatus(isSignedIn) {
 	if (isSignedIn){
 		listUpcomingEvents();
 
-		var button = $('<button></button').addClass("btn btn-primary center").attr({
+		var button = $('<button></button').addClass("btn btn-primary center createEvent").attr({
 			id: "btnCreateEvent",
 			onclick: "insertEvent();"
 		});
@@ -60,12 +60,12 @@ function listUpcomingEvents() {
 
 function createEvent(){
 
+
 	var summary = document.createElement("select");
 	summary.classList = "js-example-basic-single";
 	summary.setAttribute("name","state");
 	summary.setAttribute("id","summary");
 	summary.placeholder = "Summary";
-
 	
 	var option1=document.createElement("option");
 	option1.setAttribute("value","conference");
@@ -87,7 +87,7 @@ function createEvent(){
 	summary.appendChild(option2);
 	summary.appendChild(option3);
 	summary.appendChild(option4);
-	
+
 	var location = document.createElement("input");
 	location.setAttribute("id","location");
 	location.placeholder = "Location";

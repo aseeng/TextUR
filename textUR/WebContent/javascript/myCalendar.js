@@ -27,7 +27,6 @@
 		// Draw Month
 		this.drawMonth();
 
-		this.drawLegend();
 	}
 
 	Calendar.prototype.drawHeader = function() {
@@ -288,23 +287,6 @@
 		} else {
 			ele.appendChild(wrapper);
 		}
-	}
-
-	Calendar.prototype.drawLegend = function() {
-
-		var legend = document.createElement('div')
-		legend.classList = 'legend';
-		
-		var name = [ 'conference', 'reunion', 'deadline', 'other' ];
-		var color = [ 'blue', 'orange', 'red', 'yellow' ];
-		for (i = 0; i < 4; i++) {
-			var span = document.createElement('span')
-			span.classList = 'entry ' + color[i];
-			span.innerHTML = name[i];
-			legend.appendChild(span);
-		}
-
-		this.el.appendChild(legend);
 	}
 
 	Calendar.prototype.nextMonth = function() {
