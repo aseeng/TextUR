@@ -444,6 +444,9 @@ function post(line)
 			});
 
 			$('#input').val("");
+			var iconId = "#icon"+line;
+			$(iconId).removeClass();
+			$(iconId).addClass("fa fa-comments-o icon");
 		},
 		error : function(){ 
 			alert("error");
@@ -461,6 +464,12 @@ function editComments(index, lines){
 		if(j != index)
 		{
 			var id = "#icon"+j;
+			if($(id).hasClass("fa fa-comments-o icon"))
+			{
+				$(id).removeClass();
+				$(id).addClass("fa fa-comment-o icon");
+			}
+			
 			if(!$(id).hasClass("fa fa-comment-o icon"))
 			{
 				$(id).removeClass();
@@ -530,20 +539,14 @@ function editComments(index, lines){
 			});
 			buttonDiv.append(input);
 			
-			var button = $('<button></button>');
-			button.attr({
-				onclick: "post("+index+");",
-			});
-		
-			var icon = $('<i></i>').addClass('fa fa-send');
+			var button = $('<button> </button>').attr("onclick","post("+index+");");
+			var icon = $('<i></i>').addClass("fa fa-send");
+			
 			button.append(icon);
-			
-			
-
 			buttonDiv.append(button);
 			boxBody.append(comm);
 			
-			var margin = ((index-1)*20)+"px";
+			var margin = ((index-10)*20)+"px";
 			mainDiv.append(boxBody);
 			mainDiv.css("margin-top", margin);
 

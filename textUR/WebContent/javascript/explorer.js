@@ -10,7 +10,7 @@ $(document).ready(() => {
 });
 
 window.onload = function() {
-	window.setInterval(load, 5000, $('#user').html());
+	window.setInterval(load, 1000);
 };
 
 function addPackage() {
@@ -273,7 +273,6 @@ function showContent(name){
 			}
 			else if (hash.length == 3)
 			{
-				checkLogin();
 				$('#add').text("Add File");
 				$('#add').attr("onclick", "addFile();");
 				

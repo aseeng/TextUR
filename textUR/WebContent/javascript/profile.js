@@ -1,14 +1,40 @@
 function changePassword(){
 	
+	var div = document.createElement('div')
+		div.classList = "box-body ";
+	var oldPassword = document.createElement('input');
+		oldPassword.id = "old";
+		oldPassword.classList = "form-control change";
+		oldPassword.type = "password";
+		oldPassword.placeholder = "insert your password";
 	
-	swal("Please enter new password:", {
-		content: "input",
-	}).then((value) => {
-		var res = value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g);
-		if(res == null ){
-			input.css("border-color","red");
-			input.focus();
-			return;
+	var newPassword = document.createElement('input');
+		newPassword.id = "new";
+		newPassword.classList = "form-control change";
+		newPassword.type = "password";
+		oldPassword.name = "newPassword";
+		newPassword.placeholder = "insert new password";
+	
+	var confirmPassword = document.createElement('input');
+		confirmPassword.id = "confirm";
+		confirmPassword.classList = "form-control change";
+		confirmPassword.type = "password";
+		oldPassword.name = "confirmPassword";
+		confirmPassword.placeholder = "confirm your password";
+		
+	div.append(oldPassword);
+	div.append(newPassword);
+	div.append(confirmPassword);
+	
+	swal({
+		content: div,
+	}).then(() => {
+		var password = document.querySelector('#new').value;
+		var confirm = document.querySelector('#confirm').value;
+		if(password != confirm)
+		{
+			$('#new').css("border-color","red");
+			$('#confirm').css("border-color","red");
 		}
 		if (value != null && value != "") {
 			$.ajax({

@@ -17,6 +17,7 @@
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
 <link href="../css/home.css" rel="stylesheet">
+<link href="../css/profile.css" rel="stylesheet">
 
 <!-- Google Font -->
 <link

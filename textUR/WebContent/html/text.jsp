@@ -18,9 +18,11 @@
  <body class="skin-red sidebar-collapse">
  <div class="box box-danger center" id="mainarea">
 	<section class="content"> 
+		<button type="button" id="close" class="btn btn-danger btn-sm" data-widget="remove" onclick="closeFile();">
+			<i class="fa fa-times"></i>
+         </button>
 		<h2>${file.getName()}</h2>
 		<div class="input-group-btn">
-			<button type="button" id="close" class="btn btn-danger dropdown-toggle" onclick="closeFile();"> Close editor </button>
 			<button type="button" id="options" class="btn btn-success dropdown-toggle" data-toggle="dropdown" > Options
 				<span class="fa fa-caret-down"></span>
 			</button>
