@@ -4,56 +4,137 @@
 
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+<meta name="author" content="gettemplates.co" />
+<meta property="og:title" content=""/>
+<meta property="og:image" content=""/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content=""/>
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
+
+
 <link href="../css/home.css" rel="stylesheet">
-<title>InstanText - Welcome</title>
+<title>TextUR - Welcome</title>
 
-<!-- Custom fonts for this template -->
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-
-<!-- Custom styles for this template -->
 <link href="../css/business-casual.min.css" rel="stylesheet">
 <link href="../css/index.css" rel="stylesheet">
-<link rel="stylesheet" href="../css/createProject.css">
+<link href="../css/createProject.css" rel="stylesheet">
+
+
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="../css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="../css/icomoon.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="../css/bootstrap.css">
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="../css/magnific-popup.css">
+
+<!-- Owl Carousel  -->
+<link rel="stylesheet" href="../css/owl.carousel.min.css">
+<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+
+<!-- Theme style  -->
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- Modernizr JS -->
+<script src="../js/modernizr-2.6.2.min.js"></script>
+
+
 </head>
 
 <body class="skin-red-light">
 <c:choose>
     <c:when test="${user==null}">
-		<h1 class="site-heading text-center text-white d-none d-lg-block title">
-			<span class="site-heading-lower" id="text"><b>Text</b></span>
-			<span class="site-heading-lower" id="upper"><b>UR</b></span>
-			<span class="site-heading-upper text-primary mb-3" id="sub">A Free Java Online Editor</span>
-		</h1>
-		
-		<div class="site-heading text-center d-none d-lg-block">
-	
-			<a id="login" href="page?action=login">Login</a>
-			<a id="register" href="page?action=register">Register</a>
+    
+    <div class="gtco-loader"></div>
+    
+    <div id="page">
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-xs-12 text-right hidden-xs menu-2">
+				<ul>
+					<li class="btn-cta"><a href="page?action=login"><span>Login</span></a></li>
+					<li class="btn-cta"><a href="page?action=register"><span>Register</span></a></li>
+				</ul>
+				</div>
+			</div>
 			
 		</div>
+	</nav>
 	
-		<section id="home" class="page-section clearfix">
-			<div class="container">
-				<div class="intro">
-					<img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="../img/intro.jpg">
-					<div class="intro-text left-0 text-center bg-faded p-5 rounded description">
-						<h2 class="section-heading mb-4">
-							<span class="section-heading-upper">TextUR</span>
-							<span class="section-heading-lower">Create the future</span>
-						</h2>
-						<p class="mb-3 font">An innovative web editor to create your Java project online.
-							Work with your collaborator and share with them your projects.</p>
-						<div class="intro-button mx-auto">
-							<a class="btn btn-primary btn-lg" href="page?action=register">Register Now!</a>
+	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url(../img/background.jpg);">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1 class="site-heading text-center text-white d-none d-lg-block title">
+								<span class="site-heading-lower" id="text"><b>Text</b></span>
+								<span class="site-heading-lower" id="upper"><b>UR</b></span>
+								<span class="site-heading-upper text-primary mb-3" id="sub">A Free Java Online Editor</span>
+							</h1>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</header>
+	
+	<div id="gtco-features">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-eye"></i>
+						</span>
+						<h3>Retina Ready</h3>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+						<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-command"></i>
+						</span>
+						<h3>Fully Responsive</h3>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+						<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-power"></i>
+						</span>
+						<h3>Web Starter</h3>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+						<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+    
+    
+		
     </c:when>    
     <c:otherwise>
 		<div class="box box-danger center" id="explorer">
@@ -114,6 +195,31 @@
 	<script src="../js/explorer.js"></script>
 	<script src="../js/index.js"></script>
 	<script src="../js/loginController.js"></script>
+	
+	
+		<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="../js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="../js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="../js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="../js/main.js"></script>
+	
+	
 </body>
 
 </html>
