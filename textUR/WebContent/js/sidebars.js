@@ -33,5 +33,4 @@ function checkLogin(){
 		},
 		type: 'GET'
 	});
-	
 }

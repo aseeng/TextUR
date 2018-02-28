@@ -10,7 +10,7 @@ function createProject() {
 	
 	var checkDiv = document.createElement('div');
 	var label = document.createElement('label');
-		label.innerHTML = "initialize with a main ";
+		label.innerHTML = " initialize with a main ";
 	
 	var checkbox = document.createElement('input');
 		checkbox.type = "checkbox";

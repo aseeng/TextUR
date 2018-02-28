@@ -279,19 +279,15 @@
 		</footer>
 	</c:when>    
     
-    
-    
-    
     <c:otherwise>
 		<div class="box box-danger center" id="explorer">
-			<section class="content" id="yours"> 
+			<section class="content"> 
 				<div class="input-group-btn">
 					<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> New project
 						 <span class="fa fa-caret-down"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a id="empty"> Empty Project</a></li>
-						<li><a id="hello"> HelloWorld Project</a></li>
+						<li><a onclick="createProject()">Create a project</a></li>
 						<li><a onclick="uploadRequest();">Upload your project</a></li>
 					</ul>
 				</div>
@@ -300,7 +296,7 @@
 				<span class="site-heading-lower">Your <b>projects</b></span> 	</h2>
 					<div class=" text-center">
 						<c:forEach var="project" items="${user.getProjects().values()}">
-							<button class="btn btn-warning buttonName" onclick="showContent('${project.getName()}', true);"> 
+							<button class="btn btn-warning buttonName" onclick="showContent('${project.getName()}');"> 
 								<span class="info-box-icon bg-yellow">
 									<i class="fa fa-folder icon_folder"><br> </i> 
 									<p class="names">${project.getName()}</p> 
@@ -310,12 +306,12 @@
 					</div>
 			</section>
 	
-			<section class="content" id="others">
+			<section class="content">
 				<h2 class="site-heading text-center">	<span class="site-heading-lower">Other <b>projects</b></span>	</h2>
 		
 				<div class="text-center">
 					<c:forEach var="project" items="${user.getOtherProjects().values()}">
-						<button class="btn btn-warning buttonName" onclick="showContent('${project.getName()}', false);">
+						<button class="btn btn-warning buttonName" onclick="showContent('${project.getName()}');">
 							<span class="info-box-icon bg-yellow">
 								<i class="fa fa-folder icon_folder"><br></i>
 								<p class = "names">${project.getName()}</p>

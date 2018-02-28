@@ -12,9 +12,7 @@ function checkEnter(){
 		    $('#button').click();   
 		}
 	});
-	
 };
-
 
 function login(){
 	$.ajax({
@@ -39,9 +37,8 @@ function login(){
 						$('#username').val("")
 						$('#password').val("")
 					});
-			} else {
+			} else
 				document.location.href = "page?action=index";
-			}
 		},
 		type : 'GET',
 	});
@@ -89,10 +86,3 @@ function onSignIn(googleUser) {
 function logout() {
 	 document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:8080/SIW_InstanText/html/page?action=logout";
 }
-
-//function logout(){
-//	alert("google signOut");
-//	gapi.auth2.getAuthInstance().signOut();
-//	document.location.href = "page?action=logout";
-//}
-
