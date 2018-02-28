@@ -100,7 +100,7 @@
         </div>
       <!-- /.row -->
       <div class="col-md-9">
-		<div class="box box-danger center" id="explorer">
+		<div class="box box-danger center" id="content">
 			<section class="content"> 
 				<h2 class="site-heading text-center">	</h2>
 				<div class=" text-center">

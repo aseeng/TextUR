@@ -1,5 +1,8 @@
 $(document).ready(function() { 
 	checkLogin();
+	
+	if($('#user').html() == "")
+		$('#aside').css("display","none");
 })
 
 function openProfile(user)
