@@ -34,9 +34,9 @@ $(document).ready(function() {
 });
 
 window.onload = function(){
-	var user = $('#user').html(); 
-	load(user);
-	window.setInterval(load,5000, user);
+
+	loadChat();
+	window.setInterval(loadChat,5000);
 }
 
 function initComments() {
@@ -539,13 +539,11 @@ function editComments(index, lines){
 			buttonDiv.append(button);
 			boxBody.append(comm);
 			
-			var margin = ((index-10)*20)+"px";
 			mainDiv.append(boxBody);
-			mainDiv.css("margin-top", margin);
 
 			forum.append(mainDiv);
-			$('#buttonSection').append(forum);
-			$('#buttonSection').append(buttonDiv);
+			$(commentId).append(forum);
+			$(commentId).append(buttonDiv);
 		},
 		error : function(){ 
 			alert("error");

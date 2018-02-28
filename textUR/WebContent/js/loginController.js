@@ -16,14 +16,8 @@ function checkEnter(){
 
 function login(){
 	
-	
-	//var overlay = $('<div></div>').addClass("overlay").attr("id","overlay");
-	var spin = $('<i></i>').addClass("fa fa-refresh fa-spin");
-	
-	//overlay.append(spin);
-	$("#head").addClass("overlay");
-	$("#head").append(spin);
-	
+	var spin = $('<div></div>').addClass("se-pre-con").attr("id","loading");
+	$("body").append(spin);
 	
 	$.ajax({
 		url : 'login',

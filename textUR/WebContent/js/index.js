@@ -9,3 +9,7 @@ $(document).ready(function(){
 		$('#sidebar').attr("style","display:none");
 	$('#project').html("");
 });
+
+window.onload= function() {
+	$("#loading").remove();
+};

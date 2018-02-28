@@ -7,8 +7,11 @@ $(document).ready(() => {
 	
 	location.hash = user+name;
 	$('#sidebar').attr("style","display:block");
+	$('#calendar').attr("style","display:block");
 	window.setInterval(loadChat,1000);
 });
+
+
 
 function addPackage() {
 	var name = null;
@@ -252,6 +255,10 @@ function renamePackage(){
 }
 
 function showContent(name){
+	
+	var spin = $('<div></div>').addClass("se-pre-con").attr("id","loading");
+	$("body").append(spin);
+	
 	$('.buttonName').removeAttr("onclick", null);	
 	location.hash += "/" + name;
 	$.ajax({
@@ -312,6 +319,7 @@ function showContent(name){
 					buttonFolder.append(spanFolderBG);
 					$('#contentDiv').append(buttonFolder);
 				});
+				$("#loading").remove();
 			}
 			else if (hash.length == 4)
 			{

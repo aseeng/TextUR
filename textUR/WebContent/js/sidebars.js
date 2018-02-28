@@ -5,6 +5,10 @@ $(document).ready(function() {
 		$('#aside').css("display","none");
 })
 
+window.onload= function() {
+	$("#loading").remove();
+};
+
 function openProfile(user)
 {
 	$.ajax({
