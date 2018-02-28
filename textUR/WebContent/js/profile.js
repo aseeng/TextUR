@@ -285,7 +285,7 @@ function invitations(){
 			var body = $('<div></div>').addClass("box-body");
 			var table = $('<table></table>').addClass("table table-bordered");
 			var tbody = $('<tbdoy><tbody>');
-			var tr1 = $('<tr></tr>');
+			var tr1 = $('<tr></tr>').addClass("myTable");
 			var th1 = $('<th></th>').addClass("name").html("Project");
 			var th2 = $('<th></th>').addClass("columns");
 			var th3 = $('<th></th>').addClass("columns");
@@ -296,7 +296,7 @@ function invitations(){
 			tbody.append(tr1);
 			
 			$.each(JSON.parse(response), function(idx,obj){
-				var tr = $('<tr></tr>').attr("id", "row"+obj.id);
+				var tr = $('<tr></tr>').attr("id", "row"+obj.id).addClass();
 				var td1 = $('<td></td>').html(obj.name);
 				
 				tr.append(td1);
