@@ -296,7 +296,7 @@ function invitations(){
 			tbody.append(tr1);
 			
 			$.each(JSON.parse(response), function(idx,obj){
-				var tr = $('<tr></tr>').attr("id", "row"+obj.id).addClass("center");
+				var tr = $('<tr></tr>').attr("id", "row"+obj.id).addClass();
 				var td1 = $('<td></td>').html(obj.name);
 				
 				tr.append(td1);
