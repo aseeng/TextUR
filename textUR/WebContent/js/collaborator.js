@@ -79,6 +79,7 @@ function showCollaborator(creator, currUser){
 				
 				var open = $('<a></a>').addClass("widget-user-username username").text(obj.key.username);
 					open.attr("href","page?action=openProfile&name="+obj.key.username);
+					
 				div3.append(open);
 				
 				if(currUser == creator) 
@@ -89,11 +90,8 @@ function showCollaborator(creator, currUser){
 				}
 
 				if(!obj.value)
-					div3.append($('<h5></h5>').attr("id","pending").addClass("text").text("pending..."));
-				else
-				{	var h5 = $('<h5></h5>').addClass("widget-user-desc text").text("Collaborator");
-					div3.append(h5);
-				}
+					div3.append($('<i></i>').attr("id","pending").addClass("text fa fa-spinner"));
+				
 				
 				div2.append(div3);
 				
