@@ -22,8 +22,14 @@ body {
 	color: #828282;
 	overflow-y: scroll;
 }
-.myArea{
+
+.myArea {
 	background: #fbfbfb;
+}
+
+.footer{
+	
+	padding:10px !important;
 }
 
 #page {
@@ -263,7 +269,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #gtco-header, #gtco-counter, .gtco-bg {
-	
 	background-size: cover;
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -682,10 +687,11 @@ form label {
 	-ms-border-radius: 50%;
 	border-radius: 50%;
 }
-.gradient{
-  background: linear-gradient(to bottom right, pink, red);
+
+.gradient {
+	background: linear-gradient(to bottom right, pink, red);
 }
-	
+
 .feature-center .icon i {
 	display: table-cell;
 	vertical-align: middle;
@@ -1404,12 +1410,6 @@ form label {
 	{
 	background: #5bc0de;
 	color: #fff;
-}
-
-.btn-warning {
-	background: #f0ad4e;
-	color: #fff;
-	border: 2px solid #f0ad4e;
 }
 
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active {

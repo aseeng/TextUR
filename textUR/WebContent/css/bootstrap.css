@@ -2775,11 +2775,6 @@ a.btn.disabled, fieldset[disabled] a.btn {
   background-color: #fff;
 }
 
-.btn-warning {
-  color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
-}
 .btn-warning:focus, .btn-warning.focus {
   color: #fff;
   background-color: #ec971f;
@@ -3315,6 +3310,9 @@ tbody.collapse.in {
   float: left;
   width: 100%;
   margin-bottom: 0;
+}
+.overlay{
+	z-index:999;
 }
 
 .input-group-addon,
