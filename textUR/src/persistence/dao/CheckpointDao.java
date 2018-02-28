@@ -12,7 +12,5 @@ public interface CheckpointDao extends Dao{
 	
 	public List<Checkpoint> find(Long projectId);
 
-	public void update(Checkpoint checkpoint);
-	
 	public void delete(Long id);
 }

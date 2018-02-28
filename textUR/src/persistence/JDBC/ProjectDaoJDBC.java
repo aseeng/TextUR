@@ -51,11 +51,6 @@ public class ProjectDaoJDBC implements ProjectDao {
 		}
 	}
 
-	public Project findByPrimaryKey(Long id) {
-		Connection connection = dataSource.getConnection();
-		return findByPrimaryKey(connection, id);
-	}
-
 	public Project findByPrimaryKey(Connection connection, Long id) {
 		Project project = null;
 		try {

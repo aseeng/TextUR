@@ -31,7 +31,7 @@ public class RestoreCheckpointFile extends HttpServlet {
 
 		File file = (File) session.getAttribute("file");
 		System.out.println("id: " +file.getId());
-		list = checkpointFileDao.findByFileId(file.getId());
+		list = checkpointFileDao.findByFile(file.getId());
 		System.out.println(list);
 		String files = (new JSONArray(list).toString());
 		resp.getWriter().print(files);
@@ -57,7 +57,7 @@ public class RestoreCheckpointFile extends HttpServlet {
 		
 		resp.getWriter().print(checkFile.getText());
 		fileDao.updateText(file.getId(), checkFile.getText());
-		
+		file.setCode(checkFile.getText());
 		session.setAttribute("file", file);
 	}
 }

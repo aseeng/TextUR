@@ -22,7 +22,6 @@ public class Register extends HttpServlet {
 		String username = req.getParameter("username");
 		String mail = req.getParameter("email");
 		String password = req.getParameter("password");
-		String rePassword = req.getParameter("rePassword");
 
 		UserDao userDao = DAOFactory.getInstance().getUserDao();
 
@@ -34,15 +33,11 @@ public class Register extends HttpServlet {
 			resp.getWriter().print("email_exist");
 			return;
 		}
-		else if (!password.equals(rePassword)) {
-			resp.getWriter().print("not_match");
-			return;
-		}
 		else {
 			try {
 				User user = new User(username, mail);
 				userDao.save(user);
-				userDao.setPassword(user, password);
+				userDao.setPassword(user, "", password);
 
 			} catch (ParseException e) {
 				e.printStackTrace();

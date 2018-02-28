@@ -58,7 +58,6 @@ public class CommentDaoJDBC implements CommentDao {
 
 	@Override
 	public Comment findByPrimaryKey(Long commentId) {
-
 		Connection connection = dataSource.getConnection();
 		Comment comment = null;
 		try {
@@ -183,36 +182,6 @@ public class CommentDaoJDBC implements CommentDao {
 		return comments;
 	}
 	
-	@Override
-	public void update(Comment comment) {
-		Connection connection = dataSource.getConnection();
-		try {
-			String update = "update line SET date = ?, file = ?, line = ?, username = ?, text = ? WHERE id=?";
-			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setTimestamp(1, comment.getDate());
-			statement.setLong(2, comment.getFile().getId());
-			statement.setLong(3, comment.getLine());
-			statement.setString(4, comment.getUser().getUsername());
-			statement.setString(5, comment.getText());
-			statement.setLong(6, comment.getId());
-			statement.executeUpdate();
-		} catch (SQLException e) {
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch (SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			}
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-	}
-
 	@Override
 	public void delete(Long id) {
 		Connection connection = dataSource.getConnection();

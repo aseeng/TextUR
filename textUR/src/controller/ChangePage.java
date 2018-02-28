@@ -44,17 +44,35 @@ public class ChangePage extends HttpServlet {
 
 		if(action.equals("openProfile"))
 		{
+			if(user == null)
+			{
+				req.getRequestDispatcher("profile.jsp").forward(req, resp);
+				return;
+			}
+			
 			String name = req.getParameter("name");
 			User visitor = userDao.findByPrimaryKey(name);
 
 			visitor.setProjects(projectDao.find(name));
 			visitor.setOtherProjects(collaboratorDao.find(name));
 			session.setAttribute("visitor", visitor);
+			
+			List<Project> projects = collaboratorDao.findPendingRequest(user.getUsername());
+			if(projects.size()>0)
+				session.setAttribute("requests", projects.size());
+		
+			req.getRequestDispatcher("profile.jsp").forward(req, resp);
 			return;
 		}
 		
 		if(action.equals("open"))
 		{
+			if(user == null)
+			{
+				req.getRequestDispatcher("index.jsp").forward(req, resp);
+				return;
+			}
+			
 			String split = req.getParameter("hash");
 			String[] hash = split.split("/");
 			hash[0] = hash[0].substring(1);
@@ -128,6 +146,12 @@ public class ChangePage extends HttpServlet {
 				req.getRequestDispatcher("register.html").forward(req, resp);
 				break;
 			case "settings":
+				if(user == null)
+				{
+					req.getRequestDispatcher("settings.jsp").forward(req, resp);
+					return;
+				}
+				
 				List<Checkpoint> checkpoints = checkpointDao.find(project.getId());
 				project.setCheckpoints(checkpoints);
 	
@@ -136,9 +160,6 @@ public class ChangePage extends HttpServlet {
 				
 				session.setAttribute("project", project);
 				
-				if (user != null)
-					fileDao.disableWrite(user.getUsername());
-
 				req.getRequestDispatcher("settings.jsp").forward(req, resp);
 				break;
 			default:

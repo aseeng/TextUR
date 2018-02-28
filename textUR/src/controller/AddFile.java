@@ -42,7 +42,6 @@ public class AddFile extends HttpServlet {
 		fileDao.save(file);
 
 		session.setAttribute("file", file);
-		
 		resp.getWriter().print(file.getId());
 	}
 }

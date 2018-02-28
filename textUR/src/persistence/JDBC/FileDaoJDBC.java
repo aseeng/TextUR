@@ -8,15 +8,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import model.Checkpoint_File;
 import model.File;
 import model.Package;
 import model.User;
+import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.IdBroker;
 import persistence.PersistenceException;
-import persistence.DAOFactory;
-import persistence.dao.Checkpoint_FileDao;
 import persistence.dao.FileDao;
 import persistence.dao.PackageDao;
 import persistence.dao.UserDao;
@@ -42,10 +40,6 @@ public class FileDaoJDBC implements FileDao {
 			statement.setString(4, file.getCode());
 			statement.setNull(5, 0);
 			statement.executeUpdate();
-
-			Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
-			checkpointFileDao.save(new Checkpoint_File(file.getCode(), null, file,
-					file.getPackage().getProject().getCreator(), "Initial Checkpoint"));
 		} catch (SQLException e) {
 			if (connection != null) {
 				try {

@@ -72,6 +72,26 @@
 	  
 	  
 	  <servlet>
+	    <servlet-name>CollaboratorServlet</servlet-name>
+	    <servlet-class>controller.Collaborators</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>CollaboratorServlet</servlet-name>
+	    <url-pattern>/html/collaborator</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+	    <servlet-name>CollaborationRequestServlet</servlet-name>
+	    <servlet-class>controller.CollaborationRequest</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>CollaborationRequestServlet</servlet-name>
+	    <url-pattern>/html/collaborationRequest</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
 	    <servlet-name>CommentServlet</servlet-name>
 	    <servlet-class>controller.Comments</servlet-class>
 	  </servlet>
@@ -168,16 +188,6 @@
 	  <servlet-mapping>
 	    <servlet-name>LoginAPIServlet</servlet-name>
 	    <url-pattern>/html/loginAPI</url-pattern>
-	  </servlet-mapping>
-
-
-	  <servlet>
-	    <servlet-name>ManageCollaborationRequestServlet</servlet-name>
-	    <servlet-class>controller.ManageCollaborationRequest</servlet-class>
-	  </servlet>
-	  <servlet-mapping>
-	    <servlet-name>ManageCollaborationRequestServlet</servlet-name>
-	    <url-pattern>/html/manageCollaborationRequest</url-pattern>
 	  </servlet-mapping>
 
 
@@ -322,32 +332,12 @@
 
 
 	  <servlet>
-	    <servlet-name>SendCollaborationRequestServlet</servlet-name>
-	    <servlet-class>controller.SendCollaborationRequest</servlet-class>
-	  </servlet>
-	  <servlet-mapping>
-	    <servlet-name>SendCollaborationRequestServlet</servlet-name>
-	    <url-pattern>/html/sendCollaborationRequest</url-pattern>
-	  </servlet-mapping>
-
-
-	  <servlet>
 	    <servlet-name>SettingsServlet</servlet-name>
 	    <servlet-class>controller.Settings</servlet-class>
 	  </servlet>
 	  <servlet-mapping>
 	    <servlet-name>SettingsServlet</servlet-name>
 	    <url-pattern>/html/settings</url-pattern>
-	  </servlet-mapping>
-
-
-	  <servlet>
-	    <servlet-name>ShowCollaboratorServlet</servlet-name>
-	    <servlet-class>controller.ShowCollaborator</servlet-class>
-	  </servlet>
-	  <servlet-mapping>
-	    <servlet-name>ShowCollaboratorServlet</servlet-name>
-	    <url-pattern>/html/showCollaborator</url-pattern>
 	  </servlet-mapping>
 
 

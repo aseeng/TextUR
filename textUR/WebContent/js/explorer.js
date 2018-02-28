@@ -8,7 +8,7 @@ $(document).ready(() => {
 	location.hash = user+name;
 	$('#sidebar').attr("style","display:block");
 	$('#calendar').attr("style","display:block");
-	window.setInterval(loadChat,1000);
+	window.setInterval(loadChat,1500);
 });
 
 

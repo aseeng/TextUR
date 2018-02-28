@@ -23,8 +23,6 @@ public interface CollaboratorDao extends Dao{
 	
 	public void updateStatus(String username, Long projectId);
 	
-	public void update(Collaborator collaborator);
-
 	public void delete(String username, Long projectId);
 
 	public Project findProject(String username, String projectName);

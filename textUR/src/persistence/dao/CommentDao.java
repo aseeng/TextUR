@@ -14,7 +14,5 @@ public interface CommentDao extends Dao {
 	
 	public List<Comment> findFromLine(Long fileId, Long line);
 
-	public void update(Comment comment);
-	
 	public void delete(Long id);
 }

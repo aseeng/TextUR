@@ -6,6 +6,7 @@ public class User {
 
 	protected String username;
 	protected String mail;
+	protected String image;
 	private HashMap<Long, Project> projects = new HashMap<>();
 	private HashMap<Long, Project> otherProjects = new HashMap<>();
 	
@@ -70,5 +71,12 @@ public class User {
 	public String toString() {
 		return "user " + username;
 	}
+	
+	public String getImage() {
+		return image;
+	}
 
+	public void setImage(String image) {
+		this.image = image;
+	}
 }

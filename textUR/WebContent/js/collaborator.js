@@ -42,7 +42,7 @@ function addCollaborator(projectId, creator, currUser) {
 			    			var json = JSON.stringify(users);
 			
 			    			$.ajax({
-			    				url: 'sendCollaborationRequest',
+			    				url: 'collaborationRequest',
 			    				data : {
 			    					names : json
 			    				},
@@ -65,59 +65,9 @@ function addCollaborator(projectId, creator, currUser) {
 	}
 }
 
-function manageCollaborationRequest(){
-	$.ajax({
-		url: 'manageCollaborationRequest',
-		success: function(responseText){
-			
-			var sources = responseText.split(" ");
-			for(i=0; i<sources.length-1; i+=2)
-			{
-				var accepted;
-				var project = sources[i];
-				swal({
-						text: "Do you want to become a collaborator in " + sources[i+1], 
-						buttons: {
-						    cancel:  "Refuse!",
-					    	catch: "Accept!",
-						  },
-						})
-						.then((value) => {
-						  switch (value) {
-						  
-						    case "catch":
-						    		accepted = true;
-						    		break;
-						      
-						    default:
-						    		accepted = false;
-						    		break;
-						  }
-						  
-						  	$.ajax({
-					    		url: 'manageCollaborationRequest',
-					    		data : {
-					    			id: project,
-					    			accepted : accepted
-					    		},
-
-					    		type:'POST'
-					    	});
-
-						});
-			}
-		},
-		error : function(){ 
-			alert("manage error");
-		},
-		type : 'GET'
-	});
-}
-
-
 function showCollaborator(creator, currUser){
 	$.ajax({
-		url:'showCollaborator',
+		url: 'collaborator',
 		success: function(response){	
 			$('#collaborators').html("");
 			$.each(JSON.parse(response), function(idx, obj) {	
@@ -128,8 +78,9 @@ function showCollaborator(creator, currUser){
 				var div2 = $('<div></div>').addClass("box box-widget widget-user");
 				var div3 = $('<div></div>').addClass("widget-user-header bg-aqua-active");
 				
-				var h3 = $('<h3></h3>').addClass("widget-user-username username").text(obj.key);
-				div3.append(h3);
+				var open = $('<a></a>').addClass("widget-user-username username").text(obj.key);
+					open.attr("href","page?action=openProfile&name="+obj.key);
+				div3.append(open);
 				
 				if(currUser == creator) 
 				{
@@ -138,7 +89,6 @@ function showCollaborator(creator, currUser){
 					div3.append(a);
 				}
 
-				
 				if(!obj.value)
 					div3.append($('<h5></h5>').attr("id","pending").addClass("text").text("pending..."));
 				else
@@ -149,7 +99,6 @@ function showCollaborator(creator, currUser){
 				div2.append(div3);
 				
 				var div4 = $('<div></div>').addClass("widget-user-image");
-					div4.attr("onclick", "openProfile("+ obj.key +");");
 					
 				var image = $('<img>').addClass("img-circle myimg").attr({
 					src: "../dist/img/user1-128x128.jpg",
@@ -202,8 +151,6 @@ function removeCollaborator(projectId, user, creator, currUser) {
 		  	}
 		});
 }
-
-setInterval(manageCollaborationRequest(), 10000);
 
 function closeSettings(){
 	document.location.href="page?action=homepage";

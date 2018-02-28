@@ -39,11 +39,12 @@ public class Change extends HttpServlet {
 					resp.getWriter().print("exist");
 				else
 					user.setMail(parameter);
-				System.out.println(user.getMail() + "   " + parameter);
 				break;
 			case "password":
-				userDao.setPassword(user, parameter);
-				break;
+				String oldPassword = req.getParameter("oldPassword");
+				if(!userDao.setPassword(user, oldPassword, parameter))
+					resp.getWriter().print("exist");
+					break;
 			default:
 				break;
 		}

@@ -4,23 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import model.Checkpoint;
 import model.Checkpoint_File;
 import model.File;
-import model.Package;
 import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.IdBroker;
 import persistence.PersistenceException;
-import persistence.dao.CheckpointDao;
 import persistence.dao.Checkpoint_FileDao;
 import persistence.dao.FileDao;
-import persistence.dao.PackageDao;
-import persistence.dao.UserDao;
 
 public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 
@@ -97,17 +91,6 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				File file = fileDao.findByPrimaryKey(connection, result.getLong("file"));
 				checkpointFile.setFile(file);
 
-				CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
-				Checkpoint checkpoint = checkpointDao.findByPrimaryKey(result.getLong("checkpoint"));
-				checkpointFile.setCheckpoint(checkpoint);
-
-				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
-				checkpointFile.setPackage(pack);
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				checkpointFile.setCreator(userDao.findByPrimaryKey(result.getString("creator")));
-				
 				checkpointFile.setDescription(result.getString("description"));
 			}
 		} catch (SQLException e) {
@@ -129,144 +112,6 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 	}
 
 	@Override
-	public HashMap<Long, Checkpoint_File> find(Long checkpointID) {
-		Connection connection = dataSource.getConnection();
-		HashMap<Long, Checkpoint_File> checkpointsFile = new HashMap<>();
-
-		try {
-			Checkpoint_File checkpointFile;
-			PreparedStatement statement;
-			String query = "select * from checkpointFile where checkpoint = ?";
-			statement = connection.prepareStatement(query);
-			statement.setLong(1, checkpointID);
-			ResultSet result = statement.executeQuery();
-
-			while (result.next()) {
-				checkpointFile = new Checkpoint_File();
-				checkpointFile.setId(result.getLong("id"));
-				checkpointFile.setText((String) result.getObject("text"));
-				checkpointFile.setDate(result.getTimestamp("date"));
-
-				FileDao fileDao = DAOFactory.getInstance().getFileDao();
-				File file = fileDao.findByPrimaryKey(connection, result.getLong("file"));
-				checkpointFile.setFile(file);
-
-				CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
-				Checkpoint checkpoint = checkpointDao.findByPrimaryKey(result.getLong("checkpoint"));
-				checkpointFile.setCheckpoint(checkpoint);
-
-				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
-				checkpointFile.setPackage(pack);
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				checkpointFile.setCreator(userDao.findByPrimaryKey(result.getString("creator")));
-				
-				checkpointFile.setDescription(result.getString("description"));
-				checkpointsFile.put(file.getId(), checkpointFile);
-			}
-		} catch (SQLException e) {
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch(SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-		return checkpointsFile;
-	}
-
-
-	@Override
-	public HashMap<Long, Checkpoint_File> findAll() {
-		Connection connection = dataSource.getConnection();
-		HashMap<Long, Checkpoint_File> checkpointsFile = new HashMap<>();
-
-		try {
-			Checkpoint_File checkpointFile;
-			PreparedStatement statement;
-			String query = "select * from checkpointFile";
-			statement = connection.prepareStatement(query);
-			ResultSet result = statement.executeQuery();
-
-			while (result.next()) {
-				checkpointFile = new Checkpoint_File();
-				checkpointFile.setId(result.getLong("id"));
-				checkpointFile.setText((String) result.getObject("text"));
-				checkpointFile.setDate(result.getTimestamp("date"));
-
-				FileDao fileDao = DAOFactory.getInstance().getFileDao();
-				File file = fileDao.findByPrimaryKey(connection, result.getLong("file"));
-				checkpointFile.setFile(file);
-
-				CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
-				Checkpoint checkpoint = checkpointDao.findByPrimaryKey(result.getLong("checkpoint"));
-				checkpointFile.setCheckpoint(checkpoint);
-
-				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
-				checkpointFile.setPackage(pack);
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				checkpointFile.setCreator(userDao.findByPrimaryKey(result.getString("creator")));
-
-				checkpointFile.setDescription(result.getString("description"));
-				
-				checkpointsFile.put(file.getId(),checkpointFile);
-			}
-		}  catch (SQLException e) {
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch(SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-		return checkpointsFile;
-	}
-
-	@Override
-	public void update(Checkpoint_File checkpointFile) {
-		Connection connection = dataSource.getConnection();
-		try {
-			String update = "update checkpointFile SET id = ?, text = ?, checkpoint = ?, file = ? WHERE id=?";
-			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setLong(1, checkpointFile.getId());
-			statement.setString(2, checkpointFile.getText());
-			statement.setLong(3, checkpointFile.getCheckpoint().getId());
-			statement.setLong(4, checkpointFile.getFile().getId());
-			statement.executeUpdate();
-		} catch (SQLException e) {
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch(SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-	}
-
 	public void delete(Long checkpointId) {
 		Connection connection = dataSource.getConnection();
 		try {
@@ -332,7 +177,7 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 	}
 
 	@Override
-	public List<File> findByFileId(Long fileId) {
+	public List<File> findByFile(Long fileId) {
 		Connection connection = dataSource.getConnection();
 		List<File> files = new LinkedList<>();
 		try {

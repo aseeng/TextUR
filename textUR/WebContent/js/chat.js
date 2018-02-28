@@ -33,7 +33,7 @@ function loadChat() {
 			$.each(JSON.parse(response), function(idx, obj) {
 				var div;
 				
-				if(user == obj.user.username)
+				if(user == obj.user)
 					div = $('<div></div>').addClass("direct-chat-msg right");
 				else
 					div = $('<div></div>').addClass("direct-chat-msg left");
@@ -43,13 +43,13 @@ function loadChat() {
 				var span1;
 				var div3;
 				
-				if(user == obj.user.username){
-					span = $('<span></span>').addClass("direct-chat-name pull-right").text(obj.user.username);
+				if(user == obj.user){
+					span = $('<span></span>').addClass("direct-chat-name pull-right").text(obj.user);
 					span1 = $('<span></span>').addClass("direct-chat-timestamp pull-left").text(obj.date.substr(0,19));
 					div3 = $('<div></div>').addClass("direct-chat-text pull-right").text(obj.text);
 				}
 				else{
-					span = $('<span></span>').addClass("direct-chat-name pull-left").text(obj.user.username);
+					span = $('<span></span>').addClass("direct-chat-name pull-left").text(obj.user);
 					span1 = $('<span></span>').addClass("direct-chat-timestamp pull-right").text(obj.date.substr(0,19));
 					div3 = $('<div></div>').addClass("direct-chat-text pull-left").text(obj.text);
 				}
@@ -85,7 +85,7 @@ $('#chat_zone').scroll(function() {
 					$.each(JSON.parse(response), function(idx, obj) {	
 						var div;
 						
-						if(user == obj.user.username)
+						if(user == obj.user)
 							div = $('<div></div>').addClass("direct-chat-msg right");
 						else
 							div = $('<div></div>').addClass("direct-chat-msg left");
@@ -95,13 +95,13 @@ $('#chat_zone').scroll(function() {
 						var span1;
 						var div3;
 						
-						if(user == obj.user.username){
-							span = $('<span></span>').addClass("direct-chat-name pull-right").text(obj.user.username);
+						if(user == obj.user){
+							span = $('<span></span>').addClass("direct-chat-name pull-right").text(obj.user);
 							span1 = $('<span></span>').addClass("direct-chat-timestamp pull-left").text(obj.date.substr(0,19));
 							div3 = $('<div></div>').addClass("direct-chat-text pull-right").text(obj.text);
 						}
 						else{
-							span = $('<span></span>').addClass("direct-chat-name pull-left").text(obj.user.username);
+							span = $('<span></span>').addClass("direct-chat-name pull-left").text(obj.user);
 							span1 = $('<span></span>').addClass("direct-chat-timestamp pull-right").text(obj.date.substr(0,19));
 							div3 = $('<div></div>').addClass("direct-chat-text pull-left").text(obj.text);
 						}
@@ -121,4 +121,3 @@ $('#chat_zone').scroll(function() {
 		}); 
 	}
 });
- 

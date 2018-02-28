@@ -16,13 +16,15 @@ public interface UserDao extends Dao {
 	
 	public List<String> findAll(Project project);
 
+	public void updateImage(String username, String url);
+	
 	public boolean updateMail(String username, String mail);
 	
 	public boolean updateUsername(String username, String newUsername);
 
 	public void delete(User user);
 	
-	public void setPassword(User user, String password);
+	public boolean setPassword(User user, String oldPassword, String password);
 	
 	public UserCredential findByPrimaryKeyCredential(String username);
 	

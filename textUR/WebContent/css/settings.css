@@ -20,8 +20,8 @@ li {
 }
 
 .username{
-	
 	text-align: center;
+	color: white;
 	margin-top: -5px !important;
 }
 
@@ -35,4 +35,12 @@ li {
 .text{
 	margin-top: 40px;
 	float: right;
+}
+
+#tab{
+	font-weight: 300;	
+}
+
+#checkpoints{
+	font-weight: 400;
 }

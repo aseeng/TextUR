@@ -50,7 +50,7 @@ public class UtilDao implements Dao {
 	public void createDatabase() {
 		Connection connection = dataSource.getConnection();
 		try {
-			String create = "create table users(\"username\" VARCHAR(20) primary key, mail VARCHAR(50), password VARCHAR(16));"
+			String create = "create table users(\"username\" VARCHAR(20) primary key, mail VARCHAR(50), password VARCHAR(16), image VARCHAR(100));"
 					+ "create table project(\"id\" BIGINT primary key, name VARCHAR(50), creator VARCHAR(20) REFERENCES users(\"username\") ON UPDATE CASCADE);"
 					+ "create table package(\"id\" BIGINT primary key, name VARCHAR(50), project BIGINT REFERENCES project(\"id\") ON DELETE CASCADE);"
 					+ "create table message(\"id\" BIGINT primary key, project BIGINT REFERENCES project(\"id\") ON DELETE CASCADE, text VARCHAR(400), username VARCHAR(20) REFERENCES users(\"username\") ON UPDATE CASCADE, date TIMESTAMP);"

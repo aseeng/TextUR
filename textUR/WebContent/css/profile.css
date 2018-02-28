@@ -2,3 +2,24 @@
 .change{
 	margin-bottom: 10px;
 }
+
+#contentDiv{
+	height: 500px;
+}
+
+.save{
+	float: right;
+}
+
+.Input{
+	margin-bottom: 10px;
+}
+
+.columns{
+	width: 15%;
+}
+
+.name{
+	width: 40%;
+	text-align: center;
+}

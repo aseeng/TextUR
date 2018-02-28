@@ -99,7 +99,7 @@ function initOptions() {
 						},
 						type : 'GET'
 					});
-				}, 1000);	
+				}, 1500);	
 
 			}
 			else {
@@ -111,7 +111,7 @@ function initOptions() {
 						},
 						type : 'POST'
 					});
-				}, 1000);
+				}, 2000);
 			}
 		},
 		type : 'GET'

@@ -9,12 +9,11 @@ import java.util.List;
 
 import model.Checkpoint;
 import model.Project;
+import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.IdBroker;
 import persistence.PersistenceException;
-import persistence.DAOFactory;
 import persistence.dao.CheckpointDao;
-import persistence.dao.Checkpoint_FileDao;
 import persistence.dao.ProjectDao;
 import persistence.dao.UserDao;
 
@@ -57,6 +56,7 @@ public class CheckpointDaoJDBC implements CheckpointDao {
 		}
 	}  
 
+	@Override
 	public Checkpoint findByPrimaryKey(Long id) {
 		Connection connection = dataSource.getConnection();
 		Checkpoint checkpoint = null;
@@ -78,7 +78,6 @@ public class CheckpointDaoJDBC implements CheckpointDao {
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
 				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				checkpoint.setProject(project);
-
 			}
 		} catch (SQLException e) {
 			if (connection != null) {
@@ -119,10 +118,6 @@ public class CheckpointDaoJDBC implements CheckpointDao {
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
 				checkpoint.setCreator(userDao.findByPrimaryKey(result.getString("username")));
 
-				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
-				checkpoint.setProject(project);
-
 				checkpoints.add(checkpoint);
 			}
 		} catch (SQLException e) {
@@ -137,39 +132,8 @@ public class CheckpointDaoJDBC implements CheckpointDao {
 		return checkpoints;
 	}
 
-	public void update(Checkpoint checkpoint) {
-		Connection connection = dataSource.getConnection();
-		try {
-			String update = "update checkpoints SET id = ?, description = ?, project = ?, date = ?, username = ? WHERE id=?";
-			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setLong(1, checkpoint.getId());
-			statement.setString(2, checkpoint.getDescription());
-			statement.setLong(3, checkpoint.getProject().getId());
-			statement.setTimestamp(4, checkpoint.getDate());
-			statement.setString(5, checkpoint.getCreator().getUsername());
-			
-			statement.executeUpdate();
-		} catch (SQLException e) {
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch(SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-	}
-
+	@Override
 	public void delete(Long checkpointId) {
-		Checkpoint_FileDao checkpointFileDao = DAOFactory.getInstance().getCheckpointFileDao();
-		checkpointFileDao.delete(checkpointId);
-
 		Connection connection = dataSource.getConnection();
 		try {
 

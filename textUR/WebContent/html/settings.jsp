@@ -18,7 +18,7 @@
 			<i class="fa fa-times"></i>
          </button>
 	<div class="nav-tabs-custom">
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs" id= "tab">
 
 			<li class="active"><a href="#tab_1" data-toggle="tab"> Checkpoint 
 				<i class="fa fa-flag-checkered"></i>
@@ -32,7 +32,7 @@
 			<div class="tab-pane active" id="tab_1">
 				<a class="btn bg-blue" onclick="createCheckpoint();">Create Checkpoint</a> <br> <br>
 
-				<ul class="timeline">
+				<ul class="timeline" id="checkpoints">
 					<c:forEach var="check" items="${project.getCheckpoints()}">
 
 						<li><i class="fa bg-blue"></i>

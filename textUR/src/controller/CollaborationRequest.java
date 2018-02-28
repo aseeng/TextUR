@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONArray;
+
 import model.Collaborator;
 import model.Project;
 import model.User;
@@ -16,12 +18,10 @@ import persistence.DAOFactory;
 import persistence.dao.CollaboratorDao;
 
 @SuppressWarnings("serial")
-public class ManageCollaborationRequest extends HttpServlet
+public class CollaborationRequest extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		System.out.println("servlet manage collaboration request");
 		
 		HttpSession session = req.getSession();
 		User user = (User)session.getAttribute("user");
@@ -53,7 +53,7 @@ public class ManageCollaborationRequest extends HttpServlet
 		CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
 		List<Project> projects = collaboratorDao.findPendingRequest(user.getUsername());
 		
-		for (Project project : projects)
-			resp.getWriter().print(project.getId() + " " + project.getName() + " ");
+		String proj = (new JSONArray(projects).toString());
+		resp.getWriter().print(proj);
 	}
 }

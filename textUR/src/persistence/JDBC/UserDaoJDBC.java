@@ -9,12 +9,9 @@ import java.util.List;
 
 import model.Project;
 import model.User;
-import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.PersistenceException;
 import persistence.UserCredential;
-import persistence.dao.CollaboratorDao;
-import persistence.dao.ProjectDao;
 import persistence.dao.UserDao;
 
 public class UserDaoJDBC implements UserDao{
@@ -26,15 +23,14 @@ public class UserDaoJDBC implements UserDao{
 		this.dataSource = dataSource;
 	}
 
-	public UserDaoJDBC() { }
-
 	public void save(User user) {
 		Connection connection = dataSource.getConnection();
 		try {
-			String insert = "insert into users(username, mail) values (?,?)";
+			String insert = "insert into users(username, mail, password) values (?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, user.getUsername());
 			statement.setString(2, user.getMail());
+			statement.setString(3, "css");
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			if (connection != null) {
@@ -66,6 +62,7 @@ public class UserDaoJDBC implements UserDao{
 				user = new User();
 				user.setUsername(result.getString("username"));				
 				user.setMail(result.getString("mail"));
+				user.setImage(result.getString("image"));
 			}
 		}  catch (SQLException e) {
 			if (connection != null) {
@@ -100,6 +97,7 @@ public class UserDaoJDBC implements UserDao{
 				user = new User();
 				user.setUsername(result.getString("username"));				
 				user.setMail(result.getString("mail"));
+				user.setImage(result.getString("image"));
 			}
 		}  catch (SQLException e) {
 			if (connection != null) {
@@ -129,10 +127,10 @@ public class UserDaoJDBC implements UserDao{
 					+ "(select c.username from collaborator as c where c.project = ?)";
 			statement = connection.prepareStatement(query);
 			statement.setLong(1, project.getId());
+
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
-				
-				user= result.getString("username");				
+				user = result.getString("username");				
 				if( !user.equals(project.getCreator().getUsername()) )
 					users.add(user);
 			}
@@ -180,6 +178,32 @@ public class UserDaoJDBC implements UserDao{
 			}
 		}
 		return true;
+	}
+	
+	@Override
+	public void updateImage(String username, String url) {
+		Connection connection = dataSource.getConnection();
+		try {
+			String update = "update users SET image = ? WHERE username=?";
+			PreparedStatement statement = connection.prepareStatement(update);
+			statement.setString(1, url);
+			statement.setString(2, username);
+			statement.executeUpdate();
+		}  catch (SQLException e) {
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch(SQLException excep) {
+					throw new PersistenceException(e.getMessage());
+				}
+			} 
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
 	}
 	
 	public boolean updateUsername(String username, String newUsername)
@@ -237,11 +261,20 @@ public class UserDaoJDBC implements UserDao{
 	}
 
 	@Override
-	public void setPassword(User user, String password) {
+	public boolean setPassword(User user, String oldPassword, String password) {
 		Connection connection = dataSource.getConnection();
 		try {
+			String query = "select password from users where id = ?";
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1, user.getUsername());
+			
+			ResultSet result = statement.executeQuery();
+			String old = result.getString("password");
+			if(old != null && !old.equals(oldPassword))
+				return false;
+			
 			String update = "update users SET password = ? WHERE username=?";
-			PreparedStatement statement = connection.prepareStatement(update);
+			statement = connection.prepareStatement(update);
 			statement.setString(1, password);
 			statement.setString(2, user.getUsername());
 			statement.executeUpdate();
@@ -260,6 +293,7 @@ public class UserDaoJDBC implements UserDao{
 				throw new PersistenceException(e.getMessage());
 			}
 		}
+		return true;
 	}
 
 	@Override
@@ -270,14 +304,8 @@ public class UserDaoJDBC implements UserDao{
 			userCredential = new UserCredential(dataSource);
 			userCredential.setUsername(user.getUsername());
 			userCredential.setMail(user.getMail());
-			
-			ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-			user.setProjects(projectDao.find(username));
-			
-			CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
-			user.setOtherProjects(collaboratorDao.find(username));
+			userCredential.setImage(user.getImage());
 		}
 		return userCredential;
 	}
-
 }

@@ -10,14 +10,12 @@ import java.util.List;
 
 import model.Message;
 import model.Project;
-import model.User;
+import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.IdBroker;
 import persistence.PersistenceException;
-import persistence.DAOFactory;
 import persistence.dao.MessageDao;
 import persistence.dao.ProjectDao;
-import persistence.dao.UserDao;
 
 public class MessageDaoJDBC implements MessageDao {
 
@@ -37,7 +35,7 @@ public class MessageDaoJDBC implements MessageDao {
 			statement.setLong(1, message.getId());
 			statement.setLong(2, message.getProject().getId());
 			statement.setString(3, message.getText());
-			statement.setString(4, message.getUser().getUsername());
+			statement.setString(4, message.getUser());
 			statement.setTimestamp(5, message.getDate());
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -72,10 +70,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setId(result.getLong("id"));
 				message.setText(result.getString("text"));
 				message.setDate(result.getTimestamp("date"));
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				User user = userDao.findByPrimaryKey(result.getString("username"));
-				message.setUser(user);
+				message.setUser(result.getString("username"));
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
 				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
@@ -117,10 +112,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setId(result.getLong("id"));
 				message.setText(result.getString("text"));
 				message.setDate(result.getTimestamp("date"));
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				User user = userDao.findByPrimaryKey(result.getString("username"));
-				message.setUser(user);
+				message.setUser(result.getString("username"));
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
 				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
@@ -168,10 +160,7 @@ public class MessageDaoJDBC implements MessageDao {
 					message.setId(result.getLong("id"));
 					message.setText(result.getString("text"));
 					message.setDate(result.getTimestamp("date"));
-
-					UserDao userDao = DAOFactory.getInstance().getUserDao();
-					User user = userDao.findByPrimaryKey(result.getString("username"));
-					message.setUser(user);
+					message.setUser(result.getString("username"));
 
 					break;
 				}
@@ -216,10 +205,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setId(result.getLong("id"));
 				message.setText(result.getString("text"));
 				message.setDate(result.getTimestamp("date"));
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				User user = userDao.findByPrimaryKey(result.getString("username"));
-				message.setUser(user);
+				message.setUser(result.getString("username"));
 
 				messages.add(message);
 			}
@@ -261,10 +247,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setId(result.getLong("id"));
 				message.setText(result.getString("text"));
 				message.setDate(result.getTimestamp("date"));
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				User user = userDao.findByPrimaryKey(result.getString("username"));
-				message.setUser(user);
+				message.setUser(result.getString("username"));
 
 				messages.add(message);
 			}
@@ -302,10 +285,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setId(result.getLong("id"));
 				message.setText(result.getString("text"));
 				message.setDate(result.getTimestamp("date"));
-
-				UserDao userDao = DAOFactory.getInstance().getUserDao();
-				User user = userDao.findByPrimaryKey(result.getString("username"));
-				message.setUser(user);
+				message.setUser(result.getString("username"));
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
 				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
@@ -339,7 +319,7 @@ public class MessageDaoJDBC implements MessageDao {
 			statement.setLong(1, message.getId());
 			statement.setLong(2, message.getProject().getId());
 			statement.setString(3, message.getText());
-			statement.setString(4, message.getUser().getUsername());
+			statement.setString(4, message.getUser());
 			statement.setTimestamp(5, message.getDate());
 			statement.executeUpdate();
 		} catch (SQLException e) {

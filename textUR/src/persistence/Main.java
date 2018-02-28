@@ -15,7 +15,7 @@ import persistence.dao.UserDao;
 
 public class Main {
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		DAOFactory factory = DAOFactory.getInstance();
 		
@@ -65,10 +65,10 @@ public class Main {
 		
 		projectDao.update(project1);
 		
-		Message message1 = new Message(project1,"ciaoaoao",user1);
+		Message message1 = new Message(project1,"ciaoaoao",user1.getUsername());
 		messageDao.save(message1);
 		
-		Message message2 = new Message(project2,"chelovuoi",user3);
+		Message message2 = new Message(project2,"chelovuoi",user3.getUsername());
 		messageDao.save(message2);
 		
 		Collaborator coll1 = new Collaborator(user2, project1);
@@ -77,6 +77,5 @@ public class Main {
 		collaboratorDao.save(coll1);
 		collaboratorDao.updateStatus(user2.getUsername(), project1.getId());
 		collaboratorDao.save(coll2);
-		
 	}
 }

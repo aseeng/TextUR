@@ -30,8 +30,7 @@
 <title>TextUR</title>
 </head>
 <body>
-	<section class="content">
-        <div class="col-md-3">
+<div class="col-md-3">
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
@@ -47,7 +46,14 @@
                 <li class="list-group-item">
                   <b>Collaborator in</b> <a class="pull-right">${visitor.getOtherProjects().size()}</a>
                 </li>
-                <li class="list-group-item" onclick="options();">Options</li>
+                 <c:if test = "${visitor.getUsername().equals(user.getUsername())}">
+	                <li class="list-group-item">
+	                	<a href="#" onclick="options();"><b>Options</b></a>	
+					</li>
+	                <li class="list-group-item">
+	                	<a href="#" onclick="invitations();"><b>Invitations</b></a>
+	                	<a class="pull-right">${requests}</a></li>
+	             </c:if>
               </ul>
             </div>
             <!-- /.box-body -->
@@ -94,10 +100,9 @@
           </div>
           <!-- /.box -->
         </div>
+	<section class="content col-md-9">
       <!-- /.row -->
-      <div class="col-md-9">
-		<div class="box box-danger center" id="content">
-			<section class="content"> 
+		<div class="box box-danger center" id = "contentDiv">
 				<h2 class="site-heading text-center">	</h2>
 				<div class=" text-center">
 					<c:forEach var="project" items="${visitor.getProjects().values()}">
@@ -109,10 +114,9 @@
 						</button>
 					</c:forEach>
 				</div>
-			</section>
 		</div>
-	</div>
 	</section>
 </body>
 <script src="../js/profile.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 </html>
