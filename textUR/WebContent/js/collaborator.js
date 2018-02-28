@@ -204,3 +204,7 @@ function removeCollaborator(projectId, user, creator, currUser) {
 }
 
 setInterval(manageCollaborationRequest(), 10000);
+
+function closeSettings(){
+	document.location.href="page?action=homepage";
+}

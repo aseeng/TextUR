@@ -14,7 +14,9 @@
 <body class="skin-red-light" onload="loadCollaboratorPage('${project.getCreator().getUsername()}','${user.getUsername()}')">   
 
 	<section class="box box-primary center">
-
+		<button type="button" id="close" class="btn btn-danger btn-sm" data-widget="remove" onclick="closeSettings();">
+			<i class="fa fa-times"></i>
+         </button>
 	<div class="nav-tabs-custom">
 		<ul class="nav nav-tabs">
 

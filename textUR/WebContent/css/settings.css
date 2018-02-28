@@ -8,6 +8,10 @@ li {
 	background-color: black
 }
 
+#close{
+	float: right;
+}
+
 .myimg{
 	
 	width: 65px !important;
@@ -22,7 +26,6 @@ li {
 }
 
 .remove{
-	
 	background:red;
 	float: right;
 	margin-right: -10px;
@@ -30,7 +33,6 @@ li {
 }
 
 .text{
-	
 	margin-top: 40px;
 	float: right;
 }
