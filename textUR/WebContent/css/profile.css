@@ -10,13 +10,19 @@
 .save{
 	float: right;
 }
-
+.myTable{
+	    border: 1px solid #ddd;
+}
+td{
+	text-align:center;
+	border: 1px solid #ddd;
+}
 .Input{
 	margin-bottom: 10px;
 }
 
 .columns{
-	width: 15%;
+	width: 1%;
 }
 
 .name{

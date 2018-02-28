@@ -37,16 +37,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="controller.ManageCollaborationRequest" project="SIW_InstanText" 
-    file="/SIW_InstanText/src/controller/ManageCollaborationRequest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1521" y="43"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="controller.RemoveProject" project="SIW_InstanText" 
+  <class id="5" language="java" name="controller.RemoveProject" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/RemoveProject.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1579" y="135"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -55,7 +46,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="controller.FindUsers" project="SIW_InstanText" 
+  <class id="6" language="java" name="controller.FindUsers" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/FindUsers.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2033" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,7 +55,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="controller.CheckLogin" project="SIW_InstanText" 
+  <class id="7" language="java" name="controller.CheckLogin" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/CheckLogin.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2152" y="195"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,7 +64,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="controller.RestoreCheckpoint" project="SIW_InstanText" 
+  <class id="8" language="java" name="controller.RestoreCheckpoint" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/RestoreCheckpoint.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2073" y="49"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,7 +73,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="controller.ChangePage" project="SIW_InstanText" 
+  <class id="9" language="java" name="controller.ChangePage" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/ChangePage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1172" y="207"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -91,7 +82,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="controller.LoginAPI" project="SIW_InstanText" 
+  <class id="10" language="java" name="controller.LoginAPI" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/LoginAPI.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1303" y="215"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,7 +91,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="controller.RenamePackage" project="SIW_InstanText" 
+  <class id="11" language="java" name="controller.RenamePackage" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/RenamePackage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1460" y="215"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,7 +100,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="controller.RenameProject" project="SIW_InstanText" 
+  <class id="12" language="java" name="controller.RenameProject" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/RenameProject.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1631" y="215"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -118,7 +109,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="controller.AddFile" project="SIW_InstanText" 
+  <class id="13" language="java" name="controller.AddFile" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/AddFile.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1940" y="279"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -127,7 +118,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="controller.Register" project="SIW_InstanText" 
+  <class id="14" language="java" name="controller.Register" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/Register.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1763" y="199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -136,7 +127,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="controller.AddPackage" project="SIW_InstanText" 
+  <class id="15" language="java" name="controller.AddPackage" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/AddPackage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1906" y="199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -145,16 +136,16 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="controller.RemovePackage" project="SIW_InstanText" 
+  <class id="16" language="java" name="controller.RemovePackage" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/RemovePackage.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2291" y="197"/>    
+    <position height="-1" width="-1" x="1459" y="297"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="controller.SaveText" project="SIW_InstanText" 
+  <class id="17" language="java" name="controller.SaveText" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/SaveText.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2241" y="123"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -163,7 +154,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="controller.Login" project="SIW_InstanText" 
+  <class id="18" language="java" name="controller.Login" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/Login.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1726" y="127"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -172,7 +163,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="controller.CreateCheckpoint" project="SIW_InstanText" 
+  <class id="19" language="java" name="controller.CreateCheckpoint" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/CreateCheckpoint.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1640" y="378"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -181,7 +172,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="controller.OldMessage" project="SIW_InstanText" 
+  <class id="20" language="java" name="controller.OldMessage" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/OldMessage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2237" y="53"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -190,16 +181,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="controller.AddCollaborator" project="SIW_InstanText" 
-    file="/SIW_InstanText/src/controller/AddCollaborator.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1724" y="47"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="controller.ReadText" project="SIW_InstanText" 
+  <class id="21" language="java" name="controller.ReadText" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/ReadText.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1848" y="119"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,16 +190,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="controller.SendCollaborationRequest" project="SIW_InstanText" 
-    file="/SIW_InstanText/src/controller/SendCollaborationRequest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2111" y="277"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="25" language="java" name="controller.Execute" project="SIW_InstanText" 
+  <class id="22" language="java" name="controller.Execute" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/Execute.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1307" y="297"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,16 +199,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="controller.ShowCollaborator" project="SIW_InstanText" 
-    file="/SIW_InstanText/src/controller/ShowCollaborator.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1468" y="297"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="27" language="java" name="controller.Compile" project="SIW_InstanText" 
+  <class id="23" language="java" name="controller.Compile" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/Compile.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1955" y="117"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -244,7 +208,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="controller.CreateProject" project="SIW_InstanText" 
+  <class id="24" language="java" name="controller.CreateProject" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/CreateProject.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2102" y="117"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -253,7 +217,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="controller.UploadProject" project="SIW_InstanText" 
+  <class id="25" language="java" name="controller.UploadProject" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/UploadProject.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1805" y="271"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -262,7 +226,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="controller.RemoveCollaborator" project="SIW_InstanText" 
+  <class id="26" language="java" name="controller.RemoveCollaborator" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/RemoveCollaborator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1896" y="51"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -271,7 +235,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="controller.FindString" project="SIW_InstanText" 
+  <class id="27" language="java" name="controller.FindString" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/FindString.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1657" y="291"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -280,7 +244,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="persistence.DAOFactory" project="SIW_InstanText" 
+  <class id="28" language="java" name="persistence.DAOFactory" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/DAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="984" y="203"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -289,7 +253,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="33" language="java" name="persistence.IdBroker" project="SIW_InstanText" 
+  <class id="29" language="java" name="persistence.IdBroker" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/IdBroker.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="798" y="47"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -298,7 +262,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="34" language="java" name="persistence.UserCredential" project="SIW_InstanText" 
+  <class id="30" language="java" name="persistence.UserCredential" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/UserCredential.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="732" y="431"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -307,7 +271,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="persistence.PersistenceException" project="SIW_InstanText" 
+  <class id="31" language="java" name="persistence.PersistenceException" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/PersistenceException.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="966" y="54"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -316,7 +280,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="persistence.PostgresDAOFactory" project="SIW_InstanText" 
+  <class id="32" language="java" name="persistence.PostgresDAOFactory" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/PostgresDAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1079" y="360"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -325,7 +289,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <interface id="37" language="java" name="persistence.dao.CollaboratorDao" project="SIW_InstanText" 
+  <interface id="33" language="java" name="persistence.dao.CollaboratorDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/CollaboratorDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1006" y="550"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -334,7 +298,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="38" language="java" name="persistence.dao.ProjectDao" project="SIW_InstanText" 
+  <interface id="34" language="java" name="persistence.dao.ProjectDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/ProjectDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1122" y="702"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -343,7 +307,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="39" language="java" name="persistence.dao.PackageDao" project="SIW_InstanText" 
+  <interface id="35" language="java" name="persistence.dao.PackageDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/PackageDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1302" y="704"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -352,7 +316,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="40" language="java" name="persistence.dao.CheckpointDao" project="SIW_InstanText" 
+  <interface id="36" language="java" name="persistence.dao.CheckpointDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/CheckpointDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1810" y="560"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -361,7 +325,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="41" language="java" name="persistence.dao.FileDao" project="SIW_InstanText" 
+  <interface id="37" language="java" name="persistence.dao.FileDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/FileDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1975" y="452"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -370,7 +334,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="42" language="java" name="persistence.dao.MessageDao" project="SIW_InstanText" 
+  <interface id="38" language="java" name="persistence.dao.MessageDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/MessageDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="883" y="450"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -379,7 +343,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="43" language="java" name="persistence.dao.UserDao" project="SIW_InstanText" 
+  <interface id="39" language="java" name="persistence.dao.UserDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/UserDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1407" y="624"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -388,7 +352,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="44" language="java" name="persistence.dao.Checkpoint_FileDao" project="SIW_InstanText" 
+  <interface id="40" language="java" name="persistence.dao.Checkpoint_FileDao" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/dao/Checkpoint_FileDao.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1615" y="604"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -397,7 +361,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <class id="45" language="java" name="model.User" project="SIW_InstanText" file="/SIW_InstanText/src/model/User.java" 
+  <class id="41" language="java" name="model.User" project="SIW_InstanText" file="/SIW_InstanText/src/model/User.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="310" y="308"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -406,7 +370,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="46" language="java" name="model.Project" project="SIW_InstanText" 
+  <class id="42" language="java" name="model.Project" project="SIW_InstanText" 
     file="/SIW_InstanText/src/model/Project.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="427" y="103"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -415,7 +379,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="47" language="java" name="model.Checkpoint" project="SIW_InstanText" 
+  <class id="43" language="java" name="model.Checkpoint" project="SIW_InstanText" 
     file="/SIW_InstanText/src/model/Checkpoint.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="160" y="100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -424,7 +388,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="48" language="java" name="model.File" project="SIW_InstanText" file="/SIW_InstanText/src/model/File.java" 
+  <class id="44" language="java" name="model.File" project="SIW_InstanText" file="/SIW_InstanText/src/model/File.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="132" width="137" x="300" y="510"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -433,7 +397,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="49" language="java" name="model.Package" project="SIW_InstanText" 
+  <class id="45" language="java" name="model.Package" project="SIW_InstanText" 
     file="/SIW_InstanText/src/model/Package.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="674" y="270"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -442,7 +406,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="50" language="java" name="model.Message" project="SIW_InstanText" 
+  <class id="46" language="java" name="model.Message" project="SIW_InstanText" 
     file="/SIW_InstanText/src/model/Message.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="660" y="74"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -451,7 +415,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="51" language="java" name="model.Collaborator" project="SIW_InstanText" 
+  <class id="47" language="java" name="model.Collaborator" project="SIW_InstanText" 
     file="/SIW_InstanText/src/model/Collaborator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="564" y="526"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -460,7 +424,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="52" language="java" name="model.Checkpoint_File" project="SIW_InstanText" 
+  <class id="48" language="java" name="model.Checkpoint_File" project="SIW_InstanText" 
     file="/SIW_InstanText/src/model/Checkpoint_File.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="104" y="572"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -469,7 +433,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="53" language="java" name="persistence.JDBC.Checkpoint_FileDaoJDBC" project="SIW_InstanText" 
+  <class id="49" language="java" name="persistence.JDBC.Checkpoint_FileDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/Checkpoint_FileDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1554" y="762"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -478,7 +442,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="54" language="java" name="persistence.JDBC.CheckpointDaoJDBC" project="SIW_InstanText" 
+  <class id="50" language="java" name="persistence.JDBC.CheckpointDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/CheckpointDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1596" y="916"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -487,7 +451,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="55" language="java" name="persistence.JDBC.CollaboratorDaoJDBC" project="SIW_InstanText" 
+  <class id="51" language="java" name="persistence.JDBC.CollaboratorDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/CollaboratorDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="944" y="632"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -496,7 +460,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="56" language="java" name="persistence.JDBC.FileDaoJDBC" project="SIW_InstanText" 
+  <class id="52" language="java" name="persistence.JDBC.FileDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/FileDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1824" y="774"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -505,7 +469,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="57" language="java" name="persistence.JDBC.MessageDaoJDBC" project="SIW_InstanText" 
+  <class id="53" language="java" name="persistence.JDBC.MessageDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/MessageDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="724" y="606"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -514,7 +478,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="58" language="java" name="persistence.JDBC.PackageDaoJDBC" project="SIW_InstanText" 
+  <class id="54" language="java" name="persistence.JDBC.PackageDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/PackageDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1186" y="834"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -523,7 +487,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="59" language="java" name="persistence.JDBC.UserDaoJDBC" project="SIW_InstanText" 
+  <class id="55" language="java" name="persistence.JDBC.UserDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/UserDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1348" y="1072"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -532,7 +496,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="60" language="java" name="persistence.JDBC.ProjectDaoJDBC" project="SIW_InstanText" 
+  <class id="56" language="java" name="persistence.JDBC.ProjectDaoJDBC" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/JDBC/ProjectDaoJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="860" y="908"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -541,7 +505,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="61" language="java" name="controller.Chat" project="SIW_InstanText" 
+  <class id="57" language="java" name="controller.Chat" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/Chat.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="832" y="192"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -550,7 +514,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="62" language="java" name="persistence.DataSource" project="SIW_InstanText" 
+  <class id="58" language="java" name="persistence.DataSource" project="SIW_InstanText" 
     file="/SIW_InstanText/src/persistence/DataSource.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="272" y="1214"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -559,7 +523,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="63" language="java" name="controller.Comments" project="SIW_InstanText" 
+  <class id="59" language="java" name="controller.Comments" project="SIW_InstanText" 
     file="/SIW_InstanText/src/controller/Comments.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1308" y="374"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -568,7 +532,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="64" language="java" name="model.Comment" project="SIW_InstanText" 
+  <class id="60" language="java" name="model.Comment" project="SIW_InstanText" 
     file="/SIW_InstanText/src/model/Comment.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="132" width="115" x="207" y="768"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -577,60 +541,90 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <association id="65">    
-    <end type="SOURCE" refId="52" navigable="false">      
-      <attribute id="66" name="checkpoint">        
+  <class id="61" language="java" name="controller.CollaborationRequest" project="SIW_InstanText" 
+    file="/SIW_InstanText/src/controller/CollaborationRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1498" y="51"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="controller.Collaborators" project="SIW_InstanText" 
+    file="/SIW_InstanText/src/controller/Collaborators.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1710" y="50"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <association id="63">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="64" name="project">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="67" minimum="0" maximum="1">        
+      <multiplicity id="65" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="47" navigable="true"/>    
+    <end type="TARGET" refId="42" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="68">    
-    <end type="SOURCE" refId="57" navigable="false">      
-      <attribute id="69" name="dataSource">        
+  <association id="66">    
+    <end type="SOURCE" refId="48" navigable="false">      
+      <attribute id="67" name="file">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="70" minimum="0" maximum="1">        
+      <multiplicity id="68" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
+    <end type="TARGET" refId="44" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <realization id="71">    
-    <end type="SOURCE" refId="58"/>    
-    <end type="TARGET" refId="39"/>  
+  <association id="69">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="70" name="dataSource">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="73" name="dataSource">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="74" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <realization id="75">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="34"/>  
   </realization>  
-  <realization id="72">    
-    <end type="SOURCE" refId="55"/>    
-    <end type="TARGET" refId="37"/>  
-  </realization>  
-  <association id="73">    
-    <end type="SOURCE" refId="49" navigable="false">      
-      <attribute id="74" name="files">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="75" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="48" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
   <association id="76">    
-    <end type="SOURCE" refId="64" navigable="false">      
-      <attribute id="77" name="user"/>      
-      <multiplicity id="78" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="77" name="project">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="78" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
+    <end type="TARGET" refId="42" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
   <association id="79">    
-    <end type="SOURCE" refId="53" navigable="false">      
+    <end type="SOURCE" refId="51" navigable="false">      
       <attribute id="80" name="dataSource">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -638,51 +632,51 @@
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
+    <end type="TARGET" refId="58" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
   <association id="82">    
-    <end type="SOURCE" refId="45" navigable="false">      
-      <attribute id="83" name="otherProjects">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="84" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="85">    
     <end type="SOURCE" refId="48" navigable="false">      
-      <attribute id="86" name="user">        
+      <attribute id="83" name="pack">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="87" minimum="0" maximum="1">        
+      <multiplicity id="84" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="45" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="88">    
-    <end type="SOURCE" refId="46" navigable="false">      
-      <attribute id="89" name="chat">        
+  <association id="85">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="86" name="creator">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="90" minimum="0" maximum="2147483647">        
+      <multiplicity id="87" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="50" navigable="true"/>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="89" name="project">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="90" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
   <association id="91">    
-    <end type="SOURCE" refId="50" navigable="false">      
-      <attribute id="92" name="project">        
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="92" name="chat">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="93" minimum="0" maximum="1">        
+      <multiplicity id="93" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
@@ -690,403 +684,399 @@
     <display labels="true" multiplicity="false"/>  
   </association>  
   <association id="94">    
-    <end type="SOURCE" refId="51" navigable="false">      
-      <attribute id="95" name="project">        
+    <end type="SOURCE" refId="56" navigable="false">      
+      <attribute id="95" name="dataSource">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="96" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
+    <end type="TARGET" refId="58" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
   <association id="97">    
-    <end type="SOURCE" refId="60" navigable="false">      
-      <attribute id="98" name="dataSource">        
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="98" name="checkpointFileDao">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="99" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
+    <end type="TARGET" refId="40" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
   <association id="100">    
-    <end type="SOURCE" refId="59" navigable="false">      
-      <attribute id="101" name="dataSource">        
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="101" name="user">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="102" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
+    <end type="TARGET" refId="41" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <generalization id="103">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="32"/>  
-  </generalization>  
+  <realization id="103">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="40"/>  
+  </realization>  
   <association id="104">    
-    <end type="SOURCE" refId="46" navigable="false">      
-      <attribute id="105" name="collaborators">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="106" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="107">    
-    <end type="SOURCE" refId="64" navigable="false">      
-      <attribute id="108" name="file"/>      
-      <multiplicity id="109" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="48" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="110">    
-    <end type="SOURCE" refId="61" navigable="false">      
-      <attribute id="111" name="messageDao">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="112" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="42" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="113">    
-    <end type="SOURCE" refId="61" navigable="false">      
-      <attribute id="114" name="project">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="115" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="116">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="117" name="checkpointFileDao">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="118" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="44" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="119">    
-    <end type="SOURCE" refId="58" navigable="false">      
-      <attribute id="120" name="dataSource">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="121" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="122">    
-    <end type="SOURCE" refId="52" navigable="false">      
-      <attribute id="123" name="creator">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="124" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="125">    
     <end type="SOURCE" refId="47" navigable="false">      
-      <attribute id="126" name="project">        
+      <attribute id="105" name="user">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="127" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="128">    
-    <end type="SOURCE" refId="52" navigable="false">      
-      <attribute id="129" name="file">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="130" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="48" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="131">    
-    <end type="SOURCE" refId="46" navigable="false">      
-      <attribute id="132" name="creator">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="133" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <realization id="134">    
-    <end type="SOURCE" refId="57"/>    
-    <end type="TARGET" refId="42"/>  
-  </realization>  
-  <association id="135">    
-    <end type="SOURCE" refId="47" navigable="false">      
-      <attribute id="136" name="files">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="137" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="52" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <realization id="138">    
-    <end type="SOURCE" refId="56"/>    
-    <end type="TARGET" refId="41"/>  
-  </realization>  
-  <realization id="139">    
-    <end type="SOURCE" refId="60"/>    
-    <end type="TARGET" refId="38"/>  
-  </realization>  
-  <association id="140">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="141" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="142" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="32" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="143">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="144" name="checkpointDao">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="145" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="40" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="146">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="147" name="fileDao">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="148" minimum="0" maximum="1">        
+      <multiplicity id="106" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="41" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="149">    
-    <end type="SOURCE" refId="54" navigable="false">      
-      <attribute id="150" name="dataSource">        
+  <association id="107">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="108" name="creator">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="151" minimum="0" maximum="1">        
+      <multiplicity id="109" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
+    <end type="TARGET" refId="41" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <realization id="152">    
-    <end type="SOURCE" refId="59"/>    
-    <end type="TARGET" refId="43"/>  
+  <association id="110">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="111" name="user">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="112" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="113">    
+    <end type="SOURCE" refId="48" navigable="false">      
+      <attribute id="114" name="creator">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="115" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="117" name="dataSource">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="118" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="119">    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="120" name="packageID">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="121" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <realization id="122">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="35"/>  
   </realization>  
+  <generalization id="123">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="41"/>  
+  </generalization>  
+  <realization id="124">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <association id="125">    
+    <end type="SOURCE" refId="57" navigable="false">      
+      <attribute id="126" name="messageDao">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="127" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="128">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="129" name="otherProjects">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="130" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <realization id="131">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="36"/>  
+  </realization>  
+  <association id="132">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="133" name="collaborators">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="134" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="135">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="136" name="file">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="137" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="138">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="139" name="files">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="140" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="141">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="142" name="dataSource">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="143" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="144">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="145" name="checkpointDao">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="146" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="147">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="148" name="files">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="149" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="150">    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="151" name="dataSource">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="152" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
   <association id="153">    
-    <end type="SOURCE" refId="50" navigable="false">      
-      <attribute id="154" name="user">        
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="154" name="dataSource">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="155" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
+    <end type="TARGET" refId="58" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
   <association id="156">    
-    <end type="SOURCE" refId="47" navigable="false">      
-      <attribute id="157" name="creator">        
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="157" name="fileDao">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="158" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
+    <end type="TARGET" refId="37" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="159">    
-    <end type="SOURCE" refId="45" navigable="false">      
-      <attribute id="160" name="projects">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="161" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="162">    
-    <end type="SOURCE" refId="55" navigable="false">      
-      <attribute id="163" name="dataSource">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="164" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="165">    
-    <end type="SOURCE" refId="56" navigable="false">      
-      <attribute id="166" name="dataSource">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="167" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="168">    
-    <end type="SOURCE" refId="46" navigable="false">      
-      <attribute id="169" name="checkpoints">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="170" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="47" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <realization id="171">    
+  <realization id="159">    
     <end type="SOURCE" refId="53"/>    
-    <end type="TARGET" refId="44"/>  
+    <end type="TARGET" refId="38"/>  
   </realization>  
-  <association id="172">    
-    <end type="SOURCE" refId="51" navigable="false">      
-      <attribute id="173" name="user">        
+  <association id="160">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="161" name="packages">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="174" minimum="0" maximum="1">        
+      <multiplicity id="162" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="45" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="175">    
-    <end type="SOURCE" refId="49" navigable="false">      
-      <attribute id="176" name="project">        
+  <association id="163">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="164" name="dataSource">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="177" minimum="0" maximum="1">        
+      <multiplicity id="165" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
+    <end type="TARGET" refId="58" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="178">    
-    <end type="SOURCE" refId="52" navigable="false">      
-      <attribute id="179" name="pack">        
+  <association id="166">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="167" name="instance">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="180" minimum="0" maximum="1">        
+      <multiplicity id="168" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="49" navigable="true"/>    
+    <end type="TARGET" refId="28" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="181">    
-    <end type="SOURCE" refId="46" navigable="false">      
-      <attribute id="182" name="packages">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="183" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="49" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <realization id="184">    
-    <end type="SOURCE" refId="54"/>    
-    <end type="TARGET" refId="40"/>  
+  <realization id="169">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="37"/>  
   </realization>  
-  <association id="185">    
-    <end type="SOURCE" refId="34" navigable="false">      
-      <attribute id="186" name="dataSource">        
+  <association id="170">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="171" name="dataSource">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="187" minimum="0" maximum="1">        
+      <multiplicity id="172" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
+    <end type="TARGET" refId="58" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
-  <generalization id="188">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="45"/>  
+  <association id="173">    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="174" name="user">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="175" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="176">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="177" name="projects">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="178" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="179">    
+    <end type="SOURCE" refId="57" navigable="false">      
+      <attribute id="180" name="project">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="181" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <association id="182">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="183" name="project">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="184" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <realization id="185">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="39"/>  
+  </realization>  
+  <association id="186">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="187" name="checkpoints">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="188" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
+  </association>  
+  <generalization id="189">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="28"/>  
   </generalization>  
-  <association id="189">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="190" name="dataSource">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="191" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
-    <display labels="true" multiplicity="false"/>  
-  </association>  
-  <association id="192">    
+  <association id="190">    
     <end type="SOURCE" refId="48" navigable="false">      
-      <attribute id="193" name="packageID">        
+      <attribute id="191" name="checkpoint">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="194" minimum="0" maximum="1">        
+      <multiplicity id="192" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="49" navigable="true"/>    
+    <end type="TARGET" refId="43" navigable="true"/>    
     <display labels="true" multiplicity="false"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
