@@ -29,12 +29,7 @@ public class ReadText extends HttpServlet {
 
 		if(file.getUser() == null || !file.getUser().getUsername().equals(user.getUsername()))
 		{
-			if(fileDao.findByPrimaryKey(file.getId()).getPackage() == null) {
-				resp.getWriter().print("removed");
-				return;
-			}
-			
-			File file1 = fileDao.findByPrimaryKey(file.getId());
+			File file1 = fileDao.findCode(file.getId());
 			resp.getWriter().print("lock" + file1.getCode());
 			session.setAttribute("file", file1);
 		}		

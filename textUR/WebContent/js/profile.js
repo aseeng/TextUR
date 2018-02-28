@@ -1,7 +1,5 @@
 function changePassword(){
 	
-	var div = document.createElement('div')
-		div.classList = "box-body ";
 	var oldPassword = document.createElement('input');
 		oldPassword.id = "old";
 		oldPassword.classList = "form-control change";
@@ -26,25 +24,21 @@ function changePassword(){
 	div.append(newPassword);
 	div.append(confirmPassword);
 	
-	swal({
-		content: div,
-	}).then(() => {
-		var password = document.querySelector('#new').value;
-		var confirm = document.querySelector('#confirm').value;
-		if(password != confirm)
-		{
-			$('#new').css("border-color","red");
-			$('#confirm').css("border-color","red");
-		}
-		if (value != null && value != "") {
-			$.ajax({
-				url: 'change',
-				data: {
-					type: "password"			
-				}
-			})
-		}
-	});
+//	var password = document.querySelector('#new').value;
+//	var confirm = document.querySelector('#confirm').value;
+//	if(password != confirm)
+//	{
+//		$('#new').css("border-color","red");
+//		$('#confirm').css("border-color","red");
+//	}
+//	if (value != null && value != "") {
+//		$.ajax({
+//			url: 'change',
+//			data: {
+//				type: "password"			
+//			}
+//		})
+//	}
 }
 
 function changeEmail(){
@@ -108,3 +102,15 @@ function changeUsername(){
 	});
 }
 
+function options(){
+
+	var div = $('<div></div>');
+	var h3 = $('<h3></h3>').addClass("site-heading text-center");
+	var h3Span = $('<span></span>').addClass("site-heading-lower").html("Options");
+	h3.append(h3Span);
+	
+	
+	
+	div.append(h3);
+	$('#content').html(div);
+}

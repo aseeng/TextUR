@@ -95,13 +95,7 @@ function initOptions() {
 					$.ajax({
 						url : 'readText',
 						success: function(responseText){
-							if(responseText == "removed") {
-								swal("Warning", "File was deleted!", "warning").then(() => {
-									document.location.href = "page?action=homepage";								
-								})
-							}
-							else
-								editor.setValue(responseText.substring(4));
+							editor.setValue(responseText.substring(4));
 						},
 						type : 'GET'
 					});
@@ -122,7 +116,6 @@ function initOptions() {
 		},
 		type : 'GET'
 	});
-
 }
 
 function createCheckfile() {

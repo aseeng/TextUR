@@ -1,5 +1,6 @@
 package persistence.dao;
 
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,8 +10,8 @@ public interface FileDao extends Dao{
 	
 	public void save(File file);
 
-	public File findByPrimaryKey(Long id);
-
+	public File findByPrimaryKey(Connection connection, Long id);
+	
 	public HashMap<Long, File> find(Long packageId);
 
 	public HashMap<Long, File> findByProject(Long projectId);
@@ -38,4 +39,8 @@ public interface FileDao extends Dao{
 	public void disableWrite(String username);
 	
 	public void rename(String name, Long fileId);
+
+	public boolean check(Long fileId, String reader);
+
+	public File findCode(Long id);
 }

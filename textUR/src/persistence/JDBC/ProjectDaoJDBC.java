@@ -53,6 +53,10 @@ public class ProjectDaoJDBC implements ProjectDao {
 
 	public Project findByPrimaryKey(Long id) {
 		Connection connection = dataSource.getConnection();
+		return findByPrimaryKey(connection, id);
+	}
+
+	public Project findByPrimaryKey(Connection connection, Long id) {
 		Project project = null;
 		try {
 			PreparedStatement statement;
@@ -77,12 +81,6 @@ public class ProjectDaoJDBC implements ProjectDao {
 				} catch (SQLException excep) {
 					throw new PersistenceException(e.getMessage());
 				}
-			}
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
 			}
 		}
 		return project;
@@ -125,7 +123,7 @@ public class ProjectDaoJDBC implements ProjectDao {
 		}
 		return project;
 	}
-
+	
 	public HashMap<Long, Project> find(String username) {
 		Connection connection = dataSource.getConnection();
 		HashMap<Long, Project> projects = new HashMap<>();
@@ -164,7 +162,7 @@ public class ProjectDaoJDBC implements ProjectDao {
 		}
 		return projects;
 	}
-
+	
 	public void update(Project project) {
 		Connection connection = dataSource.getConnection();
 		try {

@@ -47,16 +47,12 @@
                 <li class="list-group-item">
                   <b>Collaborator in</b> <a class="pull-right">${visitor.getOtherProjects().size()}</a>
                 </li>
+                <li class="list-group-item" onclick="options();">Options</li>
               </ul>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-		<div class="box box-primary">Options
-			<button class="btn" onclick="changeUsername();">change username</button>
-			<button class="btn" onclick="changeEmail();">change email</button>
-			<button class="btn" onclick="changePassword();">change password</button>
-		</div>
           <!-- About Me Box -->
           <div class="box box-primary">
             <div class="box-header with-border">

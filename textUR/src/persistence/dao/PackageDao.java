@@ -1,5 +1,6 @@
 package persistence.dao;
 
+import java.sql.Connection;
 import java.util.HashMap;
 
 import model.Package;
@@ -8,7 +9,7 @@ public interface PackageDao extends Dao{
 
 	public void save(Package name);
 
-	public Package findByPrimaryKey(Long id);
+	public Package findByPrimaryKey(Connection connection, Long id);
 
 	public HashMap<Long, Package> find(Long projectId);
 	

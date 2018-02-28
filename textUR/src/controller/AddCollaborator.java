@@ -30,9 +30,7 @@ public class AddCollaborator extends HttpServlet {
 		String name = req.getParameter("name");
 		User user = userDao.findByPrimaryKey(name);
 
-		Collaborator collaborator = collaboratorDao.findByPrimaryKey(name, project.getId());
-
-		if(user != null && collaborator == null)
+		if(user != null)
 		{			
 			project.addCollaborator(user);
 			collaboratorDao.save(new Collaborator(user, project));

@@ -76,7 +76,7 @@ public class CheckpointDaoJDBC implements CheckpointDao {
 				checkpoint.setCreator(userDao.findByPrimaryKey(result.getString("username")));
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				checkpoint.setProject(project);
 
 			}
@@ -120,7 +120,7 @@ public class CheckpointDaoJDBC implements CheckpointDao {
 				checkpoint.setCreator(userDao.findByPrimaryKey(result.getString("username")));
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				checkpoint.setProject(project);
 
 				checkpoints.add(checkpoint);

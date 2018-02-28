@@ -39,7 +39,7 @@ public class CreateCheckpointFile extends HttpServlet{
 
 		FileDao fileDao = DAOFactory.getInstance().getFileDao();
 
-		if(fileDao.findByPrimaryKey(file.getId()).getUser().getUsername().equals(user.getUsername())) 
+		if(fileDao.check(file.getId(), user.getUsername()))
 			resp.getWriter().print("yes");
 		else
 			resp.getWriter().print("no");

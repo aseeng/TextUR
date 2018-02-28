@@ -63,8 +63,7 @@ public class FileDaoJDBC implements FileDao {
 		}
 	}
 
-	public File findByPrimaryKey(Long id) {
-		Connection connection = dataSource.getConnection();
+	public File findByPrimaryKey(Connection connection, Long id) {
 		File file = null;
 		try {
 			PreparedStatement statement;
@@ -78,7 +77,7 @@ public class FileDaoJDBC implements FileDao {
 				file.setName(result.getString("name"));
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				file.setPackage(pack);
 
 				file.setCode((String) result.getObject("code"));
@@ -96,16 +95,11 @@ public class FileDaoJDBC implements FileDao {
 					throw new PersistenceException(e.getMessage());
 				}
 			}
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
 		}
+
 		return file;
 	}
-	
+
 	public HashMap<Long, File> find(Long packageId) {
 		Connection connection = dataSource.getConnection();
 		HashMap<Long, File> files = new HashMap<>();
@@ -123,7 +117,7 @@ public class FileDaoJDBC implements FileDao {
 				file.setCode(result.getString("code"));
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				file.setPackage(pack);
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
@@ -167,7 +161,7 @@ public class FileDaoJDBC implements FileDao {
 				file.setCode(result.getString("code"));
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				file.setPackage(pack);
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
@@ -200,20 +194,21 @@ public class FileDaoJDBC implements FileDao {
 		try {
 			String query = "select * from file where name = ? and package = (select id from package where name = ? and "
 					+ "	(project = ( select id from project where name = ? and creator = ?)))";
-					
-			PreparedStatement statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+			PreparedStatement statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_READ_ONLY);
 			statement.setString(1, fileName);
 			statement.setString(2, packageName);
 			statement.setString(3, projectName);
 			statement.setString(4, username);
 			ResultSet result = statement.executeQuery();
-			
-			if(!result.next())
-			{
-				query =  "select * from file where name = ? and package = (select id from package where name = ? and project ="
+
+			if (!result.next()) {
+				query = "select * from file where name = ? and package = (select id from package where name = ? and project ="
 						+ "(select project from collaborator where username = ? and project = (select id from project where name = ?)))";
 
-				statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE,
+						ResultSet.CONCUR_READ_ONLY);
 				statement.setString(1, fileName);
 				statement.setString(2, packageName);
 				statement.setString(3, username);
@@ -222,14 +217,14 @@ public class FileDaoJDBC implements FileDao {
 			}
 
 			result.beforeFirst();
-			
+
 			if (result.next()) {
 				file = new File();
 				file.setId(result.getLong("id"));
 				file.setName(result.getString("name"));
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				file.setPackage(pack);
 
 				file.setCode((String) result.getObject("code"));
@@ -265,27 +260,28 @@ public class FileDaoJDBC implements FileDao {
 			PreparedStatement statement;
 			String query = "select * from file where package = (select id from package where name = ? and "
 					+ "	(project = ( select id from project where name = ? and creator = ?)))";
-					
-			statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+			statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_READ_ONLY);
 			statement.setString(1, packageName);
 			statement.setString(2, projectName);
 			statement.setString(3, username);
 			ResultSet result = statement.executeQuery();
-			
-			if(!result.next())
-			{
-				query =  "select * from file where package = (select id from package where name = ? and project ="
+
+			if (!result.next()) {
+				query = "select * from file where package = (select id from package where name = ? and project ="
 						+ "(select project from collaborator where username = ? and project = (select id from project where name = ?)))";
-						
-				statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+				statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE,
+						ResultSet.CONCUR_READ_ONLY);
 				statement.setString(1, packageName);
 				statement.setString(2, username);
 				statement.setString(3, projectName);
 				result = statement.executeQuery();
 			}
-			
+
 			result.beforeFirst();
-			
+
 			while (result.next()) {
 				file = new File();
 				file.setId(result.getLong("id"));
@@ -293,7 +289,7 @@ public class FileDaoJDBC implements FileDao {
 				file.setCode(result.getString("code"));
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				file.setPackage(pack);
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
@@ -503,7 +499,7 @@ public class FileDaoJDBC implements FileDao {
 					file.setCode(result.getString("code"));
 
 					PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-					Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+					Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 					file.setPackage(pack);
 
 					files.add(file);
@@ -601,6 +597,52 @@ public class FileDaoJDBC implements FileDao {
 				}
 			}
 		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+	}
+
+	@Override
+	public boolean check(Long fileId, String reader) {
+		Connection connection = dataSource.getConnection();
+		try {
+			String query = "select user FROM file WHERE id = ?";
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setLong(1, fileId);
+
+			ResultSet result = statement.executeQuery();
+			if(result.next())
+			{
+				return result.getString("user").equals(reader);
+			}
+		} catch (SQLException e) {
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch (SQLException excep) {
+					throw new PersistenceException(e.getMessage());
+				}
+			}
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+
+		return false;
+	}
+
+	@Override
+	public File findCode(Long id) {
+		Connection connection = dataSource.getConnection();
+		try {
+			return findByPrimaryKey(connection, id);
+		} finally{
 			try {
 				connection.close();
 			} catch (SQLException e) {

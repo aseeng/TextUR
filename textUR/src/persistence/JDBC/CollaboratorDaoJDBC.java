@@ -72,7 +72,7 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 			while (result.next()) {
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				projects.put(project.getId(), project);
 			}
 		} catch (SQLException e) {
@@ -106,7 +106,7 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 			while (result.next()) {
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				project = projectDao.findByPrimaryKey(result.getLong("project"));
+				project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 			}
 		} catch (SQLException e) {
 			if (connection != null) {
@@ -162,8 +162,6 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 
 	@Override
 	public List<Collaborator> findCollaborator(Long projectID) {
-		ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-		Project project = projectDao.findByPrimaryKey(projectID);
 		Connection connection = dataSource.getConnection();
 		List<Collaborator> users = new LinkedList<>();
 		try {
@@ -174,8 +172,9 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				Collaborator collaborator = new Collaborator();
+				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
 
-				collaborator.setProject(project);
+				collaborator.setProject(projectDao.findByPrimaryKey(connection, projectID));
 				collaborator.setStatus(result.getBoolean("status"));
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
@@ -214,7 +213,7 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 			while (result.next()) {
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				projects.add(project);
 			}
 		} catch (SQLException e) {
@@ -255,7 +254,7 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 				collaborator.setUser(user);
 
 				ProjectDao ProjectDao = DAOFactory.getInstance().getProjectDao();
-				Project Project = ProjectDao.findByPrimaryKey(result.getLong("project"));
+				Project Project = ProjectDao.findByPrimaryKey(connection, result.getLong("project"));
 				collaborator.setProject(Project);
 
 				collaborator.setStatus(result.getBoolean("status"));
@@ -268,7 +267,7 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 					throw new PersistenceException(e.getMessage());
 				}
 			}
-		} finally {
+		}  finally {
 			try {
 				connection.close();
 			} catch (SQLException e) {
@@ -297,7 +296,7 @@ public class CollaboratorDaoJDBC implements CollaboratorDao {
 				collaborator.setUser(user);
 
 				ProjectDao ProjectDao = DAOFactory.getInstance().getProjectDao();
-				Project Project = ProjectDao.findByPrimaryKey(result.getLong("Project"));
+				Project Project = ProjectDao.findByPrimaryKey(connection, result.getLong("Project"));
 				collaborator.setProject(Project);
 
 				collaborators.add(collaborator);

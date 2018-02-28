@@ -12,10 +12,10 @@ import model.Checkpoint;
 import model.Checkpoint_File;
 import model.File;
 import model.Package;
+import persistence.DAOFactory;
 import persistence.DataSource;
 import persistence.IdBroker;
 import persistence.PersistenceException;
-import persistence.DAOFactory;
 import persistence.dao.CheckpointDao;
 import persistence.dao.Checkpoint_FileDao;
 import persistence.dao.FileDao;
@@ -94,7 +94,7 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				checkpointFile.setDate(result.getTimestamp("date"));
 
 				FileDao fileDao = DAOFactory.getInstance().getFileDao();
-				File file = fileDao.findByPrimaryKey(result.getLong("file"));
+				File file = fileDao.findByPrimaryKey(connection, result.getLong("file"));
 				checkpointFile.setFile(file);
 
 				CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
@@ -102,7 +102,7 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				checkpointFile.setCheckpoint(checkpoint);
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				checkpointFile.setPackage(pack);
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
@@ -148,7 +148,7 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				checkpointFile.setDate(result.getTimestamp("date"));
 
 				FileDao fileDao = DAOFactory.getInstance().getFileDao();
-				File file = fileDao.findByPrimaryKey(result.getLong("file"));
+				File file = fileDao.findByPrimaryKey(connection, result.getLong("file"));
 				checkpointFile.setFile(file);
 
 				CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
@@ -156,7 +156,7 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				checkpointFile.setCheckpoint(checkpoint);
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				checkpointFile.setPackage(pack);
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
@@ -203,7 +203,7 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				checkpointFile.setDate(result.getTimestamp("date"));
 
 				FileDao fileDao = DAOFactory.getInstance().getFileDao();
-				File file = fileDao.findByPrimaryKey(result.getLong("file"));
+				File file = fileDao.findByPrimaryKey(connection, result.getLong("file"));
 				checkpointFile.setFile(file);
 
 				CheckpointDao checkpointDao = DAOFactory.getInstance().getCheckpointDao();
@@ -211,7 +211,7 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 				checkpointFile.setCheckpoint(checkpoint);
 
 				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				Package pack = packageDao.findByPrimaryKey(result.getLong("package"));
+				Package pack = packageDao.findByPrimaryKey(connection, result.getLong("package"));
 				checkpointFile.setPackage(pack);
 
 				UserDao userDao = DAOFactory.getInstance().getUserDao();
@@ -366,44 +366,5 @@ public class Checkpoint_FileDaoJDBC implements Checkpoint_FileDao {
 			}
 		}
 		return files;	
-	}
-	
-	public HashMap<Long, File> findLast(Long projectId)
-	{
-		Connection connection = dataSource.getConnection();
-		HashMap<Long, File> texts = new HashMap<>();
-		try {
-			PreparedStatement statement;
-			String query = "select text,file,package from checkpointFile where checkpoint IN (select MAX(id) as ID from checkpoints where project = ?)";
-			statement = connection.prepareStatement(query);
-			statement.setLong(1, projectId);
-			ResultSet result = statement.executeQuery();
-			while(result.next())
-			{
-				File file = new File();
-				file.setId(result.getLong("file"));
-				file.setCode(result.getString("text"));
-				
-				PackageDao packageDao = DAOFactory.getInstance().getPackageDao();
-				file.setPackage(packageDao.findByPrimaryKey(result.getLong("package")));
-				
-				texts.put(file.getId(), file);
-			}
-		}  catch (SQLException e) {
-			if (connection != null) {
-				try {
-					connection.rollback();
-				} catch(SQLException excep) {
-					throw new PersistenceException(e.getMessage());
-				}
-			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
-		return texts;	
-	}
+	}	
 }

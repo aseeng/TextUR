@@ -78,7 +78,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setUser(user);
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				message.setProject(project);
 			}
 		} catch (SQLException e) {
@@ -123,7 +123,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setUser(user);
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				message.setProject(project);
 
 				messages.add(message);
@@ -308,7 +308,7 @@ public class MessageDaoJDBC implements MessageDao {
 				message.setUser(user);
 
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				message.setProject(project);
 
 				messages.add(message);

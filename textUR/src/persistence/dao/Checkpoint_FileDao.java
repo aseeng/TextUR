@@ -23,6 +23,4 @@ public interface Checkpoint_FileDao extends Dao{
 	public List<File> findString(Long fileId, String text);
 	
 	public List<File> findByFileId(Long fileId);
-	
-	public HashMap<Long, File> findLast(Long projectId);
 }

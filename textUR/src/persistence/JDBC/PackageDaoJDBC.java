@@ -56,8 +56,7 @@ public class PackageDaoJDBC implements PackageDao {
 		}
 	}  
 
-	public Package findByPrimaryKey(Long id) {
-		Connection connection = dataSource.getConnection();
+	public Package findByPrimaryKey(Connection connection, Long id) {
 		Package pack = null;
 		try {
 			PreparedStatement statement;
@@ -73,7 +72,7 @@ public class PackageDaoJDBC implements PackageDao {
 				pack.setName(result.getString("name"));
 				
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				pack.setProject(project);
 			}
 		}  catch (SQLException e) {
@@ -84,13 +83,8 @@ public class PackageDaoJDBC implements PackageDao {
 					throw new PersistenceException(e.getMessage());
 				}
 			} 
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new PersistenceException(e.getMessage());
-			}
-		}
+		} 
+		
 		return pack;
 	}
 
@@ -111,7 +105,7 @@ public class PackageDaoJDBC implements PackageDao {
 				pack.setName(result.getString("name"));	
 				
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				pack.setProject(project);
 				
 				packages.put(pack.getId(),pack);
@@ -165,7 +159,7 @@ public class PackageDaoJDBC implements PackageDao {
 				pack.setName(result.getString("name"));	
 				
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				pack.setProject(project);
 			}
 		} catch (SQLException e) {
@@ -218,7 +212,7 @@ public class PackageDaoJDBC implements PackageDao {
 				pack.setName(result.getString("name"));	
 				
 				ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
-				Project project = projectDao.findByPrimaryKey(result.getLong("project"));
+				Project project = projectDao.findByPrimaryKey(connection, result.getLong("project"));
 				pack.setProject(project);
 				
 				packages.put(pack.getId(), pack);
