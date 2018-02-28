@@ -42,12 +42,11 @@ function addCollaborator(projectId, creator, currUser) {
 			    			var json = JSON.stringify(users);
 			
 			    			$.ajax({
-			    				url: 'collaborationRequest',
+			    				url: 'collaborator',
 			    				data : {
 			    					names : json
 			    				},
 			    				success: function(){
-					
 			    					swal("Success", "Collaboration request sent successfully!", "success");
 			    					$('#selectUsers').val(null).trigger('change');
 			    					findUsers();
@@ -73,19 +72,19 @@ function showCollaborator(creator, currUser){
 			$.each(JSON.parse(response), function(idx, obj) {	
 				
 				var div = $('<div></div>').addClass("col-md-3");
-					div.attr("id", "-" + obj.key);
+					div.attr("id", "-" + obj.key.username);
 				var div1 = $('<div></div>').addClass("center");
 				var div2 = $('<div></div>').addClass("box box-widget widget-user");
 				var div3 = $('<div></div>').addClass("widget-user-header bg-aqua-active");
 				
-				var open = $('<a></a>').addClass("widget-user-username username").text(obj.key);
-					open.attr("href","page?action=openProfile&name="+obj.key);
+				var open = $('<a></a>').addClass("widget-user-username username").text(obj.key.username);
+					open.attr("href","page?action=openProfile&name="+obj.key.username);
 				div3.append(open);
 				
 				if(currUser == creator) 
 				{
 					var a = $('<a></a>').addClass("btn btn-danger btn-xs remove fa fa-remove");
-						a.attr("onclick", "removeCollaborator('${project}','" + obj.key + "','" + creator + "','" + currUser + "');");
+						a.attr("onclick", "removeCollaborator('${project}','" + obj.key.username + "','" + creator + "','" + currUser + "');");
 					div3.append(a);
 				}
 
@@ -99,9 +98,9 @@ function showCollaborator(creator, currUser){
 				div2.append(div3);
 				
 				var div4 = $('<div></div>').addClass("widget-user-image");
-					
+
 				var image = $('<img>').addClass("img-circle myimg").attr({
-					src: "../dist/img/user1-128x128.jpg",
+					src: obj.key.image,
 					alt: "User avatar"
 				});
 				div4.append(image);

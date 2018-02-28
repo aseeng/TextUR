@@ -8,10 +8,10 @@ public class Message {
 	private String text;
 	private Long id;
 	private Project project;
-	private String user;
+	private User user;
 	private Timestamp date;
 
-	public Message(Project project, String text, String user) {
+	public Message(Project project, String text, User user) {
 		this.text = text;
 		this.project = project;
 		this.user = user;
@@ -33,7 +33,7 @@ public class Message {
 		return project;
 	}
 
-	public String getUser() {
+	public User getUser() {
 		return user;
 	}
 
@@ -49,7 +49,7 @@ public class Message {
 		this.project = project;
 	}
 
-	public void setUser(String user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 

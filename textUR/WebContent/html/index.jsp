@@ -290,8 +290,7 @@
 						 <span class="fa fa-caret-down"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a id="empty"> Empty Project</a></li>
-						<li><a id="hello"> HelloWorld Project</a></li>
+						<li><a onclick="createProject();"> Create a project</a></li>
 						<li><a onclick="uploadRequest();">Upload your project</a></li>
 					</ul>
 				</div>

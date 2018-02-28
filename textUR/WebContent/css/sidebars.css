@@ -40,3 +40,11 @@
 #project{
 	visibility:hidden;
 }
+
+.myChatRight{
+	margin-right: 10px !important;
+}
+
+.myChatLeft{
+	margin-left: 10px !important;
+}

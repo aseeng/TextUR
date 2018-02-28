@@ -56,10 +56,10 @@ public class Collaborators extends HttpServlet{
 		CollaboratorDao collaboratorDao = DAOFactory.getInstance().getCollaboratorDao();
 		List<Collaborator> list = collaboratorDao.findCollaborator(project.getId());		
 		
-		List<Pair<String,Boolean>> users = new ArrayList<>();
+		List<Pair<User,Boolean>> users = new ArrayList<>();
 		
 		for (Collaborator collaborator : list)
-			users.add(new Pair<String,Boolean>(collaborator.getUser().getUsername(),collaborator.getStatus()));
+			users.add(new Pair<User,Boolean>(collaborator.getUser(),collaborator.getStatus()));
 		
 		String files = (new JSONArray(users).toString());
 		resp.getWriter().print(files);

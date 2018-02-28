@@ -37,7 +37,7 @@ public class Chat extends HttpServlet {
 
 		String text = req.getParameter("text");
 
-		Message message = new Message(project, text, user.getUsername());
+		Message message = new Message(project, text, user);
 		messageDao.save(message);
 	}
 

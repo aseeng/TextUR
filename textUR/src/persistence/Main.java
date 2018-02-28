@@ -65,10 +65,10 @@ public class Main {
 		
 		projectDao.update(project1);
 		
-		Message message1 = new Message(project1,"ciaoaoao",user1.getUsername());
+		Message message1 = new Message(project1,"ciaoaoao",user1);
 		messageDao.save(message1);
 		
-		Message message2 = new Message(project2,"chelovuoi",user3.getUsername());
+		Message message2 = new Message(project2,"chelovuoi",user3);
 		messageDao.save(message2);
 		
 		Collaborator coll1 = new Collaborator(user2, project1);

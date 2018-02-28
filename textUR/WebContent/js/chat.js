@@ -33,30 +33,38 @@ function loadChat() {
 			$.each(JSON.parse(response), function(idx, obj) {
 				var div;
 				
-				if(user == obj.user)
+				if(user == obj.user.username)
 					div = $('<div></div>').addClass("direct-chat-msg right");
 				else
 					div = $('<div></div>').addClass("direct-chat-msg left");
-				
+
 				var div1 = $('<div></div>').addClass("direct-chat-info clearfix");
+
 				var span;
 				var span1;
 				var div3;
 				
-				if(user == obj.user){
-					span = $('<span></span>').addClass("direct-chat-name pull-right").text(obj.user);
+				if(user == obj.user.username){
+					span = $('<span></span>').addClass("direct-chat-name pull-right").text(obj.user.username);
 					span1 = $('<span></span>').addClass("direct-chat-timestamp pull-left").text(obj.date.substr(0,19));
-					div3 = $('<div></div>').addClass("direct-chat-text pull-right").text(obj.text);
+					div3 = $('<div></div>').addClass("direct-chat-text pull-right myChatRight").text(obj.text);
 				}
 				else{
-					span = $('<span></span>').addClass("direct-chat-name pull-left").text(obj.user);
+					span = $('<span></span>').addClass("direct-chat-name pull-left").text(obj.user.username);
 					span1 = $('<span></span>').addClass("direct-chat-timestamp pull-right").text(obj.date.substr(0,19));
-					div3 = $('<div></div>').addClass("direct-chat-text pull-left").text(obj.text);
+					div3 = $('<div></div>').addClass("direct-chat-text pull-left myChatLeft").text(obj.text);
 				}
+				
+				var img = $('<img>').addClass("direct-chat-img").attr({
+					src: obj.user.image,
+					alt: "image"
+				});
+				
 				
 				div1.append(span);
 				div1.append(span1);
 				div.append(div1);
+				div.append(img);
 				div.append(div3);
 				$('#chat_zone').append(div);
 			});
