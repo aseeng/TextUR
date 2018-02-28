@@ -7,7 +7,6 @@ $(document).ready(function() {
 		return;
 	
 	$('#sidebar').attr("style","display:block");
-	$('#aside').attr("style","display:block");
 	
 	editor = CodeMirror.fromTextArea($('#fileCode')[0], {
 		tabSize : 4,

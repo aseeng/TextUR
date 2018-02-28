@@ -1,6 +1,3 @@
-$(document).ready(function(){
-	$('#sidebar').attr("style","display:block");
-})
 function createCheckpoint(){
 	var name = null;
 	swal("Please enter checkpoint description:", {

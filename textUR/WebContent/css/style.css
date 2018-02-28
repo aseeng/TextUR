@@ -20,8 +20,10 @@ body {
 	font-size: 16px;
 	line-height: 1.7;
 	color: #828282;
-	background: #fff;
-	overflow: scroll;
+	overflow-y: scroll;
+}
+.myArea{
+	background: #fbfbfb;
 }
 
 #page {
@@ -1322,7 +1324,6 @@ form label {
 	}
 }
 
-
 .btn.btn-md {
 	padding: 8px 20px !important;
 }
@@ -1359,6 +1360,11 @@ form label {
 	color: #fff;
 }
 
+.btn-success {
+	background: #5cb85c;
+	color: #fff;
+	border: 2px solid #5cb85c;
+}
 
 .btn-success:hover, .btn-success:focus, .btn-success:active {
 	background: #4cae4c !important;
@@ -1421,6 +1427,12 @@ form label {
 	.btn-warning.btn-outline:active {
 	background: #f0ad4e;
 	color: #fff;
+}
+
+.btn-danger {
+	background: #d9534f;
+	color: #fff;
+	border: 2px solid #d9534f;
 }
 
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active {

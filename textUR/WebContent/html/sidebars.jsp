@@ -90,7 +90,7 @@
 			<div class="tab-pane active" id="control-sidebar-calendar-tab">
 				<h3 class="control-sidebar-heading"></h3>
 				<div id="calendar"></div>
-					<div class="input-group" id ="calendarButton">
+					<div id ="calendarButton">
 						<div id="createEvent" class="input-group-btn">
 							<div class="legend">
 								<span class="entry blue">conference</span>

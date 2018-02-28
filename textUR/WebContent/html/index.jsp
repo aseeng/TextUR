@@ -95,8 +95,8 @@
 			</div>
 		</header>
 		
-		<div id="gtco-features">
-			<div class="gtco-container">
+		<div id="gtco-features" class="myArea">
+			<div class="myArea">
 				<div class="row">
 					<div class="col-md-4 col-sm-4">
 						<div class="feature-center animate-box" data-animate-effect="fadeIn">
@@ -261,9 +261,10 @@
 				</div>
 			</div>
 		</div>
-		
-		<footer id="gtco-footer" role="contentinfo">
-			<div class="gtco-container">
+	
+    </div>
+    		<footer id="gtco-footer" role="contentinfo" class="myArea">
+			<div class="gtco-container myArea">
 	
 				<div class="row copyright">
 					<div class="col-md-12">
@@ -276,14 +277,7 @@
 	
 			</div>
 		</footer>
-		
-		
-		
-    </div>
-    
-    
-		
-    </c:when>    
+	</c:when>    
     
     
     
@@ -334,11 +328,7 @@
     </c:otherwise>
 </c:choose>
 	
-	<footer class="footer text-faded text-center py-5">
-	<div class="container">
-		<p class="m-0 small"> Text<b>UR</b> 2018 </p>
-	</div>
-	</footer>
+
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="../vendor/jquery/jquery.min.js"></script>
