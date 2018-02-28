@@ -22,7 +22,8 @@ public class Register extends HttpServlet {
 		String username = req.getParameter("username");
 		String mail = req.getParameter("email");
 		String password = req.getParameter("password");
-
+		String image = req.getParameter("image");
+		
 		UserDao userDao = DAOFactory.getInstance().getUserDao();
 
 		if (userDao.findByPrimaryKey(username) != null) {
@@ -35,7 +36,7 @@ public class Register extends HttpServlet {
 		}
 		else {
 			try {
-				User user = new User(username, mail);
+				User user = new User(username, mail, image);
 				userDao.save(user);
 				userDao.setPassword(user, "", password);
 

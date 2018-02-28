@@ -30,7 +30,7 @@ public class UserDaoJDBC implements UserDao{
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, user.getUsername());
 			statement.setString(2, user.getMail());
-			statement.setString(3, "../dist/img/avatar5.png");
+			statement.setString(3, user.getImage());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			if (connection != null) {
@@ -264,11 +264,12 @@ public class UserDaoJDBC implements UserDao{
 	public boolean setPassword(User user, String oldPassword, String password) {
 		Connection connection = dataSource.getConnection();
 		try {
-			String query = "select password from users where id = ?";
+			String query = "select password from users where username = ?";
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setString(1, user.getUsername());
 			
 			ResultSet result = statement.executeQuery();
+			result.next();
 			String old = result.getString("password");
 			if(old != null && !old.equals(oldPassword))
 				return false;

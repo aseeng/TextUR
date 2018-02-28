@@ -6,15 +6,18 @@ public class User {
 
 	protected String username;
 	protected String mail;
-	protected String image;
+	protected String image = "../dist/img/avatar5.png";
 	private HashMap<Long, Project> projects = new HashMap<>();
 	private HashMap<Long, Project> otherProjects = new HashMap<>();
 	
 	public User() { }
 
-	public User(String username, String mail) {
+	public User(String username, String mail, String image)
+	{
 		this.username = username;
 		this.mail = mail;
+		if(image != "")
+			this.image = image;
 	}
 
 	public String getUsername() {

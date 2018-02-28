@@ -25,9 +25,10 @@ public class LoginAPI extends HttpServlet {
 		HttpSession session = req.getSession();
 		String email = req.getParameter("email");
 		String username = req.getParameter("name");
+		String image = req.getParameter("image");
 		
 		UserDao userDao = DAOFactory.getInstance().getUserDao();
-		User user = new User(username, email);
+		User user = new User(username, email,image);
 		userDao.save(user);
 		
 		session.setAttribute("user", user);
@@ -38,6 +39,7 @@ public class LoginAPI extends HttpServlet {
 		
 		HttpSession session = req.getSession();
 		String email = req.getParameter("email");
+		String image = req.getParameter("image");
 		
 		UserDao userDao = DAOFactory.getInstance().getUserDao();
 		ProjectDao projectDao = DAOFactory.getInstance().getProjectDao();
@@ -49,6 +51,9 @@ public class LoginAPI extends HttpServlet {
 			resp.getWriter().print("register");
 			return;
 		}
+		
+		user.setImage(image);
+		userDao.updateImage(user.getUsername(), image);
 		
 		HashMap<Long, Project> projects = projectDao.find(user.getUsername());
 		user.setProjects(projects);

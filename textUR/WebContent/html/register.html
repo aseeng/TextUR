@@ -51,18 +51,20 @@
 				<input id="retype_password" type="password" class="form-control" placeholder="Confirm password" name="retype password" required> 
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			</div>
-			<div class="row">
+			<div class="form-group has-feedback">
+				<input id="image" type="text" class="form-control" placeholder="Url image (optional)" name="image">
+				 <span class="glyphicon glyphicon-globe form-control-feedback"></span>
+			</div>
 
-			<div class="col-xs-12">
-				<button id="register" class="btn btn-block bg-olive" onclick="register();" >Register</button>
-			</div>
-			<div class="col-xs-12 social-auth-links text-center">
-				<a href="page?action=login" type="button" class="btn btn-block btn-info btn-xs" id="member">I already have a membership</a>
-			</div>
-			
+			<div class="row">
+				<div class="col-xs-12">
+					<button id="register" class="btn btn-block bg-olive" onclick="register();" >Register</button>
+				</div>
+				<div class="col-xs-12 social-auth-links text-center">
+					<a href="page?action=login" type="button" class="btn btn-block btn-info btn-xs" id="member">I already have a membership</a>
+				</div>
 			</div>
 		</div>
-
 
 	<script src="../bootstrap//jquery/dist/jquery.min.js"></script>
 	<script src="../bootstrap/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -31,13 +31,11 @@ public class Main {
 		MessageDao messageDao = factory.getMessageDao();
 		CollaboratorDao collaboratorDao = factory.getCollaboratorDao();
 		
-		User user1 = new User("username", "alessandromarrazzo9@gmail.com");
-		User user2 = new User("css","css@gmail.com");
-		User user3 = new User("nicuola","paletta92@gmail.com");
+		User user1 = new User("username", "alessandromarrazzo9@gmail.com","");
+		User user2 = new User("nicuola","paletta92@gmail.com","");
 
 		userDao.save(user1);
 		userDao.save(user2);
-		userDao.save(user3);
 
 		Project project1 = new Project("rep1", user1);
 		Project project2 = new Project("rep2", user2);
@@ -68,7 +66,7 @@ public class Main {
 		Message message1 = new Message(project1,"ciaoaoao",user1);
 		messageDao.save(message1);
 		
-		Message message2 = new Message(project2,"chelovuoi",user3);
+		Message message2 = new Message(project2,"chelovuoi",user2);
 		messageDao.save(message2);
 		
 		Collaborator coll1 = new Collaborator(user2, project1);

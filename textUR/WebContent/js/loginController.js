@@ -53,7 +53,8 @@ function onSignIn(googleUser) {
 	  $.ajax({
 			url : 'loginAPI',
 			data : {
-				email : profile.getEmail()
+				email : profile.getEmail(),
+				image: profile.getImageUrl()
 			},
 			success : function(responseText) {
 				if(responseText == "register")
@@ -67,7 +68,8 @@ function onSignIn(googleUser) {
 									url: 'loginAPI',
 									data : {
 										email : profile.getEmail(),
-										name :  value
+										name :  value,
+										image: profile.getImageUrl()
 									},
 									success : function(){
 										document.location.href = "page?action=index";

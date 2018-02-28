@@ -36,6 +36,7 @@ function register(){
 			$('#email').focus();
 			$('#password').val("");
 			$('#retype_password').val("");
+			$('#image').val("");
 		});
 		return;
 	}
@@ -49,10 +50,10 @@ function register(){
 			$('#retype_password').css("border-color","red");
 			$('#password').val("");
 			$('#retype_password').val("");
+			$('#image').val("");
 		});
 		return;
 	}
-
 	
 	$.ajax({
 		url : 'register',
@@ -60,6 +61,7 @@ function register(){
 			username : $('#username').val(),
 			email : $('#email').val(),
 			password : $('#password').val(),
+			image: $('#image').val()
 		},
 		success : function(response) {
 			if(response == "exist"){
@@ -71,6 +73,7 @@ function register(){
 						$('#username').focus();
 						$('#password').val("");
 						$('#retype_password').val("");
+						$('#image').val("");
 					});
 			}
 			
@@ -83,6 +86,7 @@ function register(){
 					$('#email').focus();					
 					$('#password').val("");
 					$('#retype_password').val("");
+					$('#image').val("");
 				});
 				
 			}
