@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#login,#register{	
+	
+	font-family:Raleway;
+    font-size: 30px;
+    margin: 5px 10px;
+    
+    color: #fbfbfb;
+}
+
+.title{
+	
+	font-family:Raleway;
+	margin-bottom: -30px;
+    margin-top: 60px;
+}
+
+#text{
+	
+	font-family:Raleway;
+	font-size: 100px;
+	color: #929292 !important;
+	
+}
+
+#upper{
+	
+	font-family:Raleway;
+	font-size: 120px;
+	color: #e6b41d !important;
+}
+
+#sub{
+	 font-size: 22px;
+	 color: #ff5969 !important;
+}
+
+.font{
+	font-size: 18px;
+	
+}
+
+.description{
+	height: 250px;
+}
+
+#yours{
+	margin-top: -4%;
+}
+
+#others{
+	margin-top: 5%;
+}

@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+
+#sidebar{
+	display: none;
+}
+
+#navbar{
+	height: 50px;
+}
+
+#drop{
+	height: 50px;
+	padding-top: 5px;
+}
+
+#a_drop{
+	height: 50px;
+	margin-bottom: 10px;
+}
+	
+#logo_nav{
+	height: 50px;
+	background-color: #dd4b39;
+}
+
+#navbar_menu{
+	font-family: Raleway;
+	font-size: 16px;
+	float: right;
+}
+
+#sendMessage{
+	font-family: Raleway;
+}
+
+#user{
+	font-weight: 200;
+}
+
+#project{
+	visibility:hidden;
+}

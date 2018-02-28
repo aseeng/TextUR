@@ -63,79 +63,231 @@
     <div class="gtco-loader"></div>
     
     <div id="page">
-	<nav class="gtco-nav" role="navigation">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-xs-12 text-right hidden-xs menu-2">
-				<ul>
-					<li class="btn-cta"><a href="page?action=login"><span>Login</span></a></li>
-					<li class="btn-cta"><a href="page?action=register"><span>Register</span></a></li>
-				</ul>
+		<nav class="gtco-nav" role="navigation">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-xs-12 text-right hidden-xs menu-2">
+					<ul>
+						<li class="btn-cta"><a href="page?action=login"><span>Login</span></a></li>
+						<li class="btn-cta"><a href="page?action=register"><span>Register</span></a></li>
+					</ul>
+					</div>
+				</div>
+				
+			</div>
+		</nav>
+		
+		<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url(../img/background.jpg);">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								<h1 class="site-heading text-center text-white d-none d-lg-block title">
+									<span class="site-heading-lower" id="text"><b>Text</b></span>
+									<span class="site-heading-lower" id="upper"><b>UR</b></span>
+									<span class="site-heading-upper text-primary mb-3" id="sub">A Free Java Online Editor</span>
+								</h1>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			
+		</header>
+		
+		<div id="gtco-features">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-plus"></i>
+							</span>
+							<h3>create</h3>
+							<p>Create your projects and save the status of your projects whenever you want.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-share-alt"></i>
+							</span>
+							<h3>share</h3>
+							<p>Share your projects with other users and work with them to get the most out of your work.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-upload"></i>
+							</span>
+							<h3>upload</h3>
+							<p>Upload and download your projects online and work anywhere thanks to the web platform.</p>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-gear"></i>
+							</span>
+							<h3>compile</h3>
+							<p>Find and correct any errors thanks to the online java compiler.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-calendar-o"></i>
+							</span>
+							<h3>plans</h3>
+							<p>Plan your meetings and other events thanks to the calendar so you will not miss a single moment.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-comments"></i>
+							</span>
+							<h3>chat</h3>
+							<p>Communicate with other users through the chat so you can share your ideas instantly.</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
 		</div>
-	</nav>
-	
-	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url(../img/background.jpg);">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
+		
+		<div id="gtco-counter" class="gtco-bg gtco-counter gradient">
+			<div class="gtco-container">
+				<div class="row">
 					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1 class="site-heading text-center text-white d-none d-lg-block title">
-								<span class="site-heading-lower" id="text"><b>Text</b></span>
-								<span class="site-heading-lower" id="upper"><b>UR</b></span>
-								<span class="site-heading-upper text-primary mb-3" id="sub">A Free Java Online Editor</span>
-							</h1>
+						<div class="display-tc">
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="fa fa-users"></i>
+									</span>
+	
+									<span class="counter js-counter" data-from="0" data-to="40" data-speed="5000" data-refresh-interval="50">1</span>
+									<span class="counter-label">users</span>
+	
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="fa fa-file-code-o"></i>
+									</span>
+	
+									<span class="counter js-counter" data-from="0" data-to="97" data-speed="5000" data-refresh-interval="50">1</span>
+									<span class="counter-label">projects</span>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="fa fa-calendar-o"></i>
+									</span>
+									<span class="counter js-counter" data-from="0" data-to="72" data-speed="5000" data-refresh-interval="50">1</span>
+									<span class="counter-label">events created</span>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="icon-clock"></i>
+									</span>
+	
+									<span class="counter js-counter" data-from="0" data-to="2120" data-speed="5000" data-refresh-interval="50">1</span>
+									<span class="counter-label">Hours Spent</span>
+	
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</header>
-	
-	<div id="gtco-features">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-4 col-sm-4">
-					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="icon-eye"></i>
-						</span>
-						<h3>Retina Ready</h3>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						<p><a href="#" class="btn btn-primary">Learn More</a></p>
+		
+		
+		<div id="gtco-testimonial">
+			<div class="gtco-container">
+				<!-- <div class="row"> -->
+					<div class="row animate-box">
+						<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+							<h2>Developers</h2>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="icon-command"></i>
-						</span>
-						<h3>Fully Responsive</h3>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					<div class="row animate-box">
+						
+					
+						<div class="owl-carousel owl-carousel-fullwidth ">
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="../img/gaetano.jpg" alt="user">
+									</figure>
+									<span>Donadio Gaetano</span>
+									<blockquote>
+										<p>&ldquo;Web developer&rdquo;</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="../img/alessandro.jpg" alt="user">
+									</figure>
+									<span>Marrazzo Alessandro</span>
+									<blockquote>
+										<p>&ldquo;Web developer&rdquo;</p>									
+									</blockquote>
+								</div>
+							</div>
+							
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="icon-power"></i>
-						</span>
-						<h3>Web Starter</h3>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						<p><a href="#" class="btn btn-primary">Learn More</a></p>
+				<!-- </div> -->
+			</div>
+		</div>
+		
+		<div id="gtco-started">
+			<div class="gtco-container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+						<a href="page?action=register"><h2>Get Started</h2></a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		
+		<footer id="gtco-footer" role="contentinfo">
+			<div class="gtco-container">
+	
+				<div class="row copyright">
+					<div class="col-md-12">
+						<p class="pull-left">
+							<small class="block">&copy; 2018 TextUR. All Rights Reserved.</small> 
+							<small class="block">Designed by : Donadio Gaetano & Marrazzo Alessandro</small>
+						</p>
+					</div>
+				</div>
+	
+			</div>
+		</footer>
+		
+		
+		
     </div>
     
     
 		
     </c:when>    
+    
+    
+    
+    
     <c:otherwise>
 		<div class="box box-danger center" id="explorer">
 			<section class="content" id="yours"> 

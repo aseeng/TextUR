@@ -15,7 +15,7 @@
 *
 * ======================================================= */
 body {
-	font-family: Raleway;
+	font-family: "Work Sans", Arial, sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.7;
@@ -1322,6 +1322,21 @@ form label {
 	}
 }
 
+.btn {
+	margin-right: 4px;
+	margin-bottom: 4px;
+	font-family: "Work Sans", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	border-radius: 30px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	padding: 8px 20px;
+}
 
 .btn.btn-md {
 	padding: 8px 20px !important;
@@ -1359,6 +1374,11 @@ form label {
 	color: #fff;
 }
 
+.btn-success {
+	background: #5cb85c;
+	color: #fff;
+	border: 2px solid #5cb85c;
+}
 
 .btn-success:hover, .btn-success:focus, .btn-success:active {
 	background: #4cae4c !important;
@@ -1421,6 +1441,12 @@ form label {
 	.btn-warning.btn-outline:active {
 	background: #f0ad4e;
 	color: #fff;
+}
+
+.btn-danger {
+	background: #d9534f;
+	color: #fff;
+	border: 2px solid #d9534f;
 }
 
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active {

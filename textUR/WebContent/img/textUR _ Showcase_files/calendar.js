@@ -32,13 +32,13 @@ function updateSigninStatus(isSignedIn) {
 	if (isSignedIn){
 		listUpcomingEvents();
 
-		var button = $('<button></button').addClass("btn btn-danger createEvent center").attr({
+		var button = $('<button></button').addClass("btn btn-danger center createEvent").attr({
 			id: "btnCreateEvent",
 			onclick: "insertEvent();"
 		});
 		button.html("Create Event");
 
-		$('#calendarButton').append(button);
+		$('#createEventSpan').append(button);
 	}
 }
 

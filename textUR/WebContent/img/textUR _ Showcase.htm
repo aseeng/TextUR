@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0059)http://localhost:8080/SIW_InstanText/html/page?action=index -->
+<html lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="height: auto; min-height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button[not:disabled]:hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel[not:disabled]:hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger[not:disabled]:hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<title>textUR | Showcase</title>
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/_all-skins.min.css">
+
+<link rel="stylesheet" href="./textUR _ Showcase_files/select2.min.css">
+
+<!-- Google Font -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/css">
+<link rel="stylesheet" href="./textUR _ Showcase_files/css(1)">
+<link rel="stylesheet" href="./textUR _ Showcase_files/business-casual.min.css">
+
+<link rel="stylesheet" href="./textUR _ Showcase_files/sidebars.css">
+<link rel="stylesheet" href="./textUR _ Showcase_files/swal.css">
+<link rel="stylesheet" href="./textUR _ Showcase_files/calendar.css">
+</head>
+<body class="skin-red-light" style="height: auto; min-height: 100%;">
+
+  <header class="main-header" id="sidebar" style="display: none;"> <!-- Logo -->
+	<a href="http://localhost:8080/SIW_InstanText/html/page?action=index" class="logo" id="logo_nav"> <!-- mini logo for sidebar mini 50x50 pixels -->
+		<span class="logo-mini">I<b>T</b></span> <!-- logo for regular state and mobile devices -->
+		<span class="logo-lg">Text<b>UR</b></span>
+	</a> <!-- Header Navbar: style can be found in header.less -->
+	
+	<nav class="navbar navbar-static-top" id="navbar"> <!-- Sidebar toggle button-->
+		<!-- Messages: style can be found in dropdown.less-->
+		<div class="navbar-custom-menu" id="navbar_menu">
+			<ul class="nav navbar-nav">
+				<span id="project"></span>
+				<!-- user dropdown menu -->
+				<li class="dropdown user user-menu">
+					<a href="http://localhost:8080/SIW_InstanText/html/page?action=index#" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="./textUR _ Showcase_files/user2-160x160.jpg" class="user-image" alt="User Image">
+						<span id="user" class="hidden-xs"></span>
+					</a>
+	
+					<ul class="dropdown-menu">
+						<!-- User image -->
+						<li class="user-header">
+							<img src="./textUR _ Showcase_files/user2-160x160.jpg" class="img-circle" alt="User Image">
+							<p id="username"><br>Java Developer</p>
+						</li>
+	
+						<!-- Menu Footer-->
+						<li class="user-footer">
+							<div class="pull-left">
+								<a onclick="openProfile(&#39;&#39;)" class="btn btn-default btn-flat">Profile</a>
+							</div>
+							<div class="pull-right">
+								<a onclick="logout();" class="btn btn-default btn-flat">Logout</a>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li> <a id="sidebarButton" data-toggle="control-sidebar" onclick="handleClientLoad();"><i class="fa fa-gears"></i></a></li>
+				
+				
+			</ul>
+		</div>
+	</nav> </header>
+	
+
+<div class="control-sidebar-bg"></div>
+
+	<aside class="control-sidebar control-sidebar-light" id="aside" style="display: none;">
+  
+		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+			<li class="active"><a href="http://localhost:8080/SIW_InstanText/html/page?action=index#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-calendar"></i></a></li>
+			<li><a href="http://localhost:8080/SIW_InstanText/html/page?action=index#control-sidebar-chat-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-envelope"></i></a></li>
+		</ul>
+		
+		<div class="tab-content">
+			
+			<div class="tab-pane active" id="control-sidebar-calendar-tab">
+				<h3 class="control-sidebar-heading"></h3>
+				<div id="calendar"></div>
+					<div class="input-group" id="calendarButton">
+						<div id="createEvent" class="input-group-btn">
+							<div class="legend">
+								<span class="entry blue">conference</span>
+								<span class="entry orange">reunion</span>
+								<span class="entry red">deadline</span>
+								<span class="entry yellow">other</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			<div class="tab-pane" id="control-sidebar-chat-tab">
+				<h3 class="control-sidebar-heading"></h3>
+				
+				<div class="box box-danger direct-chat direct-chat-danger">
+					<div class="box-body" id="chatBox">
+						<div class="direct-chat-messages" id="chat_zone"></div>
+					</div>
+				</div>
+				
+				<div class="input-group">
+					<input type="text" name="message" placeholder="Write message ..." class="form-control" id="message"> <span class="input-group-btn">
+						<button class="btn btn-danger" id="sendMessage" onclick="sendMessage();">Send</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</aside>
+		
+	
+	<!-- jQuery 3 -->
+	<script src="./textUR _ Showcase_files/jquery.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="./textUR _ Showcase_files/bootstrap.min.js"></script>
+	<!-- SlimScroll -->
+	<script src="./textUR _ Showcase_files/jquery.slimscroll.min.js"></script>
+	<!-- FastClick -->
+	<script src="./textUR _ Showcase_files/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="./textUR _ Showcase_files/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="./textUR _ Showcase_files/demo.js"></script>
+	<script src="./textUR _ Showcase_files/chat.js"></script>
+	<script src="./textUR _ Showcase_files/explorer.js"></script>
+	<script src="./textUR _ Showcase_files/calendar.js"></script>
+	<script src="./textUR _ Showcase_files/sidebars.js"></script>
+	<script src="./textUR _ Showcase_files/loginController.js"></script>
+	<script src="./textUR _ Showcase_files/sweetalert.min.js"></script>
+	<script src="./textUR _ Showcase_files/moment.min.js"></script>
+	<script src="./textUR _ Showcase_files/select2.min.js"></script>
+	<script src="./textUR _ Showcase_files/myCalendar.js"></script>
+	<script async="" defer="" src="./textUR _ Showcase_files/api.js" onreadystatechange="if (this.readyState === &#39;complete&#39;) this.onload()">
+	</script>	
+	
+
+
+
+
+
+
+
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Free HTML5 Website Template by gettemplates.co">
+<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive">
+<meta name="author" content="gettemplates.co">
+<meta property="og:title" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta name="twitter:title" content="">
+<meta name="twitter:image" content="">
+<meta name="twitter:url" content="">
+<meta name="twitter:card" content="">
+
+
+<link href="./textUR _ Showcase_files/home.css" rel="stylesheet">
+<title>TextUR - Welcome</title>
+
+<link href="./textUR _ Showcase_files/css" rel="stylesheet">
+<link href="./textUR _ Showcase_files/css(2)" rel="stylesheet">
+<link href="./textUR _ Showcase_files/business-casual.min.css" rel="stylesheet">
+<link href="./textUR _ Showcase_files/index.css" rel="stylesheet">
+<link href="./textUR _ Showcase_files/createProject.css" rel="stylesheet">
+
+
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="./textUR _ Showcase_files/icomoon.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/bootstrap.css">
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/magnific-popup.css">
+
+<!-- Owl Carousel  -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/owl.carousel.min.css">
+<link rel="stylesheet" href="./textUR _ Showcase_files/owl.theme.default.min.css">
+
+<!-- Theme style  -->
+<link rel="stylesheet" href="./textUR _ Showcase_files/style.css">
+
+<!-- Modernizr JS -->
+<script src="./textUR _ Showcase_files/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+    
+    
+    <div class="gtco-loader" style="display: none;"></div>
+    
+    <div id="page"><a href="http://localhost:8080/SIW_InstanText/html/page?action=index#" class="js-gtco-nav-toggle gtco-nav-toggle gtco-nav-white"><i></i></a><div id="gtco-offcanvas"><ul>
+						<li class="btn-cta"><a href="http://localhost:8080/SIW_InstanText/html/page?action=login"><span>Login</span></a></li>
+						<li class="btn-cta"><a href="http://localhost:8080/SIW_InstanText/html/page?action=register"><span>Register</span></a></li>
+					</ul></div>
+		<nav class="gtco-nav" role="navigation">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-xs-12 text-right hidden-xs menu-2">
+					<ul>
+						<li class="btn-cta"><a href="http://localhost:8080/SIW_InstanText/html/page?action=login"><span>Login</span></a></li>
+						<li class="btn-cta"><a href="http://localhost:8080/SIW_InstanText/html/page?action=register"><span>Register</span></a></li>
+					</ul>
+					</div>
+				</div>
+				
+			</div>
+		</nav>
+		
+		<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url(../img/background.jpg);">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+								<h1 class="site-heading text-center text-white d-none d-lg-block title">
+									<span class="site-heading-lower" id="text"><b>Text</b></span>
+									<span class="site-heading-lower" id="upper"><b>UR</b></span>
+									<span class="site-heading-upper text-primary mb-3" id="sub">A Free Java Online Editor</span>
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<div id="gtco-features">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-plus"></i>
+							</span>
+							<h3>create</h3>
+							<p>Create your projects and save the status of your projects whenever you want.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-share-alt"></i>
+							</span>
+							<h3>share</h3>
+							<p>Share your projects with other users and work with them to get the most out of your work.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-upload"></i>
+							</span>
+							<h3>upload</h3>
+							<p>Upload and download your projects online and work anywhere thanks to the web platform.</p>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-gear"></i>
+							</span>
+							<h3>compile</h3>
+							<p>Find and correct any errors thanks to the online java compiler.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-calendar-o"></i>
+							</span>
+							<h3>plans</h3>
+							<p>Plan your meetings and other events thanks to the calendar so you will not miss a single moment.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="feature-center animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="fa fa-comments"></i>
+							</span>
+							<h3>chat</h3>
+							<p>Communicate with other users through the chat so you can share your ideas instantly.</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div id="gtco-counter" class="gtco-bg gtco-counter gradient animated">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="display-t">
+						<div class="display-tc">
+							<div class="col-md-3 col-sm-6 animate-box fadeInUp animated-fast">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="fa fa-users"></i>
+									</span>
+	
+									<span class="counter js-counter" data-from="0" data-to="40" data-speed="5000" data-refresh-interval="50">40</span>
+									<span class="counter-label">users</span>
+	
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box fadeInUp animated-fast">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="fa fa-file-code-o"></i>
+									</span>
+	
+									<span class="counter js-counter" data-from="0" data-to="97" data-speed="5000" data-refresh-interval="50">97</span>
+									<span class="counter-label">projects</span>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box fadeInUp animated-fast">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="fa fa-calendar-o"></i>
+									</span>
+									<span class="counter js-counter" data-from="0" data-to="72" data-speed="5000" data-refresh-interval="50">72</span>
+									<span class="counter-label">events created</span>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box fadeInUp animated-fast">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="icon-clock"></i>
+									</span>
+	
+									<span class="counter js-counter" data-from="0" data-to="2120" data-speed="5000" data-refresh-interval="50">2120</span>
+									<span class="counter-label">Hours Spent</span>
+	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div id="gtco-testimonial">
+			<div class="gtco-container">
+				<!-- <div class="row"> -->
+					<div class="row animate-box fadeInUp animated-fast">
+						<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+							<h2>Programmer</h2>
+						</div>
+					</div>
+					<div class="row animate-box fadeInUp animated-fast">
+						
+					
+						<div class="owl-carousel owl-carousel-fullwidth owl-theme owl-loaded">
+							
+							
+							
+						<div class="owl-stage-outer owl-height" style="height: 390px;"><div class="owl-stage" style="transform: translate3d(-2280px, 0px, 0px); transition: 0s; width: 6840px;"><div class="owl-item cloned" style="width: 1140px; margin-right: 0px;"><div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="./textUR _ Showcase_files/gaetano.jpg" alt="user">
+									</figure>
+									<span>Donadio Gaetano</span>
+									<figure>
+										<img src="./textUR _ Showcase_files/alessandro.jpg" alt="user">
+									</figure>
+									<span>Marrazzo Alessandro</span>
+									<blockquote>
+										<p>“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+									</blockquote>
+								</div>
+							</div></div><div class="owl-item cloned" style="width: 1140px; margin-right: 0px;"><div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="./textUR _ Showcase_files/alessandro.jpg" alt="user">
+									</figure>
+									<span>Marrazzo Alessandro</span>
+									<blockquote>
+										<p>“Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+									</blockquote>
+								</div>
+							</div></div><div class="owl-item active" style="width: 1140px; margin-right: 0px;"><div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="./textUR _ Showcase_files/gaetano.jpg" alt="user">
+									</figure>
+									<span>Donadio Gaetano</span>
+									<figure>
+										<img src="./textUR _ Showcase_files/alessandro.jpg" alt="user">
+									</figure>
+									<span>Marrazzo Alessandro</span>
+									<blockquote>
+										<p>“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+									</blockquote>
+								</div>
+							</div></div><div class="owl-item" style="width: 1140px; margin-right: 0px;"><div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="./textUR _ Showcase_files/alessandro.jpg" alt="user">
+									</figure>
+									<span>Marrazzo Alessandro</span>
+									<blockquote>
+										<p>“Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+									</blockquote>
+								</div>
+							</div></div><div class="owl-item cloned" style="width: 1140px; margin-right: 0px;"><div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="./textUR _ Showcase_files/gaetano.jpg" alt="user">
+									</figure>
+									<span>Donadio Gaetano</span>
+									<figure>
+										<img src="./textUR _ Showcase_files/alessandro.jpg" alt="user">
+									</figure>
+									<span>Marrazzo Alessandro</span>
+									<blockquote>
+										<p>“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+									</blockquote>
+								</div>
+							</div></div><div class="owl-item cloned" style="width: 1140px; margin-right: 0px;"><div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="./textUR _ Showcase_files/alessandro.jpg" alt="user">
+									</figure>
+									<span>Marrazzo Alessandro</span>
+									<blockquote>
+										<p>“Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+									</blockquote>
+								</div>
+							</div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
+					</div>
+				<!-- </div> -->
+			</div>
+		</div>
+		
+		<div id="gtco-started">
+			<div class="gtco-container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+						<a href="http://localhost:8080/SIW_InstanText/html/page?action=register"><h2>Get Started</h2></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<footer id="gtco-footer" role="contentinfo">
+			<div class="gtco-container">
+	
+				<div class="row copyright">
+					<div class="col-md-12">
+						<p class="pull-left">
+							<small class="block">© 2018 TextUR. All Rights Reserved.</small> 
+							<small class="block">Designed by : Donadio Gaetano &amp; Marrazzo Alessandro</small>
+						</p>
+					</div>
+				</div>
+	
+			</div>
+		</footer>
+		
+		
+		
+    </div>
+    
+    
+		
+        
+    
+    
+    
+    
+    
+
+	
+	<footer class="footer text-faded text-center py-5">
+	<div class="container">
+		<p class="m-0 small"> Text<b>UR</b> 2018 </p>
+	</div>
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="./textUR _ Showcase_files/jquery.min(1).js"></script>
+	<script src="./textUR _ Showcase_files/createProjects.js"></script>
+	<script src="./textUR _ Showcase_files/bootstrap.bundle.min.js"></script>
+	<script src="./textUR _ Showcase_files/explorer.js"></script>
+	<script src="./textUR _ Showcase_files/index.js"></script>
+	<script src="./textUR _ Showcase_files/loginController.js"></script>
+	
+	
+		<div class="gototop js-top active">
+		<a href="http://localhost:8080/SIW_InstanText/html/page?action=index#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="./textUR _ Showcase_files/jquery.min(2).js"></script>
+	<!-- jQuery Easing -->
+	<script src="./textUR _ Showcase_files/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="./textUR _ Showcase_files/bootstrap.min(1).js"></script>
+	<!-- Waypoints -->
+	<script src="./textUR _ Showcase_files/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="./textUR _ Showcase_files/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="./textUR _ Showcase_files/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="./textUR _ Showcase_files/jquery.magnific-popup.min.js"></script>
+	<script src="./textUR _ Showcase_files/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="./textUR _ Showcase_files/main.js"></script>
+	
+	
+
+
+</body></html>
