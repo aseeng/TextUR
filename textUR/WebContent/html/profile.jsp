@@ -35,8 +35,8 @@
           <div class="box box-primary">
             <div class="box-body box-profile">
 
+			  <img class="profile-user-img img-responsive img-circle" src=${visitor.getImage()} alt="User profile picture">
               <h3 class="profile-username text-center" id="profile">${visitor.getUsername()}</h3>
-
               <p class="text-muted text-center">Java Developer</p>
 
               <ul class="list-group list-group-unbordered">

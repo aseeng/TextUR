@@ -21,7 +21,6 @@
 <meta name="twitter:url" content="" />
 <meta name="twitter:card" content="" />
 
-
 <link href="../css/home.css" rel="stylesheet">
 <title>TextUR - Welcome</title>
 

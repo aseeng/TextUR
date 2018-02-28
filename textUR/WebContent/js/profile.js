@@ -96,12 +96,32 @@ function changeUsername(){
 	}
 }
 
+function changeImage(){
+	var value = $('#imageInput').val();
+	if (value != null && value != "") {
+		$.ajax({
+			url: 'change',
+			data: {
+				type: "image",
+				name: value
+			},
+			type: 'POST',
+			success: function(response){
+				swal("Success", "Image changed successfully!", "success").then(()=>{
+					document.location.href = "page?action=profile";
+				});
+			}
+		})
+	}
+}
+
+
 function options(){
 	var h3 = $('<h3></h3>').addClass("site-heading text-center");
 	var h3Span = $('<span></span>').addClass("site-heading-lower").html("Options");
 	h3.append(h3Span);
 	
-	var emailDiv = $('<div></div>').addClass("col-md-4"); 
+	var emailDiv = $('<div></div>').addClass("col-md-6"); 
 	var emailBoxDiv = $('<div></div>').addClass("box box-danger collapsed-box");
 	var emailBoxBorder = $('<div></div>').addClass("box-header with-border");
 	var emailTitle = $('<h3></h3>').addClass("box-title").html("change email ");
@@ -131,7 +151,7 @@ function options(){
 	emailBoxDiv.append(emailBody);
 	emailDiv.append(emailBoxDiv);
 
-	var usernameDiv = $('<div></div>').addClass("col-md-4");
+	var usernameDiv = $('<div></div>').addClass("col-md-6");
 	var usernameBoxDiv = $('<div></div>').addClass("box box-danger collapsed-box");
 	var usernameBoxBorder = $('<div></div>').addClass("box-header with-border");
 	var usernameTitle = $('<h3></h3>').addClass("box-title").html("change username ");
@@ -160,7 +180,7 @@ function options(){
 	usernameBoxDiv.append(usernameBody);
 	usernameDiv.append(usernameBoxDiv);
 	
-	var passwordDiv = $('<div></div>').addClass("col-md-4");
+	var passwordDiv = $('<div></div>').addClass("col-md-6");
 	var passwordBoxDiv = $('<div></div>').addClass("box box-danger collapsed-box");
 	var passwordBoxBorder = $('<div></div>').addClass("box-header with-border");
 	var passwordTitle = $('<h3></h3>').addClass("box-title").html("change password ");
@@ -209,11 +229,40 @@ function options(){
 	passwordBoxDiv.append(passwordBody);
 	passwordDiv.append(passwordBoxDiv);
 	
+	var imageDiv = $('<div></div>').addClass("col-md-6");
+	var imageBoxDiv = $('<div></div>').addClass("box box-danger collapsed-box");
+	var imageBoxBorder = $('<div></div>').addClass("box-header with-border");
+	var imageTitle = $('<h3></h3>').addClass("box-title").html("change image");
+	var imageCollapseDiv = $('<div></div>').addClass("box-tools pull-right");
+	var imageCollapse = $('<button></button>').addClass("btn btn-box-tool").attr("data-widget", "collapse");
+	var imageIcon = $('<i></i>').addClass("fa fa-plus");
+	
+	imageCollapse.append(imageIcon);
+	imageCollapseDiv.append(imageCollapse);
+	imageBoxBorder.append(imageTitle);
+	imageBoxBorder.append(imageCollapseDiv);
+	imageBoxDiv.append(imageBoxBorder);
+
+	var imageBody = $('<div></div>').addClass("box-body");
+	var imageInput = $('<input>').addClass("col-xs-12 Input");
+		imageInput.attr({
+			autofocus: "true",
+			onfocus: "reset();",
+			id: "imageInput",
+			placeholder: "insert image url"
+		});
+	var imageSave = $('<button></button>').addClass("btn btn-danger save").html("save");
+	imageSave.attr("onclick","changeImage()");
+	imageBody.append(imageInput);
+	imageBody.append(imageSave);
+	imageBoxDiv.append(imageBody);
+	imageDiv.append(imageBoxDiv);
+	
 	$('#contentDiv').html(h3);
 	$('#contentDiv').append(emailDiv);
 	$('#contentDiv').append(usernameDiv);
 	$('#contentDiv').append(passwordDiv);
-	
+	$('#contentDiv').append(imageDiv);
 }
 
 function reset()

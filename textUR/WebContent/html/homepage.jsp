@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>InstanText | Showcase</title>
+<title>TextUR</title>
 </head>
 
 <body class="skin-red-light">

@@ -46,14 +46,14 @@
 				<!-- user dropdown menu -->
 				<li class="dropdown user user-menu">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<img src="../dist/img/avatar5.png" class="user-image" alt="User Image">
+						<img src=${user.getImage()} class="user-image" alt="User Image">
 						<span id="user" class="hidden-xs">${user.getUsername()}</span>
 					</a>
 	
 					<ul class="dropdown-menu">
 						<!-- User image -->
 						<li class="user-header">
-							<img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+							<img src=${user.getImage()} class="img-circle" alt="User Image">
 							<p id="username">${user.getUsername()}<br>Java Developer</p>
 						</li>
 	
@@ -69,7 +69,6 @@
 					</ul>
 				</li>
 				<li> <a id="sidebarButton" data-toggle="control-sidebar" onclick="handleClientLoad();"><i class="fa fa-gears"></i></a></li>
-				
 				
 			</ul>
 		</div>
