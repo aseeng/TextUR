@@ -29,7 +29,7 @@ public class LoginAPI extends HttpServlet {
 		UserDao userDao = DAOFactory.getInstance().getUserDao();
 		User user = new User(username, email);
 		userDao.save(user);
-				
+		
 		session.setAttribute("user", user);
 	}
 	

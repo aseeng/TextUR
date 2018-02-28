@@ -35,7 +35,6 @@ public class UtilDao implements Dao {
 			System.out.println("Executed drop database");
 
 		} catch (SQLException e) {
-
 			throw new PersistenceException(e.getMessage());
 		} finally {
 			try {
