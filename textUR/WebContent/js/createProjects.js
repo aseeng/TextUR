@@ -133,7 +133,7 @@ function tryAgain(id, name){
 				});
 			else {
 				swal("Uploaded", "Your projects has been uploaded successfully!", "success").then(() => {
-					document.location.href = "page?action=homepage";								
+					document.location.href = "page?action=index";								
 				})
 			}
 		},

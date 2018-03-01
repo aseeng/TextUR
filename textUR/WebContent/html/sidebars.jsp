@@ -68,7 +68,7 @@
 						</li>
 					</ul>
 				</li>
-				<li> <a id="sidebarButton" data-toggle="control-sidebar" onclick="handleClientLoad();"><i class="fa fa-gears"></i></a></li>
+				<li> <a id="sidebarButton" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
 				
 			</ul>
 		</div>
@@ -80,13 +80,13 @@
 	<aside class="control-sidebar control-sidebar-light" id="aside">
   
 		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-			<li class="active"><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-calendar"></i></a></li>
-			<li><a href="#control-sidebar-chat-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-envelope"></i></a></li>
+			<li><a href="#control-sidebar-calendar-tab" data-toggle="tab" aria-expanded="false" onclick="handleClientLoad();"><i class="fa fa-calendar"></i></a></li>
+			<li class="active"><a href="#control-sidebar-chat-tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-envelope"></i></a></li>
 		</ul>
 		
 		<div class="tab-content">
 			
-			<div class="tab-pane active" id="control-sidebar-calendar-tab">
+			<div class="tab-pane" id="control-sidebar-calendar-tab">
 				<h3 class="control-sidebar-heading"></h3>
 				<div id="calendar"></div>
 					<div id ="calendarButton">
@@ -101,7 +101,7 @@
 					</div>
 				</div>
 			
-			<div class="tab-pane" id="control-sidebar-chat-tab">
+			<div class="tab-pane active" id="control-sidebar-chat-tab">
 				<h3 class="control-sidebar-heading"></h3>
 				
 				<div class="box box-danger direct-chat direct-chat-danger">

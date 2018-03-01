@@ -7,6 +7,9 @@ $(document).ready(function(){
 		$('#sidebar').attr("style","display:block");
 	else
 		$('#sidebar').attr("style","display:none");
+	
+	$('#message').attr("disabled","true");
+	$('#sendMessage').attr("disabled","true");
 	$('#project').html("");
 });
 
