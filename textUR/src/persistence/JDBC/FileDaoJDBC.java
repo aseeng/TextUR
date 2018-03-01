@@ -603,14 +603,14 @@ public class FileDaoJDBC implements FileDao {
 	public boolean check(Long fileId, String reader) {
 		Connection connection = dataSource.getConnection();
 		try {
-			String query = "select user FROM file WHERE id = ?";
+			String query = "select username FROM file WHERE id = ?";
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setLong(1, fileId);
 
 			ResultSet result = statement.executeQuery();
 			if(result.next())
 			{
-				return result.getString("user").equals(reader);
+				return result.getString("username").equals(reader);
 			}
 		} catch (SQLException e) {
 			if (connection != null) {

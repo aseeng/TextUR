@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<title>textUR | Showcase</title>
+<title>textUR</title>
 <!-- Bootstrap 3.3.7 -->
 <link rel="stylesheet" href="../bootstrap/bootstrap/dist/css/bootstrap.min.css">
 <!-- Font Awesome -->
@@ -31,10 +31,10 @@
 </head>
 <body>
 <div class="col-md-3">
-          <!-- Profile Image -->
-          <div class="box box-primary">
+         
+          <div class="box box-primary" id="myprofile">
             <div class="box-body box-profile">
-
+ 					<!-- Profile Image -->
 			  <img class="profile-user-img img-responsive img-circle" src=${visitor.getImage()} alt="User profile picture">
               <h3 class="profile-username text-center" id="profile">${visitor.getUsername()}</h3>
               <p class="text-muted text-center">Java Developer</p>

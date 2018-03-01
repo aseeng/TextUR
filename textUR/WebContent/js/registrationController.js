@@ -33,10 +33,11 @@ function register(){
 		swal("Email not valid", "Please insert a valid email!", "error")
 		.then(() => {
 			$('#email').css("border-color","red");
+			$('#email').css("border-style","solid");
 			$('#email').focus();
+			$('#email').val("");
 			$('#password').val("");
 			$('#retype_password').val("");
-			$('#image').val("");
 		});
 		return;
 	}
@@ -47,10 +48,11 @@ function register(){
 		swal("Password don't match", "Please retype the password!", "warning")
 		.then(() =>{
 			$('#password').css("border-color","red");
+			$('#password').css("border-style","solid");
 			$('#retype_password').css("border-color","red");
+			$('#retype_password').css("border-style","solid");
 			$('#password').val("");
 			$('#retype_password').val("");
-			$('#image').val("");
 		});
 		return;
 	}
@@ -70,6 +72,7 @@ function register(){
 						
 						$('#username').val("");
 						$('#username').css("border-color","red");
+						$('#username').css("border-style","solid");
 						$('#username').focus();
 						$('#password').val("");
 						$('#retype_password').val("");
@@ -83,6 +86,7 @@ function register(){
 					
 					$('#email').val("");
 					$('#email').css("border-color","red");
+					$('#email').css("border-style","solid");
 					$('#email').focus();					
 					$('#password').val("");
 					$('#retype_password').val("");
@@ -92,9 +96,12 @@ function register(){
 			}
 			else
 				document.location.href = "page?action=login";
-
 		},
 		type : 'POST',
-
 	});
+}
+
+function reset()
+{
+	$('.Input').removeAttr("style", null);
 }

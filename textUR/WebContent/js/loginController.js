@@ -15,7 +15,6 @@ function checkEnter(){
 };
 
 function login(){
-	
 	var spin = $('<div></div>').addClass("se-pre-con").attr("id","loading");
 	$("body").append(spin);
 	
@@ -29,24 +28,34 @@ function login(){
 			if(response == "password"){
 				swal("Error", "Wrong password!", "error")
 					.then(() => {
-						
-						$('#password').val("")
-						$('#password').css("border-color","red")
+						$('#password').val("");
+						$('#password').css("border-color","red");
+						$('#password').css("border-style","solid");
+						$('#loading').remove();
 					});
 			}
 			else if(response == "user"){
 				swal("Error","User not found!", "error")
 					.then(() => {
-						$('#username').css("border-color","red")
-						$('#username').val("")
-						$('#password').val("")
+						$('#username').css("border-color","red");
+						$('#username').css("border-style","solid");
+						$('#username').val("");
+						$('#password').val("");
+						$('#loading').remove();
 					});
-			} else
+			} else{
 				document.location.href = "page?action=index";
+			}
 		},
 		type : 'GET',
 	});
 }
+
+function reset()
+{
+	$('.Input').removeAttr("style", null);
+}
+
 
 function onSignIn(googleUser) {
 	  var profile = googleUser.getBasicProfile();
