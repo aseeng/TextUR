@@ -421,20 +421,19 @@ function post(line)
 			line : line
 		},
 		success : function(response){
-			$.each(JSON.parse(response), function(idx, obj) {
-				var	div = $('<div></div>').addClass("direct-chat-msg");
-				var div1 = $('<div></div>').addClass("box-footer box-comments");
-				var span1 = $('<span></span>').addClass("pull-left comment-date").text(obj.date.substr(0,19));
-				var span = $('<span></span>').addClass("pull-right username comment-user").text(obj.user.username);
-				var div3 = $('<div></div>').addClass("comment-text comment").text(obj.text);
+			var	div = $('<div></div>').addClass("direct-chat-msg");
+			var div1 = $('<div></div>').addClass("box-footer box-comments");
+			var date = new Date().getTime();
+			var span1 = $('<span></span>').addClass("pull-left comment-date").text(moment().format('l').date(1));
+			var span = $('<span></span>').addClass("pull-right username comment-user").text($('#user').html());
+			var div3 = $('<div></div>').addClass("comment-text comment").text(text);
 
-				span1.append(span);
-				div1.append(span1);
-				div.append(div1);
-				div.append(div3);
-				
-				$('#comment').append(div);
-			});
+			span1.append(span);
+			div1.append(span1);
+			div.append(div1);
+			div.append(div3);
+			
+			$('#comment').append(div);
 
 			$('#input').val("");
 			var iconId = "#icon"+line;

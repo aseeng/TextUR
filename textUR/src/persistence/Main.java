@@ -31,7 +31,7 @@ public class Main {
 		MessageDao messageDao = factory.getMessageDao();
 		CollaboratorDao collaboratorDao = factory.getCollaboratorDao();
 		
-		User user1 = new User("username", "alessandromarrazzo9@gmail.com","");
+		/*User user1 = new User("username", "alessandromarrazzo9@gmail.com","");
 		User user2 = new User("nicuola","paletta92@gmail.com","");
 
 		userDao.save(user1);
@@ -75,5 +75,6 @@ public class Main {
 		collaboratorDao.save(coll1);
 		collaboratorDao.updateStatus(user2.getUsername(), project1.getId());
 		collaboratorDao.save(coll2);
+		*/
 	}
 }
