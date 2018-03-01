@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,9 +11,9 @@ import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
 
+import model.Comment;
 import model.File;
 import model.User;
-import model.Comment;
 import persistence.DAOFactory;
 import persistence.dao.CommentDao;
 
@@ -57,11 +56,5 @@ public class Comments extends HttpServlet {
 		CommentDao commentDao = DAOFactory.getInstance().getCommentDao();
 		Comment comment = new Comment(file, line, user, text);
 		commentDao.save(comment);
-		
-		List<Comment> comments = new ArrayList<>();
-		comments.add(comment);
-		
-		String commentList = (new JSONArray(comments).toString());
-		resp.getWriter().print(commentList);
 	}
 }
