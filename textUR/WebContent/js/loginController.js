@@ -21,26 +21,28 @@ function login(){
 	$.ajax({
 		url : 'login',
 		data : {
-			username : $('#username').val(),
-			password : $('#password').val()
+			username : $('#usernameInput').val(),
+			password : $('#passwordInput').val()
 		},
 		success : function(response) {
 			if(response == "password"){
 				swal("Error", "Wrong password!", "error")
 					.then(() => {
-						$('#password').val("");
-						$('#password').css("border-color","red");
-						$('#password').css("border-style","solid");
+						$('#passwordInput').val("");
+						$('#passwordInput').css("border-color","red");
+						$('#passwordInput').css("border-style","solid");
+						$('#passwordInput').attr("onfocus","reset();");
 						$('#loading').remove();
 					});
 			}
 			else if(response == "user"){
 				swal("Error","User not found!", "error")
 					.then(() => {
-						$('#username').css("border-color","red");
-						$('#username').css("border-style","solid");
-						$('#username').val("");
-						$('#password').val("");
+						$('#usernameInput').css("border-color","red");
+						$('#usernameInput').css("border-style","solid");
+						$('#usernameInput').val("");
+						$('#passwordInput').val("");
+						$('#usernameInput').attr("onfocus","reset();");
 						$('#loading').remove();
 					});
 			} else{
@@ -54,6 +56,7 @@ function login(){
 function reset()
 {
 	$('.Input').removeAttr("style", null);
+//	$('.Input').removeAttr("onfocus", null);
 }
 
 

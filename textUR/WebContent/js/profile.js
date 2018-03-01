@@ -11,6 +11,8 @@ function changePassword(){
 		$('#newPasswordInput').css("border-style", "solid");
 		$('#confirmPasswordInput').css("border-color","red");
 		$('#confirmPasswordInput').css("border-style", "solid");
+		$('#newPasswordInput').attr("onfocus","reset();");
+		$('#confirmPasswordInput').attr("onfocus","reset();");s
 		return;
 	}
 	
@@ -27,6 +29,7 @@ function changePassword(){
 				swal("Your password is wrong", "Insert correct password", "error").then(()=>{
 					$('#oldPasswordInput').css("border-color","red");
 					$('#oldPasswordInput').css("border-style", "solid");
+					$('#oldPasswordInput').attr("onfocus","reset();");
 				});
 			else {
 				swal("Success", "Password changed successfully!", "success").then(()=>{
@@ -44,6 +47,7 @@ function changeEmail(){
 		swal("Error", "Email not valid!", "error");
 		$('#mailInput').css("border-color","red");
 		$('#mailInput').css("border-style", "solid");
+		$('#mailInput').attr("onfocus","reset();");
 		return;
 	}
 	if (value != null && value != "") {
@@ -57,7 +61,9 @@ function changeEmail(){
 			success: function(response){
 				if(response == "exist")
 					swal("Error", "There is already an user with the same mail", "error").then(()=>{
-						changeEmail();
+						$('#mailInput').css("border-color","red");
+						$('#mailInput').css("border-style", "solid");
+						$('#mailInput').attr("onfocus","reset();");
 					});
 				else {
 					swal("Success", "Email changed successfully!", "success").then(()=>{
@@ -82,7 +88,9 @@ function changeUsername(){
 			success: function(response){
 				if(response == "exist")
 					swal("Error", "There is already an user with the same name", "error").then(()=>{
-						changeUsername();
+						$('#usernameInput').css("border-color","red");
+						$('#usernameInput').css("border-style", "solid");
+						$('#usernameInput').attr("onfocus","reset();");
 					});
 				else {
 					swal("Success", "Username changed successfully!", "success").then(()=>{
@@ -139,7 +147,6 @@ function options(){
 	var emailInput = $('<input>').addClass("col-xs-12 Input");
 		emailInput.attr({
 			autofocus: "true",
-			onfocus: "reset();",
 			id: "mailInput",
 			placeholder: "insert new mail"
 		});
@@ -169,7 +176,6 @@ function options(){
 	var usernameInput = $('<input>').addClass("col-xs-12 Input");
 		usernameInput.attr({
 			autofocus: "true",
-			onfocus: "reset();",
 			id: "usernameInput",
 			placeholder: "insert new username"
 		});
@@ -199,7 +205,6 @@ function options(){
 		oldPasswordInput.attr({
 			type: "password",
 			autofocus: "true",
-			onfocus: "reset();",
 			id: "oldPasswordInput",
 			placeholder: "insert old password"
 		});
@@ -207,7 +212,6 @@ function options(){
 		newPasswordInput.attr({
 			type: "password",
 			autofocus: "true",
-			onfocus: "reset();",
 			id: "newPasswordInput",
 			placeholder: "insert new password"
 		});
@@ -215,7 +219,6 @@ function options(){
 		confirmPasswordInput.attr({
 			type: "password",
 			autofocus: "true",
-			onfocus: "reset();",
 			id: "confirmPasswordInput",
 			placeholder: "insert your password"
 		});
@@ -247,7 +250,6 @@ function options(){
 	var imageInput = $('<input>').addClass("col-xs-12 Input");
 		imageInput.attr({
 			autofocus: "true",
-			onfocus: "reset();",
 			id: "imageInput",
 			placeholder: "insert image url"
 		});
@@ -268,6 +270,7 @@ function options(){
 function reset()
 {
 	$('.Input').removeAttr("style", null);
+	$('.Input').removeAttr("onfocus", null);
 }
 
 function invitations(){

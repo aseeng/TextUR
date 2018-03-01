@@ -34,7 +34,7 @@ function register(){
 		.then(() => {
 			$('#email').css("border-color","red");
 			$('#email').css("border-style","solid");
-			$('#email').focus();
+			$('#email').attr("onfocus","reset();");
 			$('#email').val("");
 			$('#password').val("");
 			$('#retype_password').val("");
@@ -51,6 +51,8 @@ function register(){
 			$('#password').css("border-style","solid");
 			$('#retype_password').css("border-color","red");
 			$('#retype_password').css("border-style","solid");
+			$('#password').attr("onfocus","reset();");
+			$('#retype_password').attr("onfocus","reset();");
 			$('#password').val("");
 			$('#retype_password').val("");
 		});
@@ -73,7 +75,7 @@ function register(){
 						$('#username').val("");
 						$('#username').css("border-color","red");
 						$('#username').css("border-style","solid");
-						$('#username').focus();
+						$('#username').attr("onfocus","reset();");
 						$('#password').val("");
 						$('#retype_password').val("");
 						$('#image').val("");
@@ -87,7 +89,7 @@ function register(){
 					$('#email').val("");
 					$('#email').css("border-color","red");
 					$('#email').css("border-style","solid");
-					$('#email').focus();					
+					$('#email').attr("onfocus","reset();");
 					$('#password').val("");
 					$('#retype_password').val("");
 					$('#image').val("");
@@ -104,4 +106,5 @@ function register(){
 function reset()
 {
 	$('.Input').removeAttr("style", null);
+	$('.Input').removeAttr("onfocus", null);
 }
