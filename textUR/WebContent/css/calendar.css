@@ -20,6 +20,22 @@ body {
 	margin-top:24px;
 }
 
+#create{
+	max-width: 200px;
+    margin-left: 30%;
+}
+
+.choose{
+	margin-top: 7px;
+}
+
+#time{
+	margin-bottom: -15px;
+}
+
+#summary{
+	margin-top: -10px;
+}
 
 #calendar {
   font-family: Raleway;

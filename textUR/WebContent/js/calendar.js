@@ -60,9 +60,11 @@ function listUpcomingEvents() {
 
 function createEvent(){
 
-
+	var div = document.createElement("div");
+		div.setAttribute("id", "create");
+	
 	var summary = document.createElement("select");
-	summary.classList = "js-example-basic-single";
+	summary.classList = "js-example-basic-single choose";
 	summary.setAttribute("name","state");
 	summary.setAttribute("id","summary");
 	summary.placeholder = "Summary";
@@ -89,68 +91,30 @@ function createEvent(){
 	summary.appendChild(option4);
 
 	var location = document.createElement("input");
+	location.classList = "choose";
 	location.setAttribute("id","location");
 	location.placeholder = "Location";
 	
 	var description = document.createElement("input");
+	description.classList = "choose";
 	description.setAttribute("id","description");
 	description.placeholder = "Description";
 	
 	var dateStart = document.createElement("input");
+	dateStart.classList = "choose";
 	dateStart.setAttribute("id","start");
 	dateStart.type="date";
 
-	var hour = document.createElement("select");
-	hour.setAttribute("id","hour");
-	for(i=0; i<24; i++){	
-		
-		var op=document.createElement("option");
-		
-		if(i<10){
-			op.setAttribute("value","0"+i);
-			op.text="0"+i;
-		}
-		else{
-			op.setAttribute("value",i);
-			op.text=i;
-		}
-		hour.appendChild(op);
-	}
-	
-	
-	var min = document.createElement("select");
-	min.setAttribute("id","min");
-	for(i=0; i<60; i++){	
-		
-		var op=document.createElement("option");
-		
-		if(i<10){
-			op.setAttribute("value","0"+i);
-			op.text="0"+i;
-		}
-		else{
-			op.setAttribute("value",i);
-			op.text=i;
-		}
-		min.appendChild(op);
-	}
-
-	var div = document.createElement("div");
+	var time = document.createElement("input");
+	time.classList = "choose";
+	time.setAttribute("id","time");
+	time.type="time";
 	
 	div.appendChild(summary);
-	div.appendChild(document.createElement("br"));
-	div.appendChild(document.createElement("br"));
 	div.appendChild(location);
-	div.appendChild(document.createElement("br"));
-	div.appendChild(document.createElement("br"));
 	div.appendChild(description);
-	div.appendChild(document.createElement("br"));
-	div.appendChild(document.createElement("br"));
 	div.appendChild(dateStart);
-	div.appendChild(document.createElement("br"));
-	div.appendChild(document.createElement("br"));
-	div.appendChild(hour);
-	div.appendChild(min);
+	div.appendChild(time);
 	
 	return div;
 }
@@ -160,10 +124,10 @@ function insertEvent() {
 	var div = createEvent();
 
 	swal({
-		text: 'Insert a new event.',
+		text: 'Insert a new event',
 		content: div,
 		button: {
-		    text: "ok!"
+		    text: "create"
 		  },
 		}).then(	(value)=>{
 			
@@ -174,10 +138,10 @@ function insertEvent() {
 					'location' : $("#location").val(),
 					'description' : $("#description").val(),
 					'start' : {
-						'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
+						'dateTime' : $("#start").val()+"T"+$("#time").val()+":00+00:00",
 					},
 					'end' : {
-						'dateTime' : $("#start").val()+"T"+$("#hour").val()+":"+$('#min').val()+":00+00:00",
+						'dateTime' : $("#start").val()+"T"+$("#time").val()+":00+00:00",
 					},
 				};
 				
@@ -187,7 +151,9 @@ function insertEvent() {
 				});
 
 				request.execute(function() {
-					listUpcomingEvents();
+					swal("event created","", "success").then(()=>{
+						listUpcomingEvents();
+					});
 				});
 			}
 		});		
